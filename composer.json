@@ -1,0 +1,38 @@
+{
+  "name": "swaggest/shopware-sdk",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jakub Groncki",
+      "email": "jakub.groncki@gmail.pl"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "ext-mbstring": "*",
+    "symfony/serializer": "^6.0",
+    "league/oauth2-client": "^2.6",
+    "psr/http-client": "^1.0",
+    "symfony/console": "^6.1",
+    "symfony/event-dispatcher": "^6.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Swaggest\\ShopwareSdk\\": "src/",
+      "Swaggest\\ShopwareSdk\\Examples\\": "examples/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Swaggest\\ShopwareSdk\\Test\\": "test/"
+    }
+  },
+  "require-dev": {
+    "symplify/easy-coding-standard": "^11.0",
+    "vimeo/psalm": "^4.24",
+    "php-coveralls/php-coveralls": "^2.5",
+    "phpunit/phpunit": "^9.5"
+  }
+}

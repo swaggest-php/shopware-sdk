@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<psalm
+        errorLevel="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <DuplicateClass errorLevel="suppress" />
+        <MoreSpecificImplementedParamType>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </MoreSpecificImplementedParamType>
+        <ImplementedReturnTypeMismatch>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </ImplementedReturnTypeMismatch>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </MissingConstructor>
+        <PossiblyInvalidArgument>
+            <errorLevel type="suppress">
+                <file name="src/Code/EntityDefinition/FlagGenerator.php"/>
+            </errorLevel>
+        </PossiblyInvalidArgument>
+    </issueHandlers>
+</psalm>
