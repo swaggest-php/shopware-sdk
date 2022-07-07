@@ -24,19 +24,6 @@ final class ExtendableTraitTest extends TestCase
         self::assertSame($anotherStruct, $extension);
     }
 
-    public function testAddArrayExtension(): void
-    {
-        $struct = new TestStruct();
-        $arrayExtension = [
-            'extendedField' => 'value',
-            'anotherExtendedField' => 'another value',
-        ];
-
-        $extension = $struct->getExtension('array_extension')->getVars();
-
-        self::assertSame($arrayExtension, $extension);
-    }
-
     /**
      * @dataProvider provideExtensions
      */
