@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": "^8.0",
+    "php": "^8.1",
     "ext-mbstring": "*",
     "symfony/serializer": "^6.0",
     "league/oauth2-client": "^2.6",
