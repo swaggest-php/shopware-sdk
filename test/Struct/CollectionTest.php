@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Test\Struct;
 
+use PHPUnit\Framework\TestCase;
 use Swaggest\ShopwareSdk\Test\Entity\Entities\ElephantEntity;
 use Swaggest\ShopwareSdk\Test\Entity\Entities\HappyPersonEntity;
 use Swaggest\ShopwareSdk\Test\Struct\Collections\AnotherTestCollection;
 use Swaggest\ShopwareSdk\Test\Struct\Collections\TestCollection;
-use PHPUnit\Framework\TestCase;
 
 final class CollectionTest extends TestCase
 {

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Test\Struct;
 
+use PHPUnit\Framework\TestCase;
 use Swaggest\ShopwareSdk\Struct\Struct;
 use Swaggest\ShopwareSdk\Test\Struct\Structs\AnotherTestStruct;
 use Swaggest\ShopwareSdk\Test\Struct\Structs\TestStruct;
 use Swaggest\ShopwareSdk\Test\Struct\Structs\YetAnotherTestStruct;
-use PHPUnit\Framework\TestCase;
 
 final class ExtendableTraitTest extends TestCase
 {

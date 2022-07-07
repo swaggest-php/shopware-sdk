@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Test\Struct;
 
+use PHPUnit\Framework\TestCase;
 use Swaggest\ShopwareSdk\Test\Struct\Structs\AnotherTestStruct;
 use Swaggest\ShopwareSdk\Test\Struct\Structs\TestStruct;
-use PHPUnit\Framework\TestCase;
 
 final class CreateFromTraitTest extends TestCase
 {
