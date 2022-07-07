@@ -31,7 +31,7 @@ jobs:
       - name: Run tests
         run: |
           mkdir -p build/logs
-          XDEBUG_MODE=coverage php vendor/bin/phpunit -c phpunit.xml.dist
+          XDEBUG_MODE=coverage php vendor/bin/phpunit -c phpunit.xml
 
       - name: Coveralls
         run: php vendor/bin/php-coveralls
