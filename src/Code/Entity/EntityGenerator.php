@@ -10,10 +10,6 @@ use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
 use Swaggest\ShopwareSdk\Schema\Association;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
-use function array_map;
-use function implode;
-use function in_array;
-use function ucfirst;
 
 final class EntityGenerator implements UseAwareCodeGeneratorInterface
 {
@@ -82,33 +78,33 @@ EOF;
             $properties[] = $property;
         }
 
-        $functions = array_column($properties, 'functions');
-        $properties = array_column($properties, 'property');
+        $functions = \array_column($properties, 'functions');
+        $properties = \array_column($properties, 'property');
 
         $entity = $definition->getEntityName();
-        $entity = explode('_', $entity);
-        $entity = array_map('ucfirst', $entity);
-        $entity = implode('', $entity);
+        $entity = \explode('_', $entity);
+        $entity = \array_map('ucfirst', $entity);
+        $entity = \implode('', $entity);
 
         $parameters = [
-            '#uses#' => implode(";\n", array_map(fn (string $use) => 'use ' . $use, $this->uses)) . ';',
-            '#entity#' => ucfirst($entity),
-            '#properties#' => implode("\n\n    ", $properties),
-            '#functions#' => implode("\n\n", $functions),
+            '#uses#' => \implode(";\n", \array_map(fn (string $use) => 'use ' . $use, $this->uses)) . ';',
+            '#entity#' => \ucfirst($entity),
+            '#properties#' => \implode("\n\n    ", $properties),
+            '#functions#' => \implode("\n\n", $functions),
         ];
 
         $this->uses = [];
 
-        return str_replace(
-            array_keys($parameters),
-            array_values($parameters),
+        return \str_replace(
+            \array_keys($parameters),
+            \array_values($parameters),
             $this->classTemplate
         );
     }
 
     public function addUse(string $class): void
     {
-        if (in_array($class, $this->uses, true)) {
+        if (\in_array($class, $this->uses, true)) {
             return;
         }
 
@@ -118,7 +114,7 @@ EOF;
     private function generateProperty(Field|Association $field): ?array
     {
         $isBoolean = Field::class === $field::class && 'boolean' === $field->getType();
-        $isJson = Field::class === $field::class && in_array($field->getType(), ['json_list', 'json_object'], true);
+        $isJson = Field::class === $field::class && \in_array($field->getType(), ['json_list', 'json_object'], true);
 
         $nullable = '?';
 
@@ -128,26 +124,26 @@ EOF;
 
         $type = $this->typeHintResolver->resolve($field);
 
-        $template = str_replace(
+        $template = \str_replace(
             ['#property#', '#type#', '#nullable#'],
             [$field->getName(), $type, $nullable],
             $this->propertyTemplate
         );
 
-        $functions = str_replace(
+        $functions = \str_replace(
             ['#propertyUc#', '#propertyLc#', '#nullable#', '#type#'],
-            [ucfirst($field->getName()), lcfirst($field->getName()), $nullable, $type],
+            [\ucfirst($field->getName()), \lcfirst($field->getName()), $nullable, $type],
             $this->accessorsTemplate
         );
 
         return [
-            'property' => trim($template),
+            'property' => \trim($template),
             'functions' => $functions,
         ];
     }
 
     private function shouldSkip(string $fieldName): bool
     {
-        return in_array($fieldName, ['id', 'createdAt', 'updatedAt', 'translated', 'versionId'], true);
+        return \in_array($fieldName, ['id', 'createdAt', 'updatedAt', 'translated', 'versionId'], true);
     }
 }

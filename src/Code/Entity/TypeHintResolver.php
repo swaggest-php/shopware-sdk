@@ -10,7 +10,6 @@ use Swaggest\ShopwareSdk\Code\Event\ClassUsedEvent;
 use Swaggest\ShopwareSdk\Exception\EntityGeneratorException;
 use Swaggest\ShopwareSdk\Schema\Association;
 use Swaggest\ShopwareSdk\Schema\Field;
-use function sprintf;
 
 final class TypeHintResolver
 {
@@ -50,6 +49,6 @@ final class TypeHintResolver
 
     private function getFullClass(string $entityName, string $classType): string
     {
-        return sprintf('Swaggest\\ShopwareSdk\\Entity\\%s\\%s%s', $entityName, $entityName, $classType);
+        return \sprintf('Swaggest\\ShopwareSdk\\Entity\\%s\\%s%s', $entityName, $entityName, $classType);
     }
 }

@@ -8,8 +8,6 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
 use Swaggest\ShopwareSdk\Code\Event\ClassUsedEvent;
 use Swaggest\ShopwareSdk\Exception\FlagGeneratorException;
-use function implode;
-use function sprintf;
 
 final class FlagGenerator
 {
@@ -38,14 +36,14 @@ final class FlagGenerator
             'allow_html',
             'inherited',
             'allow_empty_string',
-            'required' => sprintf('new %s()', $className),
+            'required' => \sprintf('new %s()', $className),
 
             'reversed_inherited',
-            'since' => sprintf("new %s('%s')", $className, $flagDescriptor),
+            'since' => \sprintf("new %s('%s')", $className, $flagDescriptor),
 
             'deprecated' => $this->generateDeprecatedFlag($flagDescriptor),
 
-            'search_ranking' => sprintf('new SearchRanking(%f)', $flagDescriptor),
+            'search_ranking' => \sprintf('new SearchRanking(%f)', $flagDescriptor),
             'read_protected', 'write_protected' => $this->generateProtectedFlag($flagName, $flagDescriptor),
             default => throw new FlagGeneratorException('Unknown flag: ' . $flagName)
         };
@@ -55,7 +53,7 @@ final class FlagGenerator
     {
         $replacedBy = $flagDescriptor['replaced_by'];
 
-        return sprintf(
+        return \sprintf(
             "new Deprecated('%s', '%s', %s)",
             $flagDescriptor['deprecated_since'],
             $flagDescriptor['will_be_removed_in'],
@@ -73,7 +71,7 @@ final class FlagGenerator
         $this->eventDispatcher->dispatch(new ClassUsedEvent('Swaggest\\ShopwareSdk\\Schema\\Flag\\' . $className));
         $this->eventDispatcher->dispatch(new ClassUsedEvent('Swaggest\\ShopwareSdk\\Schema\\Flag\\ProtectedFlag'));
 
-        $output = sprintf('new %s(', $className);
+        $output = \sprintf('new %s(', $className);
         $scopes = array_map(fn (string $class) => match ($class) {
             'Shopware\\Core\\Framework\\Api\\Context\\AdminApiSource' => "ProtectedFlag::ADMIN_API",
             'Shopware\\Core\\Framework\\Api\\Context\\SalesChannelApiSource' => "ProtectedFlag::SALES_CHANNEL_API",
@@ -81,7 +79,7 @@ final class FlagGenerator
             default => throw new FlagGeneratorException('Unknown source: ' . $class)
         }, $flagDescriptor[0]);
 
-        $output .= sprintf("[%s])", implode(', ', $scopes));
+        $output .= \sprintf("[%s])", \implode(', ', $scopes));
 
         return $output;
     }

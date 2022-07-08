@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Code;
 
 use Swaggest\ShopwareSdk\Code\EntityDefinition\FlagGenerator;
-use function implode;
 
 /**
  * @property FlagGenerator $flagGenerator
@@ -20,6 +19,6 @@ trait PrepareFlagsTrait
             $flags[] = $this->flagGenerator->generateFlag($flagName, $flagDescriptor);
         }
 
-        return implode(', ', $flags);
+        return \implode(', ', $flags);
     }
 }

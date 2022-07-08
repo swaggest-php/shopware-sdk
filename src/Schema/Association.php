@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Schema;
 
 use Swaggest\ShopwareSdk\Exception\AssociationException;
-use function in_array;
-use function sprintf;
 
 final class Association
 {
@@ -33,7 +31,7 @@ final class Association
         private ?string $reference,
         private ?string $local,
     ) {
-        if (!in_array($this->relationType, [self::ONE_TO_ONE, self::ONE_TO_MANY, self::MANY_TO_ONE, self::MANY_TO_MANY], true)) {
+        if (!\in_array($this->relationType, [self::ONE_TO_ONE, self::ONE_TO_MANY, self::MANY_TO_ONE, self::MANY_TO_MANY], true)) {
             throw new AssociationException('Unknown relation type: ' . $this->relationType);
         }
 
@@ -103,7 +101,7 @@ final class Association
 
     private function createAssociationException(string $name, string $relationship, string $propertyName): AssociationException
     {
-        throw new AssociationException(sprintf(
+        throw new AssociationException(\sprintf(
             'Field %s is a %s relationship and thus needs to have the %s property set',
             $name,
             $relationship,

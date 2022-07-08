@@ -6,10 +6,6 @@ namespace Swaggest\ShopwareSdk\Code\EntityDefinition;
 
 use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
 use Swaggest\ShopwareSdk\Code\UseAwareCodeGeneratorInterface;
-use function array_map;
-use function implode;
-use function in_array;
-use function str_replace;
 
 final class EntityDefinitionGenerator implements UseAwareCodeGeneratorInterface
 {
@@ -67,9 +63,9 @@ EOF;
     public function generateEntityDefinition(string $entityName, array $entity): string
     {
         $pascalCasedEntityName = $this->snakeToPascalCase($entityName);
-        $defineFieldsMethod = str_replace('#fields#', $this->getDefineFieldsMethodContents($entity), $this->defineFieldsMethodTemplate);
+        $defineFieldsMethod = \str_replace('#fields#', $this->getDefineFieldsMethodContents($entity), $this->defineFieldsMethodTemplate);
 
-        $output = str_replace(
+        $output = \str_replace(
             [
                 '#entity_name#',
                 '#entity#',
@@ -79,7 +75,7 @@ EOF;
             [
                 $entityName,
                 $pascalCasedEntityName,
-                implode(";\n", array_map(fn (string $use) => 'use ' . $use, $this->uses)) . ';',
+                \implode(";\n", \array_map(fn (string $use) => 'use ' . $use, $this->uses)) . ';',
                 $defineFieldsMethod,
             ],
             $this->classTemplate
@@ -92,7 +88,7 @@ EOF;
 
     public function addUse(string $class): void
     {
-        if (in_array($class, $this->uses, true)) {
+        if (\in_array($class, $this->uses, true)) {
             return;
         }
 
@@ -112,6 +108,6 @@ EOF;
             }
         }
 
-        return implode(",\n", $fields) . ',';
+        return \implode(",\n", $fields) . ',';
     }
 }

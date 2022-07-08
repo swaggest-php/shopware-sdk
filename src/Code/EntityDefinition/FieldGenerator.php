@@ -6,8 +6,6 @@ namespace Swaggest\ShopwareSdk\Code\EntityDefinition;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Swaggest\ShopwareSdk\Code\Event\ClassUsedEvent;
-use function implode;
-use function sprintf;
 
 final class FieldGenerator
 {
@@ -21,7 +19,7 @@ final class FieldGenerator
     {
         $this->eventDispatcher->dispatch(new ClassUsedEvent('Swaggest\ShopwareSdk\Schema\Field'));
 
-        $output = sprintf("(new Field('%s', '%s'))->addFlags(", $name, $field['type']);
+        $output = \sprintf("(new Field('%s', '%s'))->addFlags(", $name, $field['type']);
 
         $flags = [];
 
@@ -29,7 +27,7 @@ final class FieldGenerator
             $flags[] = $this->flagGenerator->generateFlag($flagName, $flagDescriptor);
         }
 
-        $output .= sprintf('%s)', implode(', ', $flags));
+        $output .= \sprintf('%s)', \implode(', ', $flags));
 
         return $output;
     }

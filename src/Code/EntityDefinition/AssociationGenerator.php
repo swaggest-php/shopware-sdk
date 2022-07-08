@@ -8,7 +8,6 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Swaggest\ShopwareSdk\Code\Event\ClassUsedEvent;
 use Swaggest\ShopwareSdk\Code\PrepareFlagsTrait;
 use Swaggest\ShopwareSdk\Exception\AssociationGeneratorException;
-use function sprintf;
 
 final class AssociationGenerator
 {
@@ -37,7 +36,7 @@ final class AssociationGenerator
         $reference = $field['reference'] ?? null;
         $local = $field['local'] ?? null;
 
-        $output = sprintf(
+        $output = \sprintf(
             "(new Association('%s', %s, '%s', '%s', '%s', %s, %s, %s, %s))->addFlags(",
             $fieldName,
             $relationType,
