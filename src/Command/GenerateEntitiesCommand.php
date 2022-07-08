@@ -1,0 +1,68 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Swaggest\ShopwareSdk\Command;
+
+use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
+use Swaggest\ShopwareSdk\Code\Entity\CollectionGenerator;
+use Swaggest\ShopwareSdk\Code\Entity\EntityGenerator;
+use Swaggest\ShopwareSdk\Code\Entity\TypeHintResolver;
+use Swaggest\ShopwareSdk\Code\EventSubscriber\CodeEventSubscriber;
+use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Exception\SchemaException;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
+final class GenerateEntitiesCommand extends Command
+{
+    use CaseConverterTrait;
+
+    protected static $defaultName = 'shopware-app-sdk:generate-entities';
+
+    public function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $schemaPath = __DIR__ . '/../Resources/entity-schema.json';
+        $schema = \file_get_contents($schemaPath);
+
+        if (false === $schema) {
+            throw new SchemaException('Could not open schema file');
+        }
+
+        $json = \json_decode($schema, true);
+
+        $eventDispatcher = new EventDispatcher();
+
+        $typeHintResolver = new TypeHintResolver($eventDispatcher);
+        $entityGenerator = new EntityGenerator($typeHintResolver);
+
+        $eventDispatcher->addSubscriber(new CodeEventSubscriber($entityGenerator));
+
+        $collectionGenerator = new CollectionGenerator();
+
+        foreach ($json as $entityName => $entity) {
+            $className = $this->snakeToPascalCase($entityName);
+            $class = 'Swaggest\\ShopwareSdk\\Entity\\' . $className . '\\' . $className . 'Definition';
+
+            $dirName = __DIR__ . '/../Entity/' . $className;
+
+            if (!\is_dir($dirName)) {
+                \mkdir($dirName);
+            }
+
+            /** @var EntityDefinitionInterface $definition */
+            $definition = new $class();
+            $generatedEntity = $entityGenerator->generateEntity($definition);
+            $generatedCollection = $collectionGenerator->generateCollection($definition);
+
+            \file_put_contents($dirName . '/' . $className . 'Entity.php', $generatedEntity);
+            \file_put_contents($dirName . '/' . $className . 'Collection.php', $generatedCollection);
+        }
+
+        $output->writeln('Entities created');
+
+        return 0;
+    }
+}
