@@ -32,8 +32,3 @@ jobs:
         run: |
           mkdir -p build/logs
           XDEBUG_MODE=coverage php vendor/bin/phpunit -c phpunit.xml
-
-      - name: Coveralls
-        run: php vendor/bin/php-coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
