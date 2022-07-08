@@ -23,7 +23,7 @@ namespace Swaggest\ShopwareSdk\Entity\#entity#;
 use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
 #uses#
 
-class #entity#Definition implements EntityDefinitionInterface
+final class #entity#Definition implements EntityDefinitionInterface
 {
     public function getEntityName(): string
     {

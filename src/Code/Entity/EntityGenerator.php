@@ -28,7 +28,7 @@ use Swaggest\ShopwareSdk\Entity\Entity;
 use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 #uses#
 
-class #entity#Entity extends Entity
+final class #entity#Entity extends Entity
 {
     use EntityIdTrait;
 

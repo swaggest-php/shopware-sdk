@@ -29,7 +29,7 @@ use Swaggest\ShopwareSdk\Entity\EntityCollection;
  * @method #entityClass#|null first()
  * @method #entityClass#|null last()
  */
-class #entity#Collection extends EntityCollection
+final class #entity#Collection extends EntityCollection
 {
     protected function getExpectedClass(): string
     {
