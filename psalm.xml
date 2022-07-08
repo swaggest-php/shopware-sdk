@@ -14,5 +14,25 @@
 
     <issueHandlers>
         <DuplicateClass errorLevel="suppress" />
+        <MoreSpecificImplementedParamType>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </MoreSpecificImplementedParamType>
+        <ImplementedReturnTypeMismatch>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </ImplementedReturnTypeMismatch>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </MissingConstructor>
+        <PossiblyInvalidArgument>
+            <errorLevel type="suppress">
+                <file name="src/Code/EntityDefinition/FlagGenerator.php"/>
+            </errorLevel>
+        </PossiblyInvalidArgument>
     </issueHandlers>
 </psalm>

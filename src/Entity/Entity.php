@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity;
 
+use DateTimeInterface;
+use InvalidArgumentException;
 use Swaggest\ShopwareSdk\Struct\Struct;
 
 class Entity extends Struct
@@ -12,9 +14,9 @@ class Entity extends Struct
 
     protected array $translated = [];
 
-    protected \DateTimeInterface $createdAt;
+    protected ?DateTimeInterface $createdAt = null;
 
-    protected \DateTimeInterface $updatedAt;
+    protected ?DateTimeInterface $updatedAt = null;
 
     private ?string $entityName = null;
 
@@ -53,7 +55,7 @@ class Entity extends Struct
             return $this->getExtension($property);
         }
 
-        throw new \InvalidArgumentException(
+        throw new InvalidArgumentException(
             sprintf('Property %s do not exist in class %s', $property, self::class)
         );
     }
@@ -83,22 +85,22 @@ class Entity extends Struct
         $this->translated[$key] = $value;
     }
 
-    public function getCreatedAt(): \DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): void
+    public function setCreatedAt(DateTimeInterface $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    public function getUpdatedAt(): \DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): void
+    public function setUpdatedAt(DateTimeInterface $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
@@ -118,15 +120,17 @@ class Entity extends Struct
             return $this->entityName;
         }
 
-        $class = self::class;
-        $class = explode('\\', $class);
-        $class = end($class);
+        $class = static::class;
+        $class = \explode('\\', $class);
+        $class = \end($class);
 
-        return $this->entityName = preg_replace(
+        $this->entityName = \preg_replace(
             '/_entity$/',
             '',
-            ltrim(mb_strtolower((string) preg_replace('/[A-Z]/', '_$0', $class)), '_')
+            \ltrim(\mb_strtolower((string) \preg_replace('/[A-Z]/', '_$0', $class)), '_')
         );
+
+        return $this->entityName;
     }
 
     public function getEntityName(): ?string
