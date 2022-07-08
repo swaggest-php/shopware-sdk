@@ -85,7 +85,7 @@ class Entity extends Struct
         $this->translated[$key] = $value;
     }
 
-    public function getCreatedAt(): DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
@@ -95,7 +95,7 @@ class Entity extends Struct
         $this->createdAt = $createdAt;
     }
 
-    public function getUpdatedAt(): DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
