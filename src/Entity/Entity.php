@@ -14,9 +14,9 @@ class Entity extends Struct
 
     protected array $translated = [];
 
-    protected DateTimeInterface $createdAt;
+    protected ?DateTimeInterface $createdAt = null;
 
-    protected DateTimeInterface $updatedAt;
+    protected ?DateTimeInterface $updatedAt = null;
 
     private ?string $entityName = null;
 
@@ -120,15 +120,17 @@ class Entity extends Struct
             return $this->entityName;
         }
 
-        $class = self::class;
-        $class = explode('\\', $class);
-        $class = end($class);
+        $class = static::class;
+        $class = \explode('\\', $class);
+        $class = \end($class);
 
-        return $this->entityName = preg_replace(
+        $this->entityName = \preg_replace(
             '/_entity$/',
             '',
-            ltrim(mb_strtolower((string) preg_replace('/[A-Z]/', '_$0', $class)), '_')
+            \ltrim(\mb_strtolower((string) \preg_replace('/[A-Z]/', '_$0', $class)), '_')
         );
+
+        return $this->entityName;
     }
 
     public function getEntityName(): ?string

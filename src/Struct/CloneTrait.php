@@ -9,7 +9,7 @@ trait CloneTrait
     public function __clone()
     {
         /** @var array<string, object|array> $variables */
-        $variables = get_object_vars($this);
+        $variables = \get_object_vars($this);
         foreach ($variables as $key => $value) {
             if (\is_object($value)) {
                 $this->{$key} = clone $this->{$key};
