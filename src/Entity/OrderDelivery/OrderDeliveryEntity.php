@@ -18,11 +18,11 @@ final class OrderDeliveryEntity extends Entity
 
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected string $shippingOrderAddressId;
 
-    protected string $shippingOrderAddressVersionId;
+    protected ?string $shippingOrderAddressVersionId;
 
     protected string $shippingMethodId;
 
@@ -36,9 +36,9 @@ final class OrderDeliveryEntity extends Entity
 
     protected \DateTimeInterface $shippingDateLatest;
 
-    protected array $shippingCosts;
+    protected ?array $shippingCosts;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?OrderEntity $order;
 
@@ -58,12 +58,12 @@ final class OrderDeliveryEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -78,12 +78,12 @@ final class OrderDeliveryEntity extends Entity
         $this->shippingOrderAddressId = $shippingOrderAddressId;
     }
 
-    public function getShippingOrderAddressVersionId(): string
+    public function getShippingOrderAddressVersionId(): ?string
     {
         return $this->shippingOrderAddressVersionId;
     }
 
-    public function setShippingOrderAddressVersionId(string $shippingOrderAddressVersionId): void
+    public function setShippingOrderAddressVersionId(?string $shippingOrderAddressVersionId): void
     {
         $this->shippingOrderAddressVersionId = $shippingOrderAddressVersionId;
     }
@@ -148,22 +148,22 @@ final class OrderDeliveryEntity extends Entity
         $this->shippingDateLatest = $shippingDateLatest;
     }
 
-    public function getShippingCosts(): array
+    public function getShippingCosts(): ?array
     {
         return $this->shippingCosts;
     }
 
-    public function setShippingCosts(array $shippingCosts): void
+    public function setShippingCosts(?array $shippingCosts): void
     {
         $this->shippingCosts = $shippingCosts;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

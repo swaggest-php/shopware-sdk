@@ -17,7 +17,7 @@ final class ProductCrossSellingAssignedProductsEntity extends Entity
 
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?ProductEntity $product;
 
@@ -45,12 +45,12 @@ final class ProductCrossSellingAssignedProductsEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }

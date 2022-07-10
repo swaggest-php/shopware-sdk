@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\MediaDefaultFolder;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
 use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
 use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
-final class MediaDefaultFolderDefinition implements EntityDefinitionInterface
+final class MediaDefaultFolderDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -35,7 +35,7 @@ final class MediaDefaultFolderDefinition implements EntityDefinitionInterface
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),
             (new Field('associationFields', 'json_list'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
             (new Field('entity', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
-            (new Association('folder', Association::ONE_TO_ONE, 'media_folder', 'id', 'defaultFolderId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('folder', AssociationField::ONE_TO_ONE, 'media_folder', 'id', 'defaultFolderId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

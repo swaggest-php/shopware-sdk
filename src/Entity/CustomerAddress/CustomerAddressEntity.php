@@ -45,7 +45,7 @@ final class CustomerAddressEntity extends Entity
 
     protected ?string $additionalAddressLine2;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CustomerEntity $customer;
 
@@ -205,12 +205,12 @@ final class CustomerAddressEntity extends Entity
         $this->additionalAddressLine2 = $additionalAddressLine2;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

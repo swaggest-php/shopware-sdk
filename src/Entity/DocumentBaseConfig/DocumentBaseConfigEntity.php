@@ -28,9 +28,9 @@ final class DocumentBaseConfigEntity extends Entity
 
     protected ?string $documentNumber;
 
-    protected array $config;
+    protected ?array $config;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?DocumentTypeEntity $documentType;
 
@@ -108,22 +108,22 @@ final class DocumentBaseConfigEntity extends Entity
         $this->documentNumber = $documentNumber;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

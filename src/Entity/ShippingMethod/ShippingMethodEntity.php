@@ -22,9 +22,9 @@ final class ShippingMethodEntity extends Entity
 
     protected string $name;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $availabilityRuleId;
 
@@ -70,22 +70,22 @@ final class ShippingMethodEntity extends Entity
         $this->name = $name;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

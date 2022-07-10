@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\DocumentBaseConfig;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
@@ -13,7 +13,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
 use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
-final class DocumentBaseConfigDefinition implements EntityDefinitionInterface
+final class DocumentBaseConfigDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -44,9 +44,9 @@ final class DocumentBaseConfigDefinition implements EntityDefinitionInterface
             (new Field('config', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('documentType', Association::MANY_TO_ONE, 'document_type', 'documentTypeId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('logo', Association::MANY_TO_ONE, 'media', 'logoId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('salesChannels', Association::ONE_TO_MANY, 'document_base_config_sales_channel', 'id', 'documentBaseConfigId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('documentType', AssociationField::MANY_TO_ONE, 'document_type', 'documentTypeId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('logo', AssociationField::MANY_TO_ONE, 'media', 'logoId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('salesChannels', AssociationField::ONE_TO_MANY, 'document_base_config_sales_channel', 'id', 'documentBaseConfigId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
         ];
     }

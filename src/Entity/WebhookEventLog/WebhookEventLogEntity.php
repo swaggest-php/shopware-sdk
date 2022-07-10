@@ -27,9 +27,9 @@ final class WebhookEventLogEntity extends Entity
 
     protected ?string $appVersion;
 
-    protected array $requestContent;
+    protected ?array $requestContent;
 
-    protected array $responseContent;
+    protected ?array $responseContent;
 
     protected ?int $responseStatusCode;
 
@@ -39,7 +39,7 @@ final class WebhookEventLogEntity extends Entity
 
     protected string $serializedWebhookMessage;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getAppName(): ?string
     {
@@ -111,22 +111,22 @@ final class WebhookEventLogEntity extends Entity
         $this->appVersion = $appVersion;
     }
 
-    public function getRequestContent(): array
+    public function getRequestContent(): ?array
     {
         return $this->requestContent;
     }
 
-    public function setRequestContent(array $requestContent): void
+    public function setRequestContent(?array $requestContent): void
     {
         $this->requestContent = $requestContent;
     }
 
-    public function getResponseContent(): array
+    public function getResponseContent(): ?array
     {
         return $this->responseContent;
     }
 
-    public function setResponseContent(array $responseContent): void
+    public function setResponseContent(?array $responseContent): void
     {
         $this->responseContent = $responseContent;
     }
@@ -171,12 +171,12 @@ final class WebhookEventLogEntity extends Entity
         $this->serializedWebhookMessage = $serializedWebhookMessage;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

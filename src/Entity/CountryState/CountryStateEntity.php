@@ -23,9 +23,9 @@ final class CountryStateEntity extends Entity
 
     protected ?int $position;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CountryEntity $country;
 
@@ -75,22 +75,22 @@ final class CountryStateEntity extends Entity
         $this->position = $position;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

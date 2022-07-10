@@ -17,13 +17,13 @@ final class CmsSlotEntity extends Entity
 
     protected string $slot;
 
-    protected bool $locked;
+    protected ?bool $locked;
 
-    protected array $config;
+    protected ?array $config;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected array $data;
+    protected ?array $data;
 
     protected string $blockId;
 
@@ -31,7 +31,7 @@ final class CmsSlotEntity extends Entity
 
     protected ?CmsSlotTranslationCollection $translations;
 
-    protected string $cmsBlockVersionId;
+    protected ?string $cmsBlockVersionId;
 
     public function getType(): string
     {
@@ -53,42 +53,42 @@ final class CmsSlotEntity extends Entity
         $this->slot = $slot;
     }
 
-    public function getLocked(): bool
+    public function getLocked(): ?bool
     {
         return $this->locked;
     }
 
-    public function setLocked(bool $locked): void
+    public function setLocked(?bool $locked): void
     {
         $this->locked = $locked;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getData(): array
+    public function getData(): ?array
     {
         return $this->data;
     }
 
-    public function setData(array $data): void
+    public function setData(?array $data): void
     {
         $this->data = $data;
     }
@@ -123,12 +123,12 @@ final class CmsSlotEntity extends Entity
         $this->translations = $translations;
     }
 
-    public function getCmsBlockVersionId(): string
+    public function getCmsBlockVersionId(): ?string
     {
         return $this->cmsBlockVersionId;
     }
 
-    public function setCmsBlockVersionId(string $cmsBlockVersionId): void
+    public function setCmsBlockVersionId(?string $cmsBlockVersionId): void
     {
         $this->cmsBlockVersionId = $cmsBlockVersionId;
     }

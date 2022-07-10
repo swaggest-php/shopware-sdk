@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelAnalytics;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
 use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
 use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
-final class SalesChannelAnalyticsDefinition implements EntityDefinitionInterface
+final class SalesChannelAnalyticsDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -37,7 +37,7 @@ final class SalesChannelAnalyticsDefinition implements EntityDefinitionInterface
             (new Field('active', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('trackOrders', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('anonymizeIp', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('salesChannel', Association::ONE_TO_ONE, 'sales_channel', 'id', 'analyticsId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('salesChannel', AssociationField::ONE_TO_ONE, 'sales_channel', 'id', 'analyticsId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
         ];

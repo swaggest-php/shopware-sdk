@@ -29,11 +29,11 @@ final class RuleEntity extends Entity
 
     protected ?string $payload;
 
-    protected bool $invalid;
+    protected ?bool $invalid;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected array $moduleTypes;
+    protected ?array $moduleTypes;
 
     protected ?RuleConditionCollection $conditions;
 
@@ -101,32 +101,32 @@ final class RuleEntity extends Entity
         $this->payload = $payload;
     }
 
-    public function getInvalid(): bool
+    public function getInvalid(): ?bool
     {
         return $this->invalid;
     }
 
-    public function setInvalid(bool $invalid): void
+    public function setInvalid(?bool $invalid): void
     {
         $this->invalid = $invalid;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getModuleTypes(): array
+    public function getModuleTypes(): ?array
     {
         return $this->moduleTypes;
     }
 
-    public function setModuleTypes(array $moduleTypes): void
+    public function setModuleTypes(?array $moduleTypes): void
     {
         $this->moduleTypes = $moduleTypes;
     }

@@ -17,7 +17,7 @@ final class ProductManufacturerTranslationEntity extends Entity
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $productManufacturerId;
 
@@ -27,7 +27,7 @@ final class ProductManufacturerTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $productManufacturerVersionId;
+    protected ?string $productManufacturerVersionId;
 
     public function getName(): string
     {
@@ -49,12 +49,12 @@ final class ProductManufacturerTranslationEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -99,12 +99,12 @@ final class ProductManufacturerTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getProductManufacturerVersionId(): string
+    public function getProductManufacturerVersionId(): ?string
     {
         return $this->productManufacturerVersionId;
     }
 
-    public function setProductManufacturerVersionId(string $productManufacturerVersionId): void
+    public function setProductManufacturerVersionId(?string $productManufacturerVersionId): void
     {
         $this->productManufacturerVersionId = $productManufacturerVersionId;
     }

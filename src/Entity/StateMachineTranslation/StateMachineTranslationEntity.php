@@ -15,7 +15,7 @@ final class StateMachineTranslationEntity extends Entity
 
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $stateMachineId;
 
@@ -35,12 +35,12 @@ final class StateMachineTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

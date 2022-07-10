@@ -33,7 +33,7 @@ final class ProductExportEntity extends Entity
 
     protected string $fileFormat;
 
-    protected bool $includeVariants;
+    protected ?bool $includeVariants;
 
     protected bool $generateByCronjob;
 
@@ -47,7 +47,7 @@ final class ProductExportEntity extends Entity
 
     protected ?string $footerTemplate;
 
-    protected bool $pausedSchedule;
+    protected ?bool $pausedSchedule;
 
     protected ?ProductStreamEntity $productStream;
 
@@ -149,12 +149,12 @@ final class ProductExportEntity extends Entity
         $this->fileFormat = $fileFormat;
     }
 
-    public function getIncludeVariants(): bool
+    public function getIncludeVariants(): ?bool
     {
         return $this->includeVariants;
     }
 
-    public function setIncludeVariants(bool $includeVariants): void
+    public function setIncludeVariants(?bool $includeVariants): void
     {
         $this->includeVariants = $includeVariants;
     }
@@ -219,12 +219,12 @@ final class ProductExportEntity extends Entity
         $this->footerTemplate = $footerTemplate;
     }
 
-    public function getPausedSchedule(): bool
+    public function getPausedSchedule(): ?bool
     {
         return $this->pausedSchedule;
     }
 
-    public function setPausedSchedule(bool $pausedSchedule): void
+    public function setPausedSchedule(?bool $pausedSchedule): void
     {
         $this->pausedSchedule = $pausedSchedule;
     }

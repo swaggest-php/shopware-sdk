@@ -21,13 +21,13 @@ final class PropertyGroupEntity extends Entity
 
     protected string $sortingType;
 
-    protected bool $filterable;
+    protected ?bool $filterable;
 
-    protected bool $visibleOnProductDetailPage;
+    protected ?bool $visibleOnProductDetailPage;
 
     protected ?int $position;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?PropertyGroupOptionCollection $options;
 
@@ -73,22 +73,22 @@ final class PropertyGroupEntity extends Entity
         $this->sortingType = $sortingType;
     }
 
-    public function getFilterable(): bool
+    public function getFilterable(): ?bool
     {
         return $this->filterable;
     }
 
-    public function setFilterable(bool $filterable): void
+    public function setFilterable(?bool $filterable): void
     {
         $this->filterable = $filterable;
     }
 
-    public function getVisibleOnProductDetailPage(): bool
+    public function getVisibleOnProductDetailPage(): ?bool
     {
         return $this->visibleOnProductDetailPage;
     }
 
-    public function setVisibleOnProductDetailPage(bool $visibleOnProductDetailPage): void
+    public function setVisibleOnProductDetailPage(?bool $visibleOnProductDetailPage): void
     {
         $this->visibleOnProductDetailPage = $visibleOnProductDetailPage;
     }
@@ -103,12 +103,12 @@ final class PropertyGroupEntity extends Entity
         $this->position = $position;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

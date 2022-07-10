@@ -56,15 +56,15 @@ final class CustomerEntity extends Entity
 
     protected ?string $title;
 
-    protected array $vatIds;
+    protected ?array $vatIds;
 
     protected ?string $affiliateCode;
 
     protected ?string $campaignCode;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $doubleOptInRegistration;
+    protected ?bool $doubleOptInRegistration;
 
     protected ?\DateTimeInterface $doubleOptInEmailSentDate;
 
@@ -72,15 +72,15 @@ final class CustomerEntity extends Entity
 
     protected ?string $hash;
 
-    protected bool $guest;
+    protected ?bool $guest;
 
     protected ?\DateTimeInterface $firstLogin;
 
     protected ?\DateTimeInterface $lastLogin;
 
-    protected array $newsletterSalesChannelIds;
+    protected ?array $newsletterSalesChannelIds;
 
-    protected bool $newsletter;
+    protected ?bool $newsletter;
 
     protected ?\DateTimeInterface $birthday;
 
@@ -90,7 +90,7 @@ final class CustomerEntity extends Entity
 
     protected ?float $orderTotalAmount;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $legacyPassword;
 
@@ -126,7 +126,7 @@ final class CustomerEntity extends Entity
 
     protected ?string $remoteAddress;
 
-    protected array $tagIds;
+    protected ?array $tagIds;
 
     protected ?string $requestedGroupId;
 
@@ -298,12 +298,12 @@ final class CustomerEntity extends Entity
         $this->title = $title;
     }
 
-    public function getVatIds(): array
+    public function getVatIds(): ?array
     {
         return $this->vatIds;
     }
 
-    public function setVatIds(array $vatIds): void
+    public function setVatIds(?array $vatIds): void
     {
         $this->vatIds = $vatIds;
     }
@@ -328,22 +328,22 @@ final class CustomerEntity extends Entity
         $this->campaignCode = $campaignCode;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getDoubleOptInRegistration(): bool
+    public function getDoubleOptInRegistration(): ?bool
     {
         return $this->doubleOptInRegistration;
     }
 
-    public function setDoubleOptInRegistration(bool $doubleOptInRegistration): void
+    public function setDoubleOptInRegistration(?bool $doubleOptInRegistration): void
     {
         $this->doubleOptInRegistration = $doubleOptInRegistration;
     }
@@ -378,12 +378,12 @@ final class CustomerEntity extends Entity
         $this->hash = $hash;
     }
 
-    public function getGuest(): bool
+    public function getGuest(): ?bool
     {
         return $this->guest;
     }
 
-    public function setGuest(bool $guest): void
+    public function setGuest(?bool $guest): void
     {
         $this->guest = $guest;
     }
@@ -408,22 +408,22 @@ final class CustomerEntity extends Entity
         $this->lastLogin = $lastLogin;
     }
 
-    public function getNewsletterSalesChannelIds(): array
+    public function getNewsletterSalesChannelIds(): ?array
     {
         return $this->newsletterSalesChannelIds;
     }
 
-    public function setNewsletterSalesChannelIds(array $newsletterSalesChannelIds): void
+    public function setNewsletterSalesChannelIds(?array $newsletterSalesChannelIds): void
     {
         $this->newsletterSalesChannelIds = $newsletterSalesChannelIds;
     }
 
-    public function getNewsletter(): bool
+    public function getNewsletter(): ?bool
     {
         return $this->newsletter;
     }
 
-    public function setNewsletter(bool $newsletter): void
+    public function setNewsletter(?bool $newsletter): void
     {
         $this->newsletter = $newsletter;
     }
@@ -468,12 +468,12 @@ final class CustomerEntity extends Entity
         $this->orderTotalAmount = $orderTotalAmount;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -648,12 +648,12 @@ final class CustomerEntity extends Entity
         $this->remoteAddress = $remoteAddress;
     }
 
-    public function getTagIds(): array
+    public function getTagIds(): ?array
     {
         return $this->tagIds;
     }
 
-    public function setTagIds(array $tagIds): void
+    public function setTagIds(?array $tagIds): void
     {
         $this->tagIds = $tagIds;
     }

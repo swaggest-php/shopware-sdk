@@ -20,7 +20,7 @@ final class WebhookEntity extends Entity
 
     protected int $errorCount;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?string $appId;
 
@@ -66,12 +66,12 @@ final class WebhookEntity extends Entity
         $this->errorCount = $errorCount;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }

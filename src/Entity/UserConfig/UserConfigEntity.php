@@ -16,7 +16,7 @@ final class UserConfigEntity extends Entity
 
     protected string $key;
 
-    protected array $value;
+    protected ?array $value;
 
     protected ?UserEntity $user;
 
@@ -40,12 +40,12 @@ final class UserConfigEntity extends Entity
         $this->key = $key;
     }
 
-    public function getValue(): array
+    public function getValue(): ?array
     {
         return $this->value;
     }
 
-    public function setValue(array $value): void
+    public function setValue(?array $value): void
     {
         $this->value = $value;
     }

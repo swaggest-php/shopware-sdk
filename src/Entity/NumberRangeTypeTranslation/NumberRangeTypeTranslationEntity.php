@@ -15,7 +15,7 @@ final class NumberRangeTypeTranslationEntity extends Entity
 
     protected string $typeName;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $numberRangeTypeId;
 
@@ -35,12 +35,12 @@ final class NumberRangeTypeTranslationEntity extends Entity
         $this->typeName = $typeName;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

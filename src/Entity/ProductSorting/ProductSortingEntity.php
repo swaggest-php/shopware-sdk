@@ -12,7 +12,7 @@ final class ProductSortingEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected bool $locked;
+    protected ?bool $locked;
 
     protected string $key;
 
@@ -26,12 +26,12 @@ final class ProductSortingEntity extends Entity
 
     protected ProductSortingTranslationCollection $translations;
 
-    public function getLocked(): bool
+    public function getLocked(): ?bool
     {
         return $this->locked;
     }
 
-    public function setLocked(bool $locked): void
+    public function setLocked(?bool $locked): void
     {
         $this->locked = $locked;
     }

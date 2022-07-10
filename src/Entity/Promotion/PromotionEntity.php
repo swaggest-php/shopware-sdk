@@ -44,13 +44,13 @@ final class PromotionEntity extends Entity
 
     protected bool $useSetGroups;
 
-    protected bool $customerRestriction;
+    protected ?bool $customerRestriction;
 
     protected bool $preventCombination;
 
     protected ?int $orderCount;
 
-    protected array $ordersPerCustomerCount;
+    protected ?array $ordersPerCustomerCount;
 
     protected ?PromotionSetgroupCollection $setgroups;
 
@@ -70,9 +70,9 @@ final class PromotionEntity extends Entity
 
     protected PromotionTranslationCollection $translations;
 
-    protected array $exclusionIds;
+    protected ?array $exclusionIds;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getName(): string
     {
@@ -204,12 +204,12 @@ final class PromotionEntity extends Entity
         $this->useSetGroups = $useSetGroups;
     }
 
-    public function getCustomerRestriction(): bool
+    public function getCustomerRestriction(): ?bool
     {
         return $this->customerRestriction;
     }
 
-    public function setCustomerRestriction(bool $customerRestriction): void
+    public function setCustomerRestriction(?bool $customerRestriction): void
     {
         $this->customerRestriction = $customerRestriction;
     }
@@ -234,12 +234,12 @@ final class PromotionEntity extends Entity
         $this->orderCount = $orderCount;
     }
 
-    public function getOrdersPerCustomerCount(): array
+    public function getOrdersPerCustomerCount(): ?array
     {
         return $this->ordersPerCustomerCount;
     }
 
-    public function setOrdersPerCustomerCount(array $ordersPerCustomerCount): void
+    public function setOrdersPerCustomerCount(?array $ordersPerCustomerCount): void
     {
         $this->ordersPerCustomerCount = $ordersPerCustomerCount;
     }
@@ -334,22 +334,22 @@ final class PromotionEntity extends Entity
         $this->translations = $translations;
     }
 
-    public function getExclusionIds(): array
+    public function getExclusionIds(): ?array
     {
         return $this->exclusionIds;
     }
 
-    public function setExclusionIds(array $exclusionIds): void
+    public function setExclusionIds(?array $exclusionIds): void
     {
         $this->exclusionIds = $exclusionIds;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -26,7 +26,7 @@ final class PropertyGroupOptionEntity extends Entity
 
     protected ?string $mediaId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?MediaEntity $media;
 
@@ -90,12 +90,12 @@ final class PropertyGroupOptionEntity extends Entity
         $this->mediaId = $mediaId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

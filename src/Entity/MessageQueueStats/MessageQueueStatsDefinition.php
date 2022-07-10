@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\MessageQueueStats;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
 use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
@@ -12,7 +12,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class MessageQueueStatsDefinition implements EntityDefinitionInterface
+final class MessageQueueStatsDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {

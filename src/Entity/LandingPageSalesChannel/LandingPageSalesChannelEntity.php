@@ -15,7 +15,7 @@ final class LandingPageSalesChannelEntity extends Entity
 
     protected string $landingPageId;
 
-    protected string $landingPageVersionId;
+    protected ?string $landingPageVersionId;
 
     protected string $salesChannelId;
 
@@ -33,12 +33,12 @@ final class LandingPageSalesChannelEntity extends Entity
         $this->landingPageId = $landingPageId;
     }
 
-    public function getLandingPageVersionId(): string
+    public function getLandingPageVersionId(): ?string
     {
         return $this->landingPageVersionId;
     }
 
-    public function setLandingPageVersionId(string $landingPageVersionId): void
+    public function setLandingPageVersionId(?string $landingPageVersionId): void
     {
         $this->landingPageVersionId = $landingPageVersionId;
     }

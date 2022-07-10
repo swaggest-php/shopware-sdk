@@ -16,15 +16,15 @@ final class ProductStreamEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected array $apiFilter;
+    protected ?array $apiFilter;
 
-    protected bool $invalid;
+    protected ?bool $invalid;
 
     protected string $name;
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ProductStreamTranslationCollection $translations;
 
@@ -36,22 +36,22 @@ final class ProductStreamEntity extends Entity
 
     protected ?CategoryCollection $categories;
 
-    public function getApiFilter(): array
+    public function getApiFilter(): ?array
     {
         return $this->apiFilter;
     }
 
-    public function setApiFilter(array $apiFilter): void
+    public function setApiFilter(?array $apiFilter): void
     {
         $this->apiFilter = $apiFilter;
     }
 
-    public function getInvalid(): bool
+    public function getInvalid(): ?bool
     {
         return $this->invalid;
     }
 
-    public function setInvalid(bool $invalid): void
+    public function setInvalid(?bool $invalid): void
     {
         $this->invalid = $invalid;
     }
@@ -76,12 +76,12 @@ final class ProductStreamEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

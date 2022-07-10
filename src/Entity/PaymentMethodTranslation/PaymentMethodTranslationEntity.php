@@ -19,7 +19,7 @@ final class PaymentMethodTranslationEntity extends Entity
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $paymentMethodId;
 
@@ -59,12 +59,12 @@ final class PaymentMethodTranslationEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

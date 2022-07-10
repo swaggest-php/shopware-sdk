@@ -38,9 +38,9 @@ final class SalesChannelDomainEntity extends Entity
 
     protected ?ProductExportCollection $productExports;
 
-    protected bool $hreflangUseOnlyLocale;
+    protected ?bool $hreflangUseOnlyLocale;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getUrl(): string
     {
@@ -152,22 +152,22 @@ final class SalesChannelDomainEntity extends Entity
         $this->productExports = $productExports;
     }
 
-    public function getHreflangUseOnlyLocale(): bool
+    public function getHreflangUseOnlyLocale(): ?bool
     {
         return $this->hreflangUseOnlyLocale;
     }
 
-    public function setHreflangUseOnlyLocale(bool $hreflangUseOnlyLocale): void
+    public function setHreflangUseOnlyLocale(?bool $hreflangUseOnlyLocale): void
     {
         $this->hreflangUseOnlyLocale = $hreflangUseOnlyLocale;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

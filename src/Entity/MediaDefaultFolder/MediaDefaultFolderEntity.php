@@ -18,7 +18,7 @@ final class MediaDefaultFolderEntity extends Entity
 
     protected ?MediaFolderEntity $folder;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getAssociationFields(): array
     {
@@ -50,12 +50,12 @@ final class MediaDefaultFolderEntity extends Entity
         $this->folder = $folder;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

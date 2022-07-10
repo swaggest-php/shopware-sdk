@@ -38,11 +38,11 @@ final class ProductEntity extends Entity
 
     protected ?string $parentId;
 
-    protected string $parentVersionId;
+    protected ?string $parentVersionId;
 
     protected ?string $manufacturerId;
 
-    protected string $productManufacturerVersionId;
+    protected ?string $productManufacturerVersionId;
 
     protected ?string $unitId;
 
@@ -60,7 +60,7 @@ final class ProductEntity extends Entity
 
     protected ?string $cmsPageId;
 
-    protected string $cmsPageVersionId;
+    protected ?string $cmsPageVersionId;
 
     protected array $price;
 
@@ -72,23 +72,23 @@ final class ProductEntity extends Entity
 
     protected ?int $autoIncrement;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?int $availableStock;
 
-    protected bool $available;
+    protected ?bool $available;
 
-    protected bool $isCloseout;
+    protected ?bool $isCloseout;
 
-    protected array $variation;
+    protected ?array $variation;
 
     protected ?string $displayGroup;
 
-    protected array $configuratorGroupConfig;
+    protected ?array $configuratorGroupConfig;
 
     protected ?string $mainVariantId;
 
-    protected array $variantRestrictions;
+    protected ?array $variantRestrictions;
 
     protected ?string $manufacturerNumber;
 
@@ -104,11 +104,11 @@ final class ProductEntity extends Entity
 
     protected ?float $referenceUnit;
 
-    protected bool $shippingFree;
+    protected ?bool $shippingFree;
 
-    protected array $purchasePrices;
+    protected ?array $purchasePrices;
 
-    protected bool $markAsTopseller;
+    protected ?bool $markAsTopseller;
 
     protected ?float $weight;
 
@@ -122,21 +122,21 @@ final class ProductEntity extends Entity
 
     protected ?float $ratingAverage;
 
-    protected array $categoryTree;
+    protected ?array $categoryTree;
 
-    protected array $propertyIds;
+    protected ?array $propertyIds;
 
-    protected array $optionIds;
+    protected ?array $optionIds;
 
-    protected array $streamIds;
+    protected ?array $streamIds;
 
-    protected array $tagIds;
+    protected ?array $tagIds;
 
-    protected array $categoryIds;
+    protected ?array $categoryIds;
 
     protected ?int $childCount;
 
-    protected bool $customFieldSetSelectionActive;
+    protected ?bool $customFieldSetSelectionActive;
 
     protected ?int $sales;
 
@@ -154,11 +154,11 @@ final class ProductEntity extends Entity
 
     protected ?string $packUnitPlural;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
-    protected array $customSearchKeywords;
+    protected ?array $customSearchKeywords;
 
     protected ?ProductEntity $parent;
 
@@ -218,9 +218,9 @@ final class ProductEntity extends Entity
 
     protected ?CustomFieldSetCollection $customFieldSets;
 
-    protected ProductTranslationCollection $translations;
+    protected ?ProductTranslationCollection $translations;
 
-    protected array $cheapestPrice;
+    protected ?array $cheapestPrice;
 
     public function getParentId(): ?string
     {
@@ -232,12 +232,12 @@ final class ProductEntity extends Entity
         $this->parentId = $parentId;
     }
 
-    public function getParentVersionId(): string
+    public function getParentVersionId(): ?string
     {
         return $this->parentVersionId;
     }
 
-    public function setParentVersionId(string $parentVersionId): void
+    public function setParentVersionId(?string $parentVersionId): void
     {
         $this->parentVersionId = $parentVersionId;
     }
@@ -252,12 +252,12 @@ final class ProductEntity extends Entity
         $this->manufacturerId = $manufacturerId;
     }
 
-    public function getProductManufacturerVersionId(): string
+    public function getProductManufacturerVersionId(): ?string
     {
         return $this->productManufacturerVersionId;
     }
 
-    public function setProductManufacturerVersionId(string $productManufacturerVersionId): void
+    public function setProductManufacturerVersionId(?string $productManufacturerVersionId): void
     {
         $this->productManufacturerVersionId = $productManufacturerVersionId;
     }
@@ -342,12 +342,12 @@ final class ProductEntity extends Entity
         $this->cmsPageId = $cmsPageId;
     }
 
-    public function getCmsPageVersionId(): string
+    public function getCmsPageVersionId(): ?string
     {
         return $this->cmsPageVersionId;
     }
 
-    public function setCmsPageVersionId(string $cmsPageVersionId): void
+    public function setCmsPageVersionId(?string $cmsPageVersionId): void
     {
         $this->cmsPageVersionId = $cmsPageVersionId;
     }
@@ -402,12 +402,12 @@ final class ProductEntity extends Entity
         $this->autoIncrement = $autoIncrement;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -422,32 +422,32 @@ final class ProductEntity extends Entity
         $this->availableStock = $availableStock;
     }
 
-    public function getAvailable(): bool
+    public function getAvailable(): ?bool
     {
         return $this->available;
     }
 
-    public function setAvailable(bool $available): void
+    public function setAvailable(?bool $available): void
     {
         $this->available = $available;
     }
 
-    public function getIsCloseout(): bool
+    public function getIsCloseout(): ?bool
     {
         return $this->isCloseout;
     }
 
-    public function setIsCloseout(bool $isCloseout): void
+    public function setIsCloseout(?bool $isCloseout): void
     {
         $this->isCloseout = $isCloseout;
     }
 
-    public function getVariation(): array
+    public function getVariation(): ?array
     {
         return $this->variation;
     }
 
-    public function setVariation(array $variation): void
+    public function setVariation(?array $variation): void
     {
         $this->variation = $variation;
     }
@@ -462,12 +462,12 @@ final class ProductEntity extends Entity
         $this->displayGroup = $displayGroup;
     }
 
-    public function getConfiguratorGroupConfig(): array
+    public function getConfiguratorGroupConfig(): ?array
     {
         return $this->configuratorGroupConfig;
     }
 
-    public function setConfiguratorGroupConfig(array $configuratorGroupConfig): void
+    public function setConfiguratorGroupConfig(?array $configuratorGroupConfig): void
     {
         $this->configuratorGroupConfig = $configuratorGroupConfig;
     }
@@ -482,12 +482,12 @@ final class ProductEntity extends Entity
         $this->mainVariantId = $mainVariantId;
     }
 
-    public function getVariantRestrictions(): array
+    public function getVariantRestrictions(): ?array
     {
         return $this->variantRestrictions;
     }
 
-    public function setVariantRestrictions(array $variantRestrictions): void
+    public function setVariantRestrictions(?array $variantRestrictions): void
     {
         $this->variantRestrictions = $variantRestrictions;
     }
@@ -562,32 +562,32 @@ final class ProductEntity extends Entity
         $this->referenceUnit = $referenceUnit;
     }
 
-    public function getShippingFree(): bool
+    public function getShippingFree(): ?bool
     {
         return $this->shippingFree;
     }
 
-    public function setShippingFree(bool $shippingFree): void
+    public function setShippingFree(?bool $shippingFree): void
     {
         $this->shippingFree = $shippingFree;
     }
 
-    public function getPurchasePrices(): array
+    public function getPurchasePrices(): ?array
     {
         return $this->purchasePrices;
     }
 
-    public function setPurchasePrices(array $purchasePrices): void
+    public function setPurchasePrices(?array $purchasePrices): void
     {
         $this->purchasePrices = $purchasePrices;
     }
 
-    public function getMarkAsTopseller(): bool
+    public function getMarkAsTopseller(): ?bool
     {
         return $this->markAsTopseller;
     }
 
-    public function setMarkAsTopseller(bool $markAsTopseller): void
+    public function setMarkAsTopseller(?bool $markAsTopseller): void
     {
         $this->markAsTopseller = $markAsTopseller;
     }
@@ -652,62 +652,62 @@ final class ProductEntity extends Entity
         $this->ratingAverage = $ratingAverage;
     }
 
-    public function getCategoryTree(): array
+    public function getCategoryTree(): ?array
     {
         return $this->categoryTree;
     }
 
-    public function setCategoryTree(array $categoryTree): void
+    public function setCategoryTree(?array $categoryTree): void
     {
         $this->categoryTree = $categoryTree;
     }
 
-    public function getPropertyIds(): array
+    public function getPropertyIds(): ?array
     {
         return $this->propertyIds;
     }
 
-    public function setPropertyIds(array $propertyIds): void
+    public function setPropertyIds(?array $propertyIds): void
     {
         $this->propertyIds = $propertyIds;
     }
 
-    public function getOptionIds(): array
+    public function getOptionIds(): ?array
     {
         return $this->optionIds;
     }
 
-    public function setOptionIds(array $optionIds): void
+    public function setOptionIds(?array $optionIds): void
     {
         $this->optionIds = $optionIds;
     }
 
-    public function getStreamIds(): array
+    public function getStreamIds(): ?array
     {
         return $this->streamIds;
     }
 
-    public function setStreamIds(array $streamIds): void
+    public function setStreamIds(?array $streamIds): void
     {
         $this->streamIds = $streamIds;
     }
 
-    public function getTagIds(): array
+    public function getTagIds(): ?array
     {
         return $this->tagIds;
     }
 
-    public function setTagIds(array $tagIds): void
+    public function setTagIds(?array $tagIds): void
     {
         $this->tagIds = $tagIds;
     }
 
-    public function getCategoryIds(): array
+    public function getCategoryIds(): ?array
     {
         return $this->categoryIds;
     }
 
-    public function setCategoryIds(array $categoryIds): void
+    public function setCategoryIds(?array $categoryIds): void
     {
         $this->categoryIds = $categoryIds;
     }
@@ -722,12 +722,12 @@ final class ProductEntity extends Entity
         $this->childCount = $childCount;
     }
 
-    public function getCustomFieldSetSelectionActive(): bool
+    public function getCustomFieldSetSelectionActive(): ?bool
     {
         return $this->customFieldSetSelectionActive;
     }
 
-    public function setCustomFieldSetSelectionActive(bool $customFieldSetSelectionActive): void
+    public function setCustomFieldSetSelectionActive(?bool $customFieldSetSelectionActive): void
     {
         $this->customFieldSetSelectionActive = $customFieldSetSelectionActive;
     }
@@ -812,32 +812,32 @@ final class ProductEntity extends Entity
         $this->packUnitPlural = $packUnitPlural;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
 
-    public function getCustomSearchKeywords(): array
+    public function getCustomSearchKeywords(): ?array
     {
         return $this->customSearchKeywords;
     }
 
-    public function setCustomSearchKeywords(array $customSearchKeywords): void
+    public function setCustomSearchKeywords(?array $customSearchKeywords): void
     {
         $this->customSearchKeywords = $customSearchKeywords;
     }
@@ -1132,22 +1132,22 @@ final class ProductEntity extends Entity
         $this->customFieldSets = $customFieldSets;
     }
 
-    public function getTranslations(): ProductTranslationCollection
+    public function getTranslations(): ?ProductTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductTranslationCollection $translations): void
+    public function setTranslations(?ProductTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
 
-    public function getCheapestPrice(): array
+    public function getCheapestPrice(): ?array
     {
         return $this->cheapestPrice;
     }
 
-    public function setCheapestPrice(array $cheapestPrice): void
+    public function setCheapestPrice(?array $cheapestPrice): void
     {
         $this->cheapestPrice = $cheapestPrice;
     }

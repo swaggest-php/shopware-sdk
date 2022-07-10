@@ -25,15 +25,15 @@ final class SeoUrlEntity extends Entity
 
     protected string $seoPathInfo;
 
-    protected bool $isCanonical;
+    protected ?bool $isCanonical;
 
-    protected bool $isModified;
+    protected ?bool $isModified;
 
-    protected bool $isDeleted;
+    protected ?bool $isDeleted;
 
     protected ?string $url;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?LanguageEntity $language;
 
@@ -99,32 +99,32 @@ final class SeoUrlEntity extends Entity
         $this->seoPathInfo = $seoPathInfo;
     }
 
-    public function getIsCanonical(): bool
+    public function getIsCanonical(): ?bool
     {
         return $this->isCanonical;
     }
 
-    public function setIsCanonical(bool $isCanonical): void
+    public function setIsCanonical(?bool $isCanonical): void
     {
         $this->isCanonical = $isCanonical;
     }
 
-    public function getIsModified(): bool
+    public function getIsModified(): ?bool
     {
         return $this->isModified;
     }
 
-    public function setIsModified(bool $isModified): void
+    public function setIsModified(?bool $isModified): void
     {
         $this->isModified = $isModified;
     }
 
-    public function getIsDeleted(): bool
+    public function getIsDeleted(): ?bool
     {
         return $this->isDeleted;
     }
 
-    public function setIsDeleted(bool $isDeleted): void
+    public function setIsDeleted(?bool $isDeleted): void
     {
         $this->isDeleted = $isDeleted;
     }
@@ -139,12 +139,12 @@ final class SeoUrlEntity extends Entity
         $this->url = $url;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

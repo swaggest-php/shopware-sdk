@@ -20,7 +20,7 @@ final class TaxRuleEntity extends Entity
 
     protected float $taxRate;
 
-    protected array $data;
+    protected ?array $data;
 
     protected string $taxId;
 
@@ -60,12 +60,12 @@ final class TaxRuleEntity extends Entity
         $this->taxRate = $taxRate;
     }
 
-    public function getData(): array
+    public function getData(): ?array
     {
         return $this->data;
     }
 
-    public function setData(array $data): void
+    public function setData(?array $data): void
     {
         $this->data = $data;
     }

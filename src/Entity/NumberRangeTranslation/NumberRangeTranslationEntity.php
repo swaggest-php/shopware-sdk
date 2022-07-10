@@ -17,7 +17,7 @@ final class NumberRangeTranslationEntity extends Entity
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $numberRangeId;
 
@@ -47,12 +47,12 @@ final class NumberRangeTranslationEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

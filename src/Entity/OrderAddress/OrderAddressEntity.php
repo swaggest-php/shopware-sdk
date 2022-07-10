@@ -22,7 +22,7 @@ final class OrderAddressEntity extends Entity
 
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected string $salutationId;
 
@@ -50,7 +50,7 @@ final class OrderAddressEntity extends Entity
 
     protected ?string $additionalAddressLine2;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CountryEntity $country;
 
@@ -92,12 +92,12 @@ final class OrderAddressEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -232,12 +232,12 @@ final class OrderAddressEntity extends Entity
         $this->additionalAddressLine2 = $additionalAddressLine2;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

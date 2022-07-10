@@ -16,7 +16,7 @@ final class MailTemplateEntity extends Entity
 
     protected string $mailTemplateTypeId;
 
-    protected bool $systemDefault;
+    protected ?bool $systemDefault;
 
     protected ?string $senderName;
 
@@ -28,7 +28,7 @@ final class MailTemplateEntity extends Entity
 
     protected string $contentPlain;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected MailTemplateTranslationCollection $translations;
 
@@ -46,12 +46,12 @@ final class MailTemplateEntity extends Entity
         $this->mailTemplateTypeId = $mailTemplateTypeId;
     }
 
-    public function getSystemDefault(): bool
+    public function getSystemDefault(): ?bool
     {
         return $this->systemDefault;
     }
 
-    public function setSystemDefault(bool $systemDefault): void
+    public function setSystemDefault(?bool $systemDefault): void
     {
         $this->systemDefault = $systemDefault;
     }
@@ -106,12 +106,12 @@ final class MailTemplateEntity extends Entity
         $this->contentPlain = $contentPlain;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

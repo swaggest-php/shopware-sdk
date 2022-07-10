@@ -20,7 +20,7 @@ final class SnippetEntity extends Entity
 
     protected string $author;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?SnippetSetEntity $set;
 
@@ -64,12 +64,12 @@ final class SnippetEntity extends Entity
         $this->author = $author;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

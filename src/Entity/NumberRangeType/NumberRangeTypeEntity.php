@@ -20,7 +20,7 @@ final class NumberRangeTypeEntity extends Entity
 
     protected bool $global;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?NumberRangeCollection $numberRanges;
 
@@ -58,12 +58,12 @@ final class NumberRangeTypeEntity extends Entity
         $this->global = $global;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -20,15 +20,15 @@ final class FlowEntity extends Entity
 
     protected ?string $payload;
 
-    protected bool $invalid;
+    protected ?bool $invalid;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?string $description;
 
     protected ?FlowSequenceCollection $sequences;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getName(): string
     {
@@ -70,22 +70,22 @@ final class FlowEntity extends Entity
         $this->payload = $payload;
     }
 
-    public function getInvalid(): bool
+    public function getInvalid(): ?bool
     {
         return $this->invalid;
     }
 
-    public function setInvalid(bool $invalid): void
+    public function setInvalid(?bool $invalid): void
     {
         $this->invalid = $invalid;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -110,12 +110,12 @@ final class FlowEntity extends Entity
         $this->sequences = $sequences;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

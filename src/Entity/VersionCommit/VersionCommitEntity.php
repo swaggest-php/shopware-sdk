@@ -19,7 +19,7 @@ final class VersionCommitEntity extends Entity
 
     protected ?int $autoIncrement;
 
-    protected bool $isMerge;
+    protected ?bool $isMerge;
 
     protected ?string $message;
 
@@ -57,12 +57,12 @@ final class VersionCommitEntity extends Entity
         $this->autoIncrement = $autoIncrement;
     }
 
-    public function getIsMerge(): bool
+    public function getIsMerge(): ?bool
     {
         return $this->isMerge;
     }
 
-    public function setIsMerge(bool $isMerge): void
+    public function setIsMerge(?bool $isMerge): void
     {
         $this->isMerge = $isMerge;
     }

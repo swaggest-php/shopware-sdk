@@ -16,13 +16,13 @@ final class LandingPageEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
     protected ?string $metaTitle;
 
@@ -44,14 +44,14 @@ final class LandingPageEntity extends Entity
 
     protected ?SeoUrlCollection $seoUrls;
 
-    protected string $cmsPageVersionId;
+    protected ?string $cmsPageVersionId;
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -66,22 +66,22 @@ final class LandingPageEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
@@ -186,12 +186,12 @@ final class LandingPageEntity extends Entity
         $this->seoUrls = $seoUrls;
     }
 
-    public function getCmsPageVersionId(): string
+    public function getCmsPageVersionId(): ?string
     {
         return $this->cmsPageVersionId;
     }
 
-    public function setCmsPageVersionId(string $cmsPageVersionId): void
+    public function setCmsPageVersionId(?string $cmsPageVersionId): void
     {
         $this->cmsPageVersionId = $cmsPageVersionId;
     }

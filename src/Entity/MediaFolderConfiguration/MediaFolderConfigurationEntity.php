@@ -13,15 +13,15 @@ final class MediaFolderConfigurationEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected bool $createThumbnails;
+    protected ?bool $createThumbnails;
 
-    protected bool $keepAspectRatio;
+    protected ?bool $keepAspectRatio;
 
     protected ?int $thumbnailQuality;
 
-    protected bool $private;
+    protected ?bool $private;
 
-    protected bool $noAssociation;
+    protected ?bool $noAssociation;
 
     protected ?MediaFolderCollection $mediaFolders;
 
@@ -29,24 +29,24 @@ final class MediaFolderConfigurationEntity extends Entity
 
     protected ?string $mediaThumbnailSizesRo;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    public function getCreateThumbnails(): bool
+    public function getCreateThumbnails(): ?bool
     {
         return $this->createThumbnails;
     }
 
-    public function setCreateThumbnails(bool $createThumbnails): void
+    public function setCreateThumbnails(?bool $createThumbnails): void
     {
         $this->createThumbnails = $createThumbnails;
     }
 
-    public function getKeepAspectRatio(): bool
+    public function getKeepAspectRatio(): ?bool
     {
         return $this->keepAspectRatio;
     }
 
-    public function setKeepAspectRatio(bool $keepAspectRatio): void
+    public function setKeepAspectRatio(?bool $keepAspectRatio): void
     {
         $this->keepAspectRatio = $keepAspectRatio;
     }
@@ -61,22 +61,22 @@ final class MediaFolderConfigurationEntity extends Entity
         $this->thumbnailQuality = $thumbnailQuality;
     }
 
-    public function getPrivate(): bool
+    public function getPrivate(): ?bool
     {
         return $this->private;
     }
 
-    public function setPrivate(bool $private): void
+    public function setPrivate(?bool $private): void
     {
         $this->private = $private;
     }
 
-    public function getNoAssociation(): bool
+    public function getNoAssociation(): ?bool
     {
         return $this->noAssociation;
     }
 
-    public function setNoAssociation(bool $noAssociation): void
+    public function setNoAssociation(?bool $noAssociation): void
     {
         $this->noAssociation = $noAssociation;
     }
@@ -111,12 +111,12 @@ final class MediaFolderConfigurationEntity extends Entity
         $this->mediaThumbnailSizesRo = $mediaThumbnailSizesRo;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

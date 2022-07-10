@@ -17,9 +17,9 @@ final class CustomFieldEntity extends Entity
 
     protected string $type;
 
-    protected array $config;
+    protected ?array $config;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?string $customFieldSetId;
 
@@ -47,22 +47,22 @@ final class CustomFieldEntity extends Entity
         $this->type = $type;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }

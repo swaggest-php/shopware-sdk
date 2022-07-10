@@ -17,7 +17,7 @@ final class SalesChannelTypeEntity extends Entity
 
     protected ?string $iconName;
 
-    protected array $screenshotUrls;
+    protected ?array $screenshotUrls;
 
     protected string $name;
 
@@ -27,7 +27,7 @@ final class SalesChannelTypeEntity extends Entity
 
     protected ?string $descriptionLong;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected SalesChannelTypeTranslationCollection $translations;
 
@@ -53,12 +53,12 @@ final class SalesChannelTypeEntity extends Entity
         $this->iconName = $iconName;
     }
 
-    public function getScreenshotUrls(): array
+    public function getScreenshotUrls(): ?array
     {
         return $this->screenshotUrls;
     }
 
-    public function setScreenshotUrls(array $screenshotUrls): void
+    public function setScreenshotUrls(?array $screenshotUrls): void
     {
         $this->screenshotUrls = $screenshotUrls;
     }
@@ -103,12 +103,12 @@ final class SalesChannelTypeEntity extends Entity
         $this->descriptionLong = $descriptionLong;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

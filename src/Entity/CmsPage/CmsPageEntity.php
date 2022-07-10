@@ -24,13 +24,13 @@ final class CmsPageEntity extends Entity
 
     protected ?string $entity;
 
-    protected array $config;
+    protected ?array $config;
 
     protected ?string $previewMediaId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected bool $locked;
+    protected ?bool $locked;
 
     protected ?CmsSectionCollection $sections;
 
@@ -76,12 +76,12 @@ final class CmsPageEntity extends Entity
         $this->entity = $entity;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
@@ -96,22 +96,22 @@ final class CmsPageEntity extends Entity
         $this->previewMediaId = $previewMediaId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getLocked(): bool
+    public function getLocked(): ?bool
     {
         return $this->locked;
     }
 
-    public function setLocked(bool $locked): void
+    public function setLocked(?bool $locked): void
     {
         $this->locked = $locked;
     }

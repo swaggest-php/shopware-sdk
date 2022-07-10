@@ -13,7 +13,7 @@ final class MailHeaderFooterEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected bool $systemDefault;
+    protected ?bool $systemDefault;
 
     protected string $name;
 
@@ -31,12 +31,12 @@ final class MailHeaderFooterEntity extends Entity
 
     protected ?SalesChannelCollection $salesChannels;
 
-    public function getSystemDefault(): bool
+    public function getSystemDefault(): ?bool
     {
         return $this->systemDefault;
     }
 
-    public function setSystemDefault(bool $systemDefault): void
+    public function setSystemDefault(?bool $systemDefault): void
     {
         $this->systemDefault = $systemDefault;
     }

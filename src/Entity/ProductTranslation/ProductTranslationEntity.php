@@ -27,11 +27,11 @@ final class ProductTranslationEntity extends Entity
 
     protected ?string $packUnitPlural;
 
-    protected array $customSearchKeywords;
+    protected ?array $customSearchKeywords;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $productId;
 
@@ -41,7 +41,7 @@ final class ProductTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     public function getMetaDescription(): ?string
     {
@@ -113,32 +113,32 @@ final class ProductTranslationEntity extends Entity
         $this->packUnitPlural = $packUnitPlural;
     }
 
-    public function getCustomSearchKeywords(): array
+    public function getCustomSearchKeywords(): ?array
     {
         return $this->customSearchKeywords;
     }
 
-    public function setCustomSearchKeywords(array $customSearchKeywords): void
+    public function setCustomSearchKeywords(?array $customSearchKeywords): void
     {
         $this->customSearchKeywords = $customSearchKeywords;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -183,12 +183,12 @@ final class ProductTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }

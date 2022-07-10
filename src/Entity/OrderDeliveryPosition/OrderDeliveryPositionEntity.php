@@ -15,13 +15,13 @@ final class OrderDeliveryPositionEntity extends Entity
 
     protected string $orderDeliveryId;
 
-    protected string $orderDeliveryVersionId;
+    protected ?string $orderDeliveryVersionId;
 
     protected string $orderLineItemId;
 
-    protected string $orderLineItemVersionId;
+    protected ?string $orderLineItemVersionId;
 
-    protected array $price;
+    protected ?array $price;
 
     protected ?float $unitPrice;
 
@@ -29,7 +29,7 @@ final class OrderDeliveryPositionEntity extends Entity
 
     protected ?int $quantity;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?OrderDeliveryEntity $orderDelivery;
 
@@ -45,12 +45,12 @@ final class OrderDeliveryPositionEntity extends Entity
         $this->orderDeliveryId = $orderDeliveryId;
     }
 
-    public function getOrderDeliveryVersionId(): string
+    public function getOrderDeliveryVersionId(): ?string
     {
         return $this->orderDeliveryVersionId;
     }
 
-    public function setOrderDeliveryVersionId(string $orderDeliveryVersionId): void
+    public function setOrderDeliveryVersionId(?string $orderDeliveryVersionId): void
     {
         $this->orderDeliveryVersionId = $orderDeliveryVersionId;
     }
@@ -65,22 +65,22 @@ final class OrderDeliveryPositionEntity extends Entity
         $this->orderLineItemId = $orderLineItemId;
     }
 
-    public function getOrderLineItemVersionId(): string
+    public function getOrderLineItemVersionId(): ?string
     {
         return $this->orderLineItemVersionId;
     }
 
-    public function setOrderLineItemVersionId(string $orderLineItemVersionId): void
+    public function setOrderLineItemVersionId(?string $orderLineItemVersionId): void
     {
         $this->orderLineItemVersionId = $orderLineItemVersionId;
     }
 
-    public function getPrice(): array
+    public function getPrice(): ?array
     {
         return $this->price;
     }
 
-    public function setPrice(array $price): void
+    public function setPrice(?array $price): void
     {
         $this->price = $price;
     }
@@ -115,12 +115,12 @@ final class OrderDeliveryPositionEntity extends Entity
         $this->quantity = $quantity;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -19,7 +19,7 @@ final class ProductSearchConfigEntity extends Entity
 
     protected int $minSearchLength;
 
-    protected array $excludedTerms;
+    protected ?array $excludedTerms;
 
     protected ?LanguageEntity $language;
 
@@ -55,12 +55,12 @@ final class ProductSearchConfigEntity extends Entity
         $this->minSearchLength = $minSearchLength;
     }
 
-    public function getExcludedTerms(): array
+    public function getExcludedTerms(): ?array
     {
         return $this->excludedTerms;
     }
 
-    public function setExcludedTerms(array $excludedTerms): void
+    public function setExcludedTerms(?array $excludedTerms): void
     {
         $this->excludedTerms = $excludedTerms;
     }

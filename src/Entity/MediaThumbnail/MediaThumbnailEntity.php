@@ -22,7 +22,7 @@ final class MediaThumbnailEntity extends Entity
 
     protected ?MediaEntity $media;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getMediaId(): string
     {
@@ -74,12 +74,12 @@ final class MediaThumbnailEntity extends Entity
         $this->media = $media;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

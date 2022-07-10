@@ -23,7 +23,7 @@ final class SalutationEntity extends Entity
 
     protected string $letterName;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected SalutationTranslationCollection $translations;
 
@@ -67,12 +67,12 @@ final class SalutationEntity extends Entity
         $this->letterName = $letterName;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

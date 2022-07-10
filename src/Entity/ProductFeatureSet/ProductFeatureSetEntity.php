@@ -17,7 +17,7 @@ final class ProductFeatureSetEntity extends Entity
 
     protected ?string $description;
 
-    protected array $features;
+    protected ?array $features;
 
     protected ?ProductCollection $products;
 
@@ -43,12 +43,12 @@ final class ProductFeatureSetEntity extends Entity
         $this->description = $description;
     }
 
-    public function getFeatures(): array
+    public function getFeatures(): ?array
     {
         return $this->features;
     }
 
-    public function setFeatures(array $features): void
+    public function setFeatures(?array $features): void
     {
         $this->features = $features;
     }

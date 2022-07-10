@@ -17,7 +17,7 @@ final class PropertyGroupOptionTranslationEntity extends Entity
 
     protected ?int $position;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $propertyGroupOptionId;
 
@@ -47,12 +47,12 @@ final class PropertyGroupOptionTranslationEntity extends Entity
         $this->position = $position;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

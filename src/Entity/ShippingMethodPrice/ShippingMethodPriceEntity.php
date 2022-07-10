@@ -25,9 +25,9 @@ final class ShippingMethodPriceEntity extends Entity
 
     protected ?float $quantityEnd;
 
-    protected array $currencyPrice;
+    protected ?array $currencyPrice;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?ShippingMethodEntity $shippingMethod;
 
@@ -95,22 +95,22 @@ final class ShippingMethodPriceEntity extends Entity
         $this->quantityEnd = $quantityEnd;
     }
 
-    public function getCurrencyPrice(): array
+    public function getCurrencyPrice(): ?array
     {
         return $this->currencyPrice;
     }
 
-    public function setCurrencyPrice(array $currencyPrice): void
+    public function setCurrencyPrice(?array $currencyPrice): void
     {
         $this->currencyPrice = $currencyPrice;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

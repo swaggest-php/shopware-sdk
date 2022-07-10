@@ -22,7 +22,7 @@ final class DeliveryTimeEntity extends Entity
 
     protected string $unit;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?ShippingMethodCollection $shippingMethods;
 
@@ -70,12 +70,12 @@ final class DeliveryTimeEntity extends Entity
         $this->unit = $unit;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

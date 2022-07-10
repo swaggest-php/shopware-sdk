@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Promotion;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\Computed;
@@ -18,7 +18,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\SearchRanking;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class PromotionDefinition implements EntityDefinitionInterface
+final class PromotionDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -56,15 +56,15 @@ final class PromotionDefinition implements EntityDefinitionInterface
             (new Field('preventCombination', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
             (new Field('orderCount', 'int'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new WriteProtected([ProtectedFlag::SYSTEM])),
             (new Field('ordersPerCustomerCount', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new WriteProtected([ProtectedFlag::SYSTEM])),
-            (new Association('setgroups', Association::ONE_TO_MANY, 'promotion_setgroup', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('salesChannels', Association::ONE_TO_MANY, 'promotion_sales_channel', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('discounts', Association::ONE_TO_MANY, 'promotion_discount', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('individualCodes', Association::ONE_TO_MANY, 'promotion_individual_code', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('personaRules', Association::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_persona_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('personaCustomers', Association::MANY_TO_MANY, 'customer', 'id', 'id', null, 'promotion_persona_customer', 'customerId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('orderRules', Association::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_order_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('cartRules', Association::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_cart_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('translations', Association::ONE_TO_MANY, 'promotion_translation', 'id', 'promotionId', 'promotionId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
+            (new AssociationField('setgroups', AssociationField::ONE_TO_MANY, 'promotion_setgroup', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('salesChannels', AssociationField::ONE_TO_MANY, 'promotion_sales_channel', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('discounts', AssociationField::ONE_TO_MANY, 'promotion_discount', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('individualCodes', AssociationField::ONE_TO_MANY, 'promotion_individual_code', 'id', 'promotionId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('personaRules', AssociationField::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_persona_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('personaCustomers', AssociationField::MANY_TO_MANY, 'customer', 'id', 'id', null, 'promotion_persona_customer', 'customerId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('orderRules', AssociationField::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_order_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('cartRules', AssociationField::MANY_TO_MANY, 'rule', 'id', 'id', null, 'promotion_cart_rule', 'ruleId', 'promotionId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'promotion_translation', 'id', 'promotionId', 'promotionId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
             (new Field('exclusionIds', 'json_list'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Translatable()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

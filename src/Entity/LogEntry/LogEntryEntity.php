@@ -19,9 +19,9 @@ final class LogEntryEntity extends Entity
 
     protected ?string $channel;
 
-    protected array $context;
+    protected ?array $context;
 
-    protected array $extra;
+    protected ?array $extra;
 
     public function getMessage(): ?string
     {
@@ -53,22 +53,22 @@ final class LogEntryEntity extends Entity
         $this->channel = $channel;
     }
 
-    public function getContext(): array
+    public function getContext(): ?array
     {
         return $this->context;
     }
 
-    public function setContext(array $context): void
+    public function setContext(?array $context): void
     {
         $this->context = $context;
     }
 
-    public function getExtra(): array
+    public function getExtra(): ?array
     {
         return $this->extra;
     }
 
-    public function setExtra(array $extra): void
+    public function setExtra(?array $extra): void
     {
         $this->extra = $extra;
     }

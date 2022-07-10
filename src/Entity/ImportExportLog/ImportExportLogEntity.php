@@ -34,7 +34,7 @@ final class ImportExportLogEntity extends Entity
 
     protected array $config;
 
-    protected array $result;
+    protected ?array $result;
 
     protected ?UserEntity $user;
 
@@ -146,12 +146,12 @@ final class ImportExportLogEntity extends Entity
         $this->config = $config;
     }
 
-    public function getResult(): array
+    public function getResult(): ?array
     {
         return $this->result;
     }
 
-    public function setResult(array $result): void
+    public function setResult(?array $result): void
     {
         $this->result = $result;
     }

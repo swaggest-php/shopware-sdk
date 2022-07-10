@@ -33,7 +33,7 @@ final class NewsletterRecipientEntity extends Entity
 
     protected string $hash;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?\DateTimeInterface $confirmedAt;
 
@@ -141,12 +141,12 @@ final class NewsletterRecipientEntity extends Entity
         $this->hash = $hash;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

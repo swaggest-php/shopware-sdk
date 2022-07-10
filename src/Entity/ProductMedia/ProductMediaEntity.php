@@ -15,7 +15,7 @@ final class ProductMediaEntity extends Entity
 
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected string $mediaId;
 
@@ -25,7 +25,7 @@ final class ProductMediaEntity extends Entity
 
     protected ?MediaEntity $media;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getProductId(): string
     {
@@ -37,12 +37,12 @@ final class ProductMediaEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -87,12 +87,12 @@ final class ProductMediaEntity extends Entity
         $this->media = $media;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

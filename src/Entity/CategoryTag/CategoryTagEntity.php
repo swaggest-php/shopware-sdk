@@ -15,7 +15,7 @@ final class CategoryTagEntity extends Entity
 
     protected string $categoryId;
 
-    protected string $categoryVersionId;
+    protected ?string $categoryVersionId;
 
     protected string $tagId;
 
@@ -33,12 +33,12 @@ final class CategoryTagEntity extends Entity
         $this->categoryId = $categoryId;
     }
 
-    public function getCategoryVersionId(): string
+    public function getCategoryVersionId(): ?string
     {
         return $this->categoryVersionId;
     }
 
-    public function setCategoryVersionId(string $categoryVersionId): void
+    public function setCategoryVersionId(?string $categoryVersionId): void
     {
         $this->categoryVersionId = $categoryVersionId;
     }

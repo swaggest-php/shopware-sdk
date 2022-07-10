@@ -16,17 +16,17 @@ final class CustomerGroupEntity extends Entity
 
     protected string $name;
 
-    protected bool $displayGross;
+    protected ?bool $displayGross;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected bool $registrationActive;
+    protected ?bool $registrationActive;
 
     protected ?string $registrationTitle;
 
     protected ?string $registrationIntroduction;
 
-    protected bool $registrationOnlyCompanyRegistration;
+    protected ?bool $registrationOnlyCompanyRegistration;
 
     protected ?string $registrationSeoMetaDescription;
 
@@ -48,32 +48,32 @@ final class CustomerGroupEntity extends Entity
         $this->name = $name;
     }
 
-    public function getDisplayGross(): bool
+    public function getDisplayGross(): ?bool
     {
         return $this->displayGross;
     }
 
-    public function setDisplayGross(bool $displayGross): void
+    public function setDisplayGross(?bool $displayGross): void
     {
         $this->displayGross = $displayGross;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getRegistrationActive(): bool
+    public function getRegistrationActive(): ?bool
     {
         return $this->registrationActive;
     }
 
-    public function setRegistrationActive(bool $registrationActive): void
+    public function setRegistrationActive(?bool $registrationActive): void
     {
         $this->registrationActive = $registrationActive;
     }
@@ -98,12 +98,12 @@ final class CustomerGroupEntity extends Entity
         $this->registrationIntroduction = $registrationIntroduction;
     }
 
-    public function getRegistrationOnlyCompanyRegistration(): bool
+    public function getRegistrationOnlyCompanyRegistration(): ?bool
     {
         return $this->registrationOnlyCompanyRegistration;
     }
 
-    public function setRegistrationOnlyCompanyRegistration(bool $registrationOnlyCompanyRegistration): void
+    public function setRegistrationOnlyCompanyRegistration(?bool $registrationOnlyCompanyRegistration): void
     {
         $this->registrationOnlyCompanyRegistration = $registrationOnlyCompanyRegistration;
     }

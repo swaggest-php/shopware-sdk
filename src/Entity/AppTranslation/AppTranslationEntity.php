@@ -19,7 +19,7 @@ final class AppTranslationEntity extends Entity
 
     protected ?string $privacyPolicyExtensions;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $appId;
 
@@ -59,12 +59,12 @@ final class AppTranslationEntity extends Entity
         $this->privacyPolicyExtensions = $privacyPolicyExtensions;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

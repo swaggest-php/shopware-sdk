@@ -48,9 +48,9 @@ final class MediaEntity extends Entity
 
     protected ?string $mediaTypeRaw;
 
-    protected array $metaData;
+    protected ?array $metaData;
 
-    protected array $mediaType;
+    protected ?array $mediaType;
 
     protected ?string $alt;
 
@@ -58,11 +58,11 @@ final class MediaEntity extends Entity
 
     protected ?string $url;
 
-    protected bool $hasFile;
+    protected ?bool $hasFile;
 
-    protected bool $private;
+    protected ?bool $private;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $thumbnailsRo;
 
@@ -192,22 +192,22 @@ final class MediaEntity extends Entity
         $this->mediaTypeRaw = $mediaTypeRaw;
     }
 
-    public function getMetaData(): array
+    public function getMetaData(): ?array
     {
         return $this->metaData;
     }
 
-    public function setMetaData(array $metaData): void
+    public function setMetaData(?array $metaData): void
     {
         $this->metaData = $metaData;
     }
 
-    public function getMediaType(): array
+    public function getMediaType(): ?array
     {
         return $this->mediaType;
     }
 
-    public function setMediaType(array $mediaType): void
+    public function setMediaType(?array $mediaType): void
     {
         $this->mediaType = $mediaType;
     }
@@ -242,32 +242,32 @@ final class MediaEntity extends Entity
         $this->url = $url;
     }
 
-    public function getHasFile(): bool
+    public function getHasFile(): ?bool
     {
         return $this->hasFile;
     }
 
-    public function setHasFile(bool $hasFile): void
+    public function setHasFile(?bool $hasFile): void
     {
         $this->hasFile = $hasFile;
     }
 
-    public function getPrivate(): bool
+    public function getPrivate(): ?bool
     {
         return $this->private;
     }
 
-    public function setPrivate(bool $private): void
+    public function setPrivate(?bool $private): void
     {
         $this->private = $private;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -19,13 +19,13 @@ final class FlowSequenceEntity extends Entity
 
     protected ?string $actionName;
 
-    protected array $config;
+    protected ?array $config;
 
     protected ?int $position;
 
     protected ?int $displayGroup;
 
-    protected bool $trueCase;
+    protected ?bool $trueCase;
 
     protected ?FlowEntity $flow;
 
@@ -37,7 +37,7 @@ final class FlowSequenceEntity extends Entity
 
     protected ?string $parentId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getFlowId(): string
     {
@@ -69,12 +69,12 @@ final class FlowSequenceEntity extends Entity
         $this->actionName = $actionName;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
@@ -99,12 +99,12 @@ final class FlowSequenceEntity extends Entity
         $this->displayGroup = $displayGroup;
     }
 
-    public function getTrueCase(): bool
+    public function getTrueCase(): ?bool
     {
         return $this->trueCase;
     }
 
-    public function setTrueCase(bool $trueCase): void
+    public function setTrueCase(?bool $trueCase): void
     {
         $this->trueCase = $trueCase;
     }
@@ -159,12 +159,12 @@ final class FlowSequenceEntity extends Entity
         $this->parentId = $parentId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

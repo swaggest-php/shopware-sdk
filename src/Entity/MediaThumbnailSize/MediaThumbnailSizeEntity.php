@@ -18,7 +18,7 @@ final class MediaThumbnailSizeEntity extends Entity
 
     protected ?MediaFolderConfigurationCollection $mediaFolderConfigurations;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getWidth(): int
     {
@@ -50,12 +50,12 @@ final class MediaThumbnailSizeEntity extends Entity
         $this->mediaFolderConfigurations = $mediaFolderConfigurations;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

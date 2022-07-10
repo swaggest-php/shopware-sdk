@@ -38,15 +38,15 @@ final class UserEntity extends Entity
 
     protected string $email;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $admin;
+    protected ?bool $admin;
 
     protected ?\DateTimeInterface $lastUpdatedPasswordAt;
 
     protected string $timeZone;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?LocaleEntity $locale;
 
@@ -154,22 +154,22 @@ final class UserEntity extends Entity
         $this->email = $email;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getAdmin(): bool
+    public function getAdmin(): ?bool
     {
         return $this->admin;
     }
 
-    public function setAdmin(bool $admin): void
+    public function setAdmin(?bool $admin): void
     {
         $this->admin = $admin;
     }
@@ -194,12 +194,12 @@ final class UserEntity extends Entity
         $this->timeZone = $timeZone;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

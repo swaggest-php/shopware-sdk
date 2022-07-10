@@ -27,7 +27,7 @@ final class StateMachineTransitionEntity extends Entity
 
     protected ?StateMachineStateEntity $toStateMachineState;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getActionName(): string
     {
@@ -99,12 +99,12 @@ final class StateMachineTransitionEntity extends Entity
         $this->toStateMachineState = $toStateMachineState;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

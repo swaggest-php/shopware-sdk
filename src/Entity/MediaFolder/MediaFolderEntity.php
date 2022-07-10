@@ -14,7 +14,7 @@ final class MediaFolderEntity extends Entity
 {
     use EntityIdTrait;
 
-    protected bool $useParentConfiguration;
+    protected ?bool $useParentConfiguration;
 
     protected string $configurationId;
 
@@ -36,14 +36,14 @@ final class MediaFolderEntity extends Entity
 
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    public function getUseParentConfiguration(): bool
+    public function getUseParentConfiguration(): ?bool
     {
         return $this->useParentConfiguration;
     }
 
-    public function setUseParentConfiguration(bool $useParentConfiguration): void
+    public function setUseParentConfiguration(?bool $useParentConfiguration): void
     {
         $this->useParentConfiguration = $useParentConfiguration;
     }
@@ -148,12 +148,12 @@ final class MediaFolderEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

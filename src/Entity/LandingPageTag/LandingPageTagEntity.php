@@ -15,7 +15,7 @@ final class LandingPageTagEntity extends Entity
 
     protected string $landingPageId;
 
-    protected string $landingPageVersionId;
+    protected ?string $landingPageVersionId;
 
     protected string $tagId;
 
@@ -33,12 +33,12 @@ final class LandingPageTagEntity extends Entity
         $this->landingPageId = $landingPageId;
     }
 
-    public function getLandingPageVersionId(): string
+    public function getLandingPageVersionId(): ?string
     {
         return $this->landingPageVersionId;
     }
 
-    public function setLandingPageVersionId(string $landingPageVersionId): void
+    public function setLandingPageVersionId(?string $landingPageVersionId): void
     {
         $this->landingPageVersionId = $landingPageVersionId;
     }

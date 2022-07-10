@@ -17,7 +17,7 @@ final class ProductCustomFieldSetEntity extends Entity
 
     protected string $customFieldSetId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?ProductEntity $product;
 
@@ -43,12 +43,12 @@ final class ProductCustomFieldSetEntity extends Entity
         $this->customFieldSetId = $customFieldSetId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }

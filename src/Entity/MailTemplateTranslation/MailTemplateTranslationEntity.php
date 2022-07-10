@@ -23,7 +23,7 @@ final class MailTemplateTranslationEntity extends Entity
 
     protected string $contentPlain;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $mailTemplateId;
 
@@ -83,12 +83,12 @@ final class MailTemplateTranslationEntity extends Entity
         $this->contentPlain = $contentPlain;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

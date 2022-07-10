@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\ProductSearchConfig;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
@@ -13,7 +13,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
 use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
-final class ProductSearchConfigDefinition implements EntityDefinitionInterface
+final class ProductSearchConfigDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -38,8 +38,8 @@ final class ProductSearchConfigDefinition implements EntityDefinitionInterface
             (new Field('andLogic', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
             (new Field('minSearchLength', 'int'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
             (new Field('excludedTerms', 'json_list'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('language', Association::ONE_TO_ONE, 'language', 'languageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('configFields', Association::ONE_TO_MANY, 'product_search_config_field', 'id', 'searchConfigId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('language', AssociationField::ONE_TO_ONE, 'language', 'languageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('configFields', AssociationField::ONE_TO_MANY, 'product_search_config_field', 'id', 'searchConfigId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
         ];

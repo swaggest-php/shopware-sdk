@@ -17,9 +17,9 @@ final class EventActionEntity extends Entity
 
     protected string $actionName;
 
-    protected array $config;
+    protected ?array $config;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?string $title;
 
@@ -27,7 +27,7 @@ final class EventActionEntity extends Entity
 
     protected ?SalesChannelCollection $salesChannels;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getEventName(): string
     {
@@ -49,22 +49,22 @@ final class EventActionEntity extends Entity
         $this->actionName = $actionName;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -99,12 +99,12 @@ final class EventActionEntity extends Entity
         $this->salesChannels = $salesChannels;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -19,7 +19,7 @@ final class ShippingMethodTranslationEntity extends Entity
 
     protected ?string $trackingUrl;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $shippingMethodId;
 
@@ -59,12 +59,12 @@ final class ShippingMethodTranslationEntity extends Entity
         $this->trackingUrl = $trackingUrl;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
