@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaDefaultFolder;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MediaFolder\MediaFolderEntity;
 
 final class MediaDefaultFolderEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected array $associationFields;
 
     protected string $entity;

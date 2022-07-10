@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\LogEntry;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 ;
 
 final class LogEntryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $message;
 
     protected ?int $level;

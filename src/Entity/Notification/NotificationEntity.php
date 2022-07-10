@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Notification;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationEntity;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class NotificationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $status;
 
     protected string $message;

@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\DeliveryTime;
 
 use Swaggest\ShopwareSdk\Entity\DeliveryTimeTranslation\DeliveryTimeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodCollection;
 
 final class DeliveryTimeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected int $min;
@@ -28,7 +25,7 @@ final class DeliveryTimeEntity extends Entity
 
     protected ?ProductCollection $products;
 
-    protected DeliveryTimeTranslationCollection $translations;
+    protected ?DeliveryTimeTranslationCollection $translations;
 
     public function getName(): string
     {
@@ -100,12 +97,12 @@ final class DeliveryTimeEntity extends Entity
         $this->products = $products;
     }
 
-    public function getTranslations(): DeliveryTimeTranslationCollection
+    public function getTranslations(): ?DeliveryTimeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(DeliveryTimeTranslationCollection $translations): void
+    public function setTranslations(?DeliveryTimeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

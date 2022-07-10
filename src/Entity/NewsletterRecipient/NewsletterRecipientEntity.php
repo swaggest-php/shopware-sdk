@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NewsletterRecipient;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class NewsletterRecipientEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $email;
 
     protected ?string $title;

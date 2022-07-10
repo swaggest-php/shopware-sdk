@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\AppActionButtonTranslation;
 
 use Swaggest\ShopwareSdk\Entity\AppActionButton\AppActionButtonEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class AppActionButtonTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $label;
 
     protected string $appActionButtonId;

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachineState;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderCollection;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\OrderTransaction\OrderTransactionCollection;
@@ -16,8 +15,6 @@ use Swaggest\ShopwareSdk\Entity\StateMachineTransition\StateMachineTransitionCol
 
 final class StateMachineStateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $technicalName;
 
     protected string $name;

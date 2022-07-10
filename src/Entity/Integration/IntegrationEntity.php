@@ -7,13 +7,10 @@ namespace Swaggest\ShopwareSdk\Entity\Integration;
 use Swaggest\ShopwareSdk\Entity\AclRole\AclRoleCollection;
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Notification\NotificationCollection;
 
 final class IntegrationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $label;
 
     protected string $accessKey;

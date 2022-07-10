@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductVisibility;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class ProductVisibilityEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected ?string $productVersionId;

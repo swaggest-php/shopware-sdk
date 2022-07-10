@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NewsletterRecipientTag;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NewsletterRecipient\NewsletterRecipientEntity;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class NewsletterRecipientTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $newsletterRecipientId;
 
     protected string $tagId;

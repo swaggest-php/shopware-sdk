@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Currency;
 use Swaggest\ShopwareSdk\Entity\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
 use Swaggest\ShopwareSdk\Entity\CurrencyTranslation\CurrencyTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderCollection;
 use Swaggest\ShopwareSdk\Entity\ProductExport\ProductExportCollection;
 use Swaggest\ShopwareSdk\Entity\PromotionDiscountPrices\PromotionDiscountPricesCollection;
@@ -16,8 +15,6 @@ use Swaggest\ShopwareSdk\Entity\SalesChannelDomain\SalesChannelDomainCollection;
 
 final class CurrencyEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected float $factor;
 
     protected string $symbol;
@@ -34,7 +31,7 @@ final class CurrencyEntity extends Entity
 
     protected ?array $customFields;
 
-    protected CurrencyTranslationCollection $translations;
+    protected ?CurrencyTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannelDefaultAssignments;
 
@@ -136,12 +133,12 @@ final class CurrencyEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): CurrencyTranslationCollection
+    public function getTranslations(): ?CurrencyTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CurrencyTranslationCollection $translations): void
+    public function setTranslations(?CurrencyTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

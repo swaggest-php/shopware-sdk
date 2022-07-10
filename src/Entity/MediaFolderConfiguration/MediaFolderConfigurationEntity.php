@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaFolderConfiguration;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MediaFolder\MediaFolderCollection;
 use Swaggest\ShopwareSdk\Entity\MediaThumbnailSize\MediaThumbnailSizeCollection;
 
 final class MediaFolderConfigurationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?bool $createThumbnails;
 
     protected ?bool $keepAspectRatio;

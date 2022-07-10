@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\TaxRule;
 
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Tax\TaxEntity;
 use Swaggest\ShopwareSdk\Entity\TaxRuleType\TaxRuleTypeEntity;
 
 final class TaxRuleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $taxRuleTypeId;
 
     protected string $countryId;

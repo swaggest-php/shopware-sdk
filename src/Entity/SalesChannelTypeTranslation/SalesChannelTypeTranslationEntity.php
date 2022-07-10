@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelTypeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannelType\SalesChannelTypeEntity;
 
 final class SalesChannelTypeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $manufacturer;

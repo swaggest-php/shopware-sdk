@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\UserRecovery;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class UserRecoveryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $hash;
 
     protected string $userId;

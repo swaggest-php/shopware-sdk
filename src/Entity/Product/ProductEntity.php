@@ -10,7 +10,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerWishlistProduct\CustomerWishlistProductC
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetCollection;
 use Swaggest\ShopwareSdk\Entity\DeliveryTime\DeliveryTimeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MainCategory\MainCategoryCollection;
 use Swaggest\ShopwareSdk\Entity\OrderLineItem\OrderLineItemCollection;
 use Swaggest\ShopwareSdk\Entity\ProductConfiguratorSetting\ProductConfiguratorSettingCollection;
@@ -34,8 +33,6 @@ use Swaggest\ShopwareSdk\Entity\Unit\UnitEntity;
 
 final class ProductEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $parentId;
 
     protected ?string $parentVersionId;

@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\ProductCustomFieldSet;
 
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 
 final class ProductCustomFieldSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected string $customFieldSetId;

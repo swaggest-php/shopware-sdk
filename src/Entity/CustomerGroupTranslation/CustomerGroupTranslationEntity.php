@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation;
 
 use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CustomerGroupTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $registrationTitle;

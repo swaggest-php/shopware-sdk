@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\Promotion;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PromotionDiscount\PromotionDiscountCollection;
 use Swaggest\ShopwareSdk\Entity\PromotionIndividualCode\PromotionIndividualCodeCollection;
 use Swaggest\ShopwareSdk\Entity\PromotionSalesChannel\PromotionSalesChannelCollection;
@@ -16,8 +15,6 @@ use Swaggest\ShopwareSdk\Entity\Rule\RuleCollection;
 
 final class PromotionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected bool $active;
@@ -68,7 +65,7 @@ final class PromotionEntity extends Entity
 
     protected ?RuleCollection $cartRules;
 
-    protected PromotionTranslationCollection $translations;
+    protected ?PromotionTranslationCollection $translations;
 
     protected ?array $exclusionIds;
 
@@ -324,12 +321,12 @@ final class PromotionEntity extends Entity
         $this->cartRules = $cartRules;
     }
 
-    public function getTranslations(): PromotionTranslationCollection
+    public function getTranslations(): ?PromotionTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PromotionTranslationCollection $translations): void
+    public function setTranslations(?PromotionTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

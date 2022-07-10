@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\OrderCustomer;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class OrderCustomerEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $customerId;
 
     protected string $orderId;

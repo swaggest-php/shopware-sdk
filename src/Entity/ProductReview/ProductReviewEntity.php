@@ -6,15 +6,12 @@ namespace Swaggest\ShopwareSdk\Entity\ProductReview;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class ProductReviewEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected ?string $productVersionId;

@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\SalesChannelCountry;
 
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelCountryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $salesChannelId;
 
     protected string $countryId;

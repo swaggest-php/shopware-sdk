@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\PaymentMethod;
 use Swaggest\ShopwareSdk\Entity\AppPaymentMethod\AppPaymentMethodEntity;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\OrderTransaction\OrderTransactionCollection;
 use Swaggest\ShopwareSdk\Entity\PaymentMethodTranslation\PaymentMethodTranslationCollection;
@@ -17,8 +16,6 @@ use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class PaymentMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $pluginId;
 
     protected ?string $handlerIdentifier;
@@ -49,7 +46,7 @@ final class PaymentMethodEntity extends Entity
 
     protected ?bool $prepared;
 
-    protected PaymentMethodTranslationCollection $translations;
+    protected ?PaymentMethodTranslationCollection $translations;
 
     protected ?MediaEntity $media;
 
@@ -217,12 +214,12 @@ final class PaymentMethodEntity extends Entity
         $this->prepared = $prepared;
     }
 
-    public function getTranslations(): PaymentMethodTranslationCollection
+    public function getTranslations(): ?PaymentMethodTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PaymentMethodTranslationCollection $translations): void
+    public function setTranslations(?PaymentMethodTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

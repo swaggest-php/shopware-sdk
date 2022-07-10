@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Tag;
 use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaCollection;
 use Swaggest\ShopwareSdk\Entity\NewsletterRecipient\NewsletterRecipientCollection;
@@ -17,8 +16,6 @@ use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodCollection;
 
 final class TagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?ProductCollection $products;

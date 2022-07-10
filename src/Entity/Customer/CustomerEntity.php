@@ -10,7 +10,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\CustomerRecovery\CustomerRecoveryEntity;
 use Swaggest\ShopwareSdk\Entity\CustomerWishlist\CustomerWishlistCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\OrderCustomer\OrderCustomerCollection;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
@@ -22,8 +21,6 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class CustomerEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $groupId;
 
     protected string $defaultPaymentMethodId;

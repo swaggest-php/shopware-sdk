@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\SalesChannelCurrency;
 
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelCurrencyEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $salesChannelId;
 
     protected string $currencyId;

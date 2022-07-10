@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PropertyGroup;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupOption\PropertyGroupOptionCollection;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupTranslation\PropertyGroupTranslationCollection;
 
 final class PropertyGroupEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $description;
@@ -31,7 +28,7 @@ final class PropertyGroupEntity extends Entity
 
     protected ?PropertyGroupOptionCollection $options;
 
-    protected PropertyGroupTranslationCollection $translations;
+    protected ?PropertyGroupTranslationCollection $translations;
 
     public function getName(): string
     {
@@ -123,12 +120,12 @@ final class PropertyGroupEntity extends Entity
         $this->options = $options;
     }
 
-    public function getTranslations(): PropertyGroupTranslationCollection
+    public function getTranslations(): ?PropertyGroupTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PropertyGroupTranslationCollection $translations): void
+    public function setTranslations(?PropertyGroupTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

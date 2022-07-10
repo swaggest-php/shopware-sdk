@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\ProductCategoryTree;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 
 final class ProductCategoryTreeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected ?string $productVersionId;

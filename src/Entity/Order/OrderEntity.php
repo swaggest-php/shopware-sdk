@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Order;
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Document\DocumentCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressCollection;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressEntity;
@@ -22,8 +21,6 @@ use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class OrderEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?int $autoIncrement;
 
     protected ?string $orderNumber;

@@ -7,12 +7,9 @@ namespace Swaggest\ShopwareSdk\Entity\CmsSlot;
 use Swaggest\ShopwareSdk\Entity\CmsBlock\CmsBlockEntity;
 use Swaggest\ShopwareSdk\Entity\CmsSlotTranslation\CmsSlotTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class CmsSlotEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $type;
 
     protected string $slot;

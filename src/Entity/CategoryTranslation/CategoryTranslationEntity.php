@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CategoryTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CategoryTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?array $breadcrumb;

@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MailTemplate;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailTemplateMedia\MailTemplateMediaCollection;
 use Swaggest\ShopwareSdk\Entity\MailTemplateTranslation\MailTemplateTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\MailTemplateType\MailTemplateTypeEntity;
 
 final class MailTemplateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mailTemplateTypeId;
 
     protected ?bool $systemDefault;
@@ -30,7 +27,7 @@ final class MailTemplateEntity extends Entity
 
     protected ?array $customFields;
 
-    protected MailTemplateTranslationCollection $translations;
+    protected ?MailTemplateTranslationCollection $translations;
 
     protected ?MailTemplateTypeEntity $mailTemplateType;
 
@@ -116,12 +113,12 @@ final class MailTemplateEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): MailTemplateTranslationCollection
+    public function getTranslations(): ?MailTemplateTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(MailTemplateTranslationCollection $translations): void
+    public function setTranslations(?MailTemplateTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

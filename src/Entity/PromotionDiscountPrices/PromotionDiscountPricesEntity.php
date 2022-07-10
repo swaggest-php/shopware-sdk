@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\PromotionDiscountPrices;
 
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PromotionDiscount\PromotionDiscountEntity;
 
 final class PromotionDiscountPricesEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $discountId;
 
     protected string $currencyId;

@@ -9,15 +9,12 @@ use Swaggest\ShopwareSdk\Entity\CountryTranslation\CountryTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
 use Swaggest\ShopwareSdk\Entity\CustomerAddress\CustomerAddressCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\TaxRule\TaxRuleCollection;
 
 final class CountryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $iso;
@@ -52,7 +49,7 @@ final class CountryEntity extends Entity
 
     protected ?CountryStateCollection $states;
 
-    protected CountryTranslationCollection $translations;
+    protected ?CountryTranslationCollection $translations;
 
     protected ?CustomerAddressCollection $customerAddresses;
 
@@ -236,12 +233,12 @@ final class CountryEntity extends Entity
         $this->states = $states;
     }
 
-    public function getTranslations(): CountryTranslationCollection
+    public function getTranslations(): ?CountryTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CountryTranslationCollection $translations): void
+    public function setTranslations(?CountryTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

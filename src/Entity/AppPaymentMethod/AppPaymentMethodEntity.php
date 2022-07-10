@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\AppPaymentMethod;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
 
 final class AppPaymentMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $appName;
 
     protected string $identifier;

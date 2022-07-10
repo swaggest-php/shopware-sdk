@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachineHistory;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\StateMachine\StateMachineEntity;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class StateMachineHistoryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $stateMachineId;
 
     protected ?StateMachineEntity $stateMachine;

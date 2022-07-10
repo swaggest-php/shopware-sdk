@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\TaxRuleType;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\TaxRule\TaxRuleCollection;
 use Swaggest\ShopwareSdk\Entity\TaxRuleTypeTranslation\TaxRuleTypeTranslationCollection;
 
 final class TaxRuleTypeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $technicalName;
 
     protected int $position;
@@ -21,7 +18,7 @@ final class TaxRuleTypeEntity extends Entity
 
     protected ?TaxRuleCollection $rules;
 
-    protected TaxRuleTypeTranslationCollection $translations;
+    protected ?TaxRuleTypeTranslationCollection $translations;
 
     public function getTechnicalName(): string
     {
@@ -63,12 +60,12 @@ final class TaxRuleTypeEntity extends Entity
         $this->rules = $rules;
     }
 
-    public function getTranslations(): TaxRuleTypeTranslationCollection
+    public function getTranslations(): ?TaxRuleTypeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(TaxRuleTypeTranslationCollection $translations): void
+    public function setTranslations(?TaxRuleTypeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

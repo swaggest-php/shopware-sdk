@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ShippingMethodPrice;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodEntity;
 
 final class ShippingMethodPriceEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $shippingMethodId;
 
     protected ?string $ruleId;

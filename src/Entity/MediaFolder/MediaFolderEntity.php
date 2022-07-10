@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaFolder;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaCollection;
 use Swaggest\ShopwareSdk\Entity\MediaDefaultFolder\MediaDefaultFolderEntity;
 use Swaggest\ShopwareSdk\Entity\MediaFolderConfiguration\MediaFolderConfigurationEntity;
 
 final class MediaFolderEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?bool $useParentConfiguration;
 
     protected string $configurationId;

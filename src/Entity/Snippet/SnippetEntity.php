@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Snippet;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SnippetSet\SnippetSetEntity;
 
 final class SnippetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $setId;
 
     protected string $translationKey;

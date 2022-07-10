@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Tax;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodCollection;
 use Swaggest\ShopwareSdk\Entity\TaxRule\TaxRuleCollection;
 
 final class TaxEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected float $taxRate;
 
     protected string $name;

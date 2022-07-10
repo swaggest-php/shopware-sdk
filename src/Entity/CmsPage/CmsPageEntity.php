@@ -8,7 +8,6 @@ use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPageTranslation\CmsPageTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CmsSection\CmsSectionCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
@@ -16,8 +15,6 @@ use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class CmsPageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $name;
 
     protected string $type;

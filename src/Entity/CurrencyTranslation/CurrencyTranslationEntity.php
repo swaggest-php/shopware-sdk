@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CurrencyTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CurrencyTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $shortName;
 
     protected string $name;

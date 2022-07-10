@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\User;
 
 use Swaggest\ShopwareSdk\Entity\AclRole\AclRoleCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportLog\ImportExportLogCollection;
 use Swaggest\ShopwareSdk\Entity\Locale\LocaleEntity;
 use Swaggest\ShopwareSdk\Entity\Media\MediaCollection;
@@ -20,8 +19,6 @@ use Swaggest\ShopwareSdk\Entity\UserRecovery\UserRecoveryEntity;
 
 final class UserEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $localeId;
 
     protected ?string $avatarId;

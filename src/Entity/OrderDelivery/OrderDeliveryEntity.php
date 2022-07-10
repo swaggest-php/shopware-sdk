@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\OrderDelivery;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDeliveryPosition\OrderDeliveryPositionCollection;
@@ -14,8 +13,6 @@ use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 
 final class OrderDeliveryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $orderId;
 
     protected ?string $orderVersionId;

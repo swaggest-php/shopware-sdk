@@ -8,13 +8,10 @@ use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\CountryState\CountryStateEntity;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class CustomerAddressEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $customerId;
 
     protected string $countryId;

@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductManufacturer;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\ProductManufacturerTranslation\ProductManufacturerTranslationCollection;
 
 final class ProductManufacturerEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $mediaId;
 
     protected ?string $link;
@@ -28,7 +25,7 @@ final class ProductManufacturerEntity extends Entity
 
     protected ?ProductCollection $products;
 
-    protected ProductManufacturerTranslationCollection $translations;
+    protected ?ProductManufacturerTranslationCollection $translations;
 
     public function getMediaId(): ?string
     {
@@ -100,12 +97,12 @@ final class ProductManufacturerEntity extends Entity
         $this->products = $products;
     }
 
-    public function getTranslations(): ProductManufacturerTranslationCollection
+    public function getTranslations(): ?ProductManufacturerTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductManufacturerTranslationCollection $translations): void
+    public function setTranslations(?ProductManufacturerTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CategoryTag;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class CategoryTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $categoryId;
 
     protected ?string $categoryVersionId;

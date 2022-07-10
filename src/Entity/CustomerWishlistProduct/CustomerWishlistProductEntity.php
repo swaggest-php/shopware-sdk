@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerWishlistProduct;
 
 use Swaggest\ShopwareSdk\Entity\CustomerWishlist\CustomerWishlistEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 
 final class CustomerWishlistProductEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected ?string $productVersionId;

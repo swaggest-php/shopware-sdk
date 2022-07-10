@@ -12,7 +12,6 @@ use Swaggest\ShopwareSdk\Entity\CmsSection\CmsSectionCollection;
 use Swaggest\ShopwareSdk\Entity\Document\DocumentCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfig\DocumentBaseConfigCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailTemplateMedia\MailTemplateMediaCollection;
 use Swaggest\ShopwareSdk\Entity\MediaFolder\MediaFolderEntity;
 use Swaggest\ShopwareSdk\Entity\MediaThumbnail\MediaThumbnailCollection;
@@ -30,8 +29,6 @@ use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class MediaEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $userId;
 
     protected ?string $mediaFolderId;
@@ -66,7 +63,7 @@ final class MediaEntity extends Entity
 
     protected ?string $thumbnailsRo;
 
-    protected MediaTranslationCollection $translations;
+    protected ?MediaTranslationCollection $translations;
 
     protected ?TagCollection $tags;
 
@@ -282,12 +279,12 @@ final class MediaEntity extends Entity
         $this->thumbnailsRo = $thumbnailsRo;
     }
 
-    public function getTranslations(): MediaTranslationCollection
+    public function getTranslations(): ?MediaTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(MediaTranslationCollection $translations): void
+    public function setTranslations(?MediaTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

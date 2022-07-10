@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MailHeaderFooter;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailHeaderFooterTranslation\MailHeaderFooterTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class MailHeaderFooterEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?bool $systemDefault;
 
     protected string $name;
@@ -27,7 +24,7 @@ final class MailHeaderFooterEntity extends Entity
 
     protected ?string $footerPlain;
 
-    protected MailHeaderFooterTranslationCollection $translations;
+    protected ?MailHeaderFooterTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannels;
 
@@ -101,12 +98,12 @@ final class MailHeaderFooterEntity extends Entity
         $this->footerPlain = $footerPlain;
     }
 
-    public function getTranslations(): MailHeaderFooterTranslationCollection
+    public function getTranslations(): ?MailHeaderFooterTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(MailHeaderFooterTranslationCollection $translations): void
+    public function setTranslations(?MailHeaderFooterTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

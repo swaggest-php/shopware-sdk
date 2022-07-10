@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachine;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\StateMachineHistory\StateMachineHistoryCollection;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateCollection;
 use Swaggest\ShopwareSdk\Entity\StateMachineTransition\StateMachineTransitionCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\StateMachineTranslation\StateMachineTranslationC
 
 final class StateMachineEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $technicalName;
 
     protected string $name;
@@ -27,7 +24,7 @@ final class StateMachineEntity extends Entity
 
     protected ?string $initialStateId;
 
-    protected StateMachineTranslationCollection $translations;
+    protected ?StateMachineTranslationCollection $translations;
 
     protected ?StateMachineHistoryCollection $historyEntries;
 
@@ -91,12 +88,12 @@ final class StateMachineEntity extends Entity
         $this->initialStateId = $initialStateId;
     }
 
-    public function getTranslations(): StateMachineTranslationCollection
+    public function getTranslations(): ?StateMachineTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(StateMachineTranslationCollection $translations): void
+    public function setTranslations(?StateMachineTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

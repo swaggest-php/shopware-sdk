@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductConfiguratorSetting;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupOption\PropertyGroupOptionEntity;
 
 final class ProductConfiguratorSettingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected ?string $productVersionId;

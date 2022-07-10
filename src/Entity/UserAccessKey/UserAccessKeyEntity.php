@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\UserAccessKey;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class UserAccessKeyEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $userId;
 
     protected string $accessKey;

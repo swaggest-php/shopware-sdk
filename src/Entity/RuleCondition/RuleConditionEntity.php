@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\RuleCondition;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class RuleConditionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $type;
 
     protected string $ruleId;

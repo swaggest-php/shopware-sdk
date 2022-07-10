@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ImportExportProfile;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportLog\ImportExportLogCollection;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfileTranslation\ImportExportProfileTranslationCollection;
 
 final class ImportExportProfileEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $name;
 
     protected string $label;
@@ -37,7 +34,7 @@ final class ImportExportProfileEntity extends Entity
 
     protected ?ImportExportLogCollection $importExportLogs;
 
-    protected ImportExportProfileTranslationCollection $translations;
+    protected ?ImportExportProfileTranslationCollection $translations;
 
     public function getName(): ?string
     {
@@ -159,12 +156,12 @@ final class ImportExportProfileEntity extends Entity
         $this->importExportLogs = $importExportLogs;
     }
 
-    public function getTranslations(): ImportExportProfileTranslationCollection
+    public function getTranslations(): ?ImportExportProfileTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ImportExportProfileTranslationCollection $translations): void
+    public function setTranslations(?ImportExportProfileTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

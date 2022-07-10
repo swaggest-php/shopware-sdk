@@ -7,13 +7,10 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerGroup;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation\CustomerGroupTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class CustomerGroupEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?bool $displayGross;
@@ -34,7 +31,7 @@ final class CustomerGroupEntity extends Entity
 
     protected ?SalesChannelCollection $salesChannels;
 
-    protected CustomerGroupTranslationCollection $translations;
+    protected ?CustomerGroupTranslationCollection $translations;
 
     protected ?SalesChannelCollection $registrationSalesChannels;
 
@@ -138,12 +135,12 @@ final class CustomerGroupEntity extends Entity
         $this->salesChannels = $salesChannels;
     }
 
-    public function getTranslations(): CustomerGroupTranslationCollection
+    public function getTranslations(): ?CustomerGroupTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CustomerGroupTranslationCollection $translations): void
+    public function setTranslations(?CustomerGroupTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NumberRangeSalesChannel;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NumberRange\NumberRangeEntity;
 use Swaggest\ShopwareSdk\Entity\NumberRangeType\NumberRangeTypeEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class NumberRangeSalesChannelEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $numberRangeId;
 
     protected string $salesChannelId;

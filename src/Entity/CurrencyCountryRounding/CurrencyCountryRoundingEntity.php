@@ -7,12 +7,9 @@ namespace Swaggest\ShopwareSdk\Entity\CurrencyCountryRounding;
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class CurrencyCountryRoundingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $currencyId;
 
     protected string $countryId;

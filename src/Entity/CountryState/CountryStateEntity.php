@@ -8,13 +8,10 @@ use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\CountryStateTranslation\CountryStateTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CustomerAddress\CustomerAddressCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressCollection;
 
 final class CountryStateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $countryId;
 
     protected string $shortCode;
@@ -29,7 +26,7 @@ final class CountryStateEntity extends Entity
 
     protected ?CountryEntity $country;
 
-    protected CountryStateTranslationCollection $translations;
+    protected ?CountryStateTranslationCollection $translations;
 
     protected ?CustomerAddressCollection $customerAddresses;
 
@@ -105,12 +102,12 @@ final class CountryStateEntity extends Entity
         $this->country = $country;
     }
 
-    public function getTranslations(): CountryStateTranslationCollection
+    public function getTranslations(): ?CountryStateTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CountryStateTranslationCollection $translations): void
+    public function setTranslations(?CountryStateTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

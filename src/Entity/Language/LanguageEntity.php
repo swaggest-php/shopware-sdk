@@ -18,7 +18,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation\CustomerGroupTranslatio
 use Swaggest\ShopwareSdk\Entity\DeliveryTimeTranslation\DeliveryTimeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentTypeTranslation\DocumentTypeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfileTranslation\ImportExportProfileTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\LandingPageTranslation\LandingPageTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Locale\LocaleEntity;
@@ -61,8 +60,6 @@ use Swaggest\ShopwareSdk\Entity\UnitTranslation\UnitTranslationCollection;
 
 final class LanguageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $parentId;
 
     protected string $localeId;

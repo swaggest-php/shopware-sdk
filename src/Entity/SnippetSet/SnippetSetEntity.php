@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SnippetSet;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannelDomain\SalesChannelDomainCollection;
 use Swaggest\ShopwareSdk\Entity\Snippet\SnippetCollection;
 
 final class SnippetSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $baseFile;

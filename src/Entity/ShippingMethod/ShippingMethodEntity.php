@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\ShippingMethod;
 
 use Swaggest\ShopwareSdk\Entity\DeliveryTime\DeliveryTimeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
@@ -18,8 +17,6 @@ use Swaggest\ShopwareSdk\Entity\Tax\TaxEntity;
 
 final class ShippingMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?bool $active;
@@ -42,7 +39,7 @@ final class ShippingMethodEntity extends Entity
 
     protected ?string $trackingUrl;
 
-    protected ShippingMethodTranslationCollection $translations;
+    protected ?ShippingMethodTranslationCollection $translations;
 
     protected ?RuleEntity $availabilityRule;
 
@@ -170,12 +167,12 @@ final class ShippingMethodEntity extends Entity
         $this->trackingUrl = $trackingUrl;
     }
 
-    public function getTranslations(): ShippingMethodTranslationCollection
+    public function getTranslations(): ?ShippingMethodTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ShippingMethodTranslationCollection $translations): void
+    public function setTranslations(?ShippingMethodTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

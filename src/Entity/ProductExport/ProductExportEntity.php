@@ -6,15 +6,12 @@ namespace Swaggest\ShopwareSdk\Entity\ProductExport;
 
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductStream\ProductStreamEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannelDomain\SalesChannelDomainEntity;
 
 final class ProductExportEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productStreamId;
 
     protected string $storefrontSalesChannelId;

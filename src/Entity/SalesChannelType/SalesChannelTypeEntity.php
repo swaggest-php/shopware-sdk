@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelType;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannelTypeTranslation\SalesChannelTypeTranslationCollection;
 
 final class SalesChannelTypeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $coverUrl;
 
     protected ?string $iconName;
@@ -29,7 +26,7 @@ final class SalesChannelTypeEntity extends Entity
 
     protected ?array $customFields;
 
-    protected SalesChannelTypeTranslationCollection $translations;
+    protected ?SalesChannelTypeTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannels;
 
@@ -113,12 +110,12 @@ final class SalesChannelTypeEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): SalesChannelTypeTranslationCollection
+    public function getTranslations(): ?SalesChannelTypeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(SalesChannelTypeTranslationCollection $translations): void
+    public function setTranslations(?SalesChannelTypeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

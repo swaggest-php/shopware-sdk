@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductCrossSellingAssignedProducts;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSelling\ProductCrossSellingEntity;
 
 final class ProductCrossSellingAssignedProductsEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $crossSellingId;
 
     protected string $productId;

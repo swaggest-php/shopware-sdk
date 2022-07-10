@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Unit;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\UnitTranslation\UnitTranslationCollection;
 
 final class UnitEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $shortCode;
 
     protected string $name;
@@ -21,7 +18,7 @@ final class UnitEntity extends Entity
 
     protected ?ProductCollection $products;
 
-    protected UnitTranslationCollection $translations;
+    protected ?UnitTranslationCollection $translations;
 
     public function getShortCode(): string
     {
@@ -63,12 +60,12 @@ final class UnitEntity extends Entity
         $this->products = $products;
     }
 
-    public function getTranslations(): UnitTranslationCollection
+    public function getTranslations(): ?UnitTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(UnitTranslationCollection $translations): void
+    public function setTranslations(?UnitTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

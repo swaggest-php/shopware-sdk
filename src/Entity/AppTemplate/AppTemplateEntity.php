@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\AppTemplate;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class AppTemplateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $template;
 
     protected string $path;

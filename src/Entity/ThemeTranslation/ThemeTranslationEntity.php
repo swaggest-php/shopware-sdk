@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ThemeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\Theme\ThemeEntity;
 
 final class ThemeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $description;
 
     protected ?array $labels;

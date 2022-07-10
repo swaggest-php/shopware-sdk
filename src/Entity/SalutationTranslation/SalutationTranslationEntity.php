@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalutationTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class SalutationTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $displayName;
 
     protected string $letterName;

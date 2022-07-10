@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\AclUserRole;
 
 use Swaggest\ShopwareSdk\Entity\AclRole\AclRoleEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class AclUserRoleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $userId;
 
     protected string $aclRoleId;

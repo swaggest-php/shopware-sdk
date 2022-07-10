@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Theme;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\ThemeTranslation\ThemeTranslationCollection;
 
 final class ThemeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $technicalName;
 
     protected string $name;
@@ -39,7 +36,7 @@ final class ThemeEntity extends Entity
 
     protected bool $active;
 
-    protected ThemeTranslationCollection $translations;
+    protected ?ThemeTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannels;
 
@@ -169,12 +166,12 @@ final class ThemeEntity extends Entity
         $this->active = $active;
     }
 
-    public function getTranslations(): ThemeTranslationCollection
+    public function getTranslations(): ?ThemeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ThemeTranslationCollection $translations): void
+    public function setTranslations(?ThemeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

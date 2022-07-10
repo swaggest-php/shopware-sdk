@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\ProductStream;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSelling\ProductCrossSellingCollection;
 use Swaggest\ShopwareSdk\Entity\ProductExport\ProductExportCollection;
 use Swaggest\ShopwareSdk\Entity\ProductStreamFilter\ProductStreamFilterCollection;
@@ -14,8 +13,6 @@ use Swaggest\ShopwareSdk\Entity\ProductStreamTranslation\ProductStreamTranslatio
 
 final class ProductStreamEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?array $apiFilter;
 
     protected ?bool $invalid;
@@ -26,7 +23,7 @@ final class ProductStreamEntity extends Entity
 
     protected ?array $customFields;
 
-    protected ProductStreamTranslationCollection $translations;
+    protected ?ProductStreamTranslationCollection $translations;
 
     protected ?ProductStreamFilterCollection $filters;
 
@@ -86,12 +83,12 @@ final class ProductStreamEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): ProductStreamTranslationCollection
+    public function getTranslations(): ?ProductStreamTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductStreamTranslationCollection $translations): void
+    public function setTranslations(?ProductStreamTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

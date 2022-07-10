@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Category;
 use Swaggest\ShopwareSdk\Entity\CategoryTranslation\CategoryTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MainCategory\MainCategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
@@ -18,8 +17,6 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class CategoryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $parentId;
 
     protected ?string $parentVersionId;

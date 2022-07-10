@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ShippingMethodTag;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodEntity;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class ShippingMethodTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $shippingMethodId;
 
     protected string $tagId;

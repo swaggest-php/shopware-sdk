@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\LandingPageSalesChannel;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class LandingPageSalesChannelEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $landingPageId;
 
     protected ?string $landingPageVersionId;

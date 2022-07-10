@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerRecovery;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class CustomerRecoveryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $hash;
 
     protected string $customerId;

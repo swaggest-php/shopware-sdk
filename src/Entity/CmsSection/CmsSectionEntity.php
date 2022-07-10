@@ -7,13 +7,10 @@ namespace Swaggest\ShopwareSdk\Entity\CmsSection;
 use Swaggest\ShopwareSdk\Entity\CmsBlock\CmsBlockCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class CmsSectionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected int $position;
 
     protected string $type;

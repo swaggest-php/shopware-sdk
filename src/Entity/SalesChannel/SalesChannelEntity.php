@@ -16,7 +16,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\CustomerWishlist\CustomerWishlistCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfigSalesChannel\DocumentBaseConfigSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\EventAction\EventActionCollection;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageCollection;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageCollection;
@@ -46,8 +45,6 @@ use Swaggest\ShopwareSdk\Entity\Theme\ThemeCollection;
 
 final class SalesChannelEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $typeId;
 
     protected string $languageId;
@@ -102,7 +99,7 @@ final class SalesChannelEntity extends Entity
 
     protected ?array $customFields;
 
-    protected SalesChannelTranslationCollection $translations;
+    protected ?SalesChannelTranslationCollection $translations;
 
     protected ?CurrencyCollection $currencies;
 
@@ -470,12 +467,12 @@ final class SalesChannelEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): SalesChannelTranslationCollection
+    public function getTranslations(): ?SalesChannelTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(SalesChannelTranslationCollection $translations): void
+    public function setTranslations(?SalesChannelTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

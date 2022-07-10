@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ImportExportLog;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportFile\ImportExportFileEntity;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfile\ImportExportProfileEntity;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class ImportExportLogEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $activity;
 
     protected string $state;

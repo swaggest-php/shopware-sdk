@@ -7,13 +7,10 @@ namespace Swaggest\ShopwareSdk\Entity\DocumentBaseConfig;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfigSalesChannel\DocumentBaseConfigSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentType\DocumentTypeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class DocumentBaseConfigEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $documentTypeId;
 
     protected ?string $logoId;

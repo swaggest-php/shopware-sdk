@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Rule;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\EventAction\EventActionCollection;
 use Swaggest\ShopwareSdk\Entity\FlowSequence\FlowSequenceCollection;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodCollection;
@@ -19,8 +18,6 @@ use Swaggest\ShopwareSdk\Entity\ShippingMethodPrice\ShippingMethodPriceCollectio
 
 final class RuleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected int $priority;

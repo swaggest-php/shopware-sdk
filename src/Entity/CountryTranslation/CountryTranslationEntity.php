@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CountryTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CountryTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?array $customFields;

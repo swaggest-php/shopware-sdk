@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\AppCmsBlockTranslation;
 
 use Swaggest\ShopwareSdk\Entity\AppCmsBlock\AppCmsBlockEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class AppCmsBlockTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $label;
 
     protected string $appCmsBlockId;

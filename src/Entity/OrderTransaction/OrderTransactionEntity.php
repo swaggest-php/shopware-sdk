@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\OrderTransaction;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 
 final class OrderTransactionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $orderId;
 
     protected ?string $orderVersionId;

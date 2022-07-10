@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelAnalytics;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelAnalyticsEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $trackingId;
 
     protected ?bool $active;

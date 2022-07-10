@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\WebhookEventLog;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 ;
 
 final class WebhookEventLogEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $appName;
 
     protected string $webhookName;

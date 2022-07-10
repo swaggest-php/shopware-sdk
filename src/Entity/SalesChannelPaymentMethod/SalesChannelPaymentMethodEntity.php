@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelPaymentMethod;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelPaymentMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $salesChannelId;
 
     protected string $paymentMethodId;

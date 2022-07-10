@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NumberRange;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NumberRangeSalesChannel\NumberRangeSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\NumberRangeState\NumberRangeStateEntity;
 use Swaggest\ShopwareSdk\Entity\NumberRangeTranslation\NumberRangeTranslationCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\NumberRangeType\NumberRangeTypeEntity;
 
 final class NumberRangeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $typeId;
 
     protected bool $global;
@@ -35,7 +32,7 @@ final class NumberRangeEntity extends Entity
 
     protected ?NumberRangeStateEntity $state;
 
-    protected NumberRangeTranslationCollection $translations;
+    protected ?NumberRangeTranslationCollection $translations;
 
     public function getTypeId(): string
     {
@@ -137,12 +134,12 @@ final class NumberRangeEntity extends Entity
         $this->state = $state;
     }
 
-    public function getTranslations(): NumberRangeTranslationCollection
+    public function getTranslations(): ?NumberRangeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(NumberRangeTranslationCollection $translations): void
+    public function setTranslations(?NumberRangeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

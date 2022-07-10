@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\FlowSequence;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Flow\FlowEntity;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class FlowSequenceEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $flowId;
 
     protected ?string $ruleId;

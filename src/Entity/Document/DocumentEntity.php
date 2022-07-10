@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\Document;
 
 use Swaggest\ShopwareSdk\Entity\DocumentType\DocumentTypeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 
 final class DocumentEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $documentTypeId;
 
     protected string $fileType;

@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductSorting;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductSortingTranslation\ProductSortingTranslationCollection;
 
 final class ProductSortingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?bool $locked;
 
     protected string $key;
@@ -24,7 +21,7 @@ final class ProductSortingEntity extends Entity
 
     protected string $label;
 
-    protected ProductSortingTranslationCollection $translations;
+    protected ?ProductSortingTranslationCollection $translations;
 
     public function getLocked(): ?bool
     {
@@ -86,12 +83,12 @@ final class ProductSortingEntity extends Entity
         $this->label = $label;
     }
 
-    public function getTranslations(): ProductSortingTranslationCollection
+    public function getTranslations(): ?ProductSortingTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductSortingTranslationCollection $translations): void
+    public function setTranslations(?ProductSortingTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\LandingPage;
 
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPageTranslation\LandingPageTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\SeoUrl\SeoUrlCollection;
@@ -14,8 +13,6 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class LandingPageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?bool $active;
 
     protected string $name;
@@ -32,7 +29,7 @@ final class LandingPageEntity extends Entity
 
     protected string $url;
 
-    protected LandingPageTranslationCollection $translations;
+    protected ?LandingPageTranslationCollection $translations;
 
     protected ?TagCollection $tags;
 
@@ -126,12 +123,12 @@ final class LandingPageEntity extends Entity
         $this->url = $url;
     }
 
-    public function getTranslations(): LandingPageTranslationCollection
+    public function getTranslations(): ?LandingPageTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(LandingPageTranslationCollection $translations): void
+    public function setTranslations(?LandingPageTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

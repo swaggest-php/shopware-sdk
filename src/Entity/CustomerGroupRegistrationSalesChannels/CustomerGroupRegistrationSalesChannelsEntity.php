@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerGroupRegistrationSalesChannels;
 
 use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class CustomerGroupRegistrationSalesChannelsEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $customerGroupId;
 
     protected string $salesChannelId;

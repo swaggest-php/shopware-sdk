@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Flow;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\FlowSequence\FlowSequenceCollection;
 
 final class FlowEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $eventName;

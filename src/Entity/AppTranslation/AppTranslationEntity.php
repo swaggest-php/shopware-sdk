@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\AppTranslation;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class AppTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $label;
 
     protected ?string $description;

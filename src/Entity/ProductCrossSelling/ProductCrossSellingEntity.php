@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductCrossSelling;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSellingAssignedProducts\ProductCrossSellingAssignedProductsCollection;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSellingTranslation\ProductCrossSellingTranslationCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\ProductStream\ProductStreamEntity;
 
 final class ProductCrossSellingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected int $position;
@@ -41,7 +38,7 @@ final class ProductCrossSellingEntity extends Entity
 
     protected ?ProductCrossSellingAssignedProductsCollection $assignedProducts;
 
-    protected ProductCrossSellingTranslationCollection $translations;
+    protected ?ProductCrossSellingTranslationCollection $translations;
 
     public function getName(): string
     {
@@ -173,12 +170,12 @@ final class ProductCrossSellingEntity extends Entity
         $this->assignedProducts = $assignedProducts;
     }
 
-    public function getTranslations(): ProductCrossSellingTranslationCollection
+    public function getTranslations(): ?ProductCrossSellingTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductCrossSellingTranslationCollection $translations): void
+    public function setTranslations(?ProductCrossSellingTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

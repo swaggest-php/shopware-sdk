@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NumberRangeType;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NumberRange\NumberRangeCollection;
 use Swaggest\ShopwareSdk\Entity\NumberRangeSalesChannel\NumberRangeSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\NumberRangeTypeTranslation\NumberRangeTypeTranslationCollection;
 
 final class NumberRangeTypeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $technicalName;
 
     protected string $typeName;
@@ -26,7 +23,7 @@ final class NumberRangeTypeEntity extends Entity
 
     protected ?NumberRangeSalesChannelCollection $numberRangeSalesChannels;
 
-    protected NumberRangeTypeTranslationCollection $translations;
+    protected ?NumberRangeTypeTranslationCollection $translations;
 
     public function getTechnicalName(): ?string
     {
@@ -88,12 +85,12 @@ final class NumberRangeTypeEntity extends Entity
         $this->numberRangeSalesChannels = $numberRangeSalesChannels;
     }
 
-    public function getTranslations(): NumberRangeTypeTranslationCollection
+    public function getTranslations(): ?NumberRangeTypeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(NumberRangeTypeTranslationCollection $translations): void
+    public function setTranslations(?NumberRangeTypeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

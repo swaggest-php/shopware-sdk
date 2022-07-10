@@ -8,13 +8,10 @@ use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\CustomField\CustomFieldCollection;
 use Swaggest\ShopwareSdk\Entity\CustomFieldSetRelation\CustomFieldSetRelationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 
 final class CustomFieldSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?array $config;

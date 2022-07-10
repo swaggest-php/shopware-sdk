@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\AclRole;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationCollection;
 use Swaggest\ShopwareSdk\Entity\User\UserCollection;
 
 final class AclRoleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $description;

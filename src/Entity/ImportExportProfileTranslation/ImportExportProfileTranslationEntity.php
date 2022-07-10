@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ImportExportProfileTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfile\ImportExportProfileEntity;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class ImportExportProfileTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $label;
 
     protected string $importExportProfileId;

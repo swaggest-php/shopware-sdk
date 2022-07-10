@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Salutation;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\CustomerAddress\CustomerAddressCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NewsletterRecipient\NewsletterRecipientCollection;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressCollection;
 use Swaggest\ShopwareSdk\Entity\OrderCustomer\OrderCustomerCollection;
@@ -15,8 +14,6 @@ use Swaggest\ShopwareSdk\Entity\SalutationTranslation\SalutationTranslationColle
 
 final class SalutationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $salutationKey;
 
     protected string $displayName;
@@ -25,7 +22,7 @@ final class SalutationEntity extends Entity
 
     protected ?array $customFields;
 
-    protected SalutationTranslationCollection $translations;
+    protected ?SalutationTranslationCollection $translations;
 
     protected ?CustomerCollection $customers;
 
@@ -77,12 +74,12 @@ final class SalutationEntity extends Entity
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): SalutationTranslationCollection
+    public function getTranslations(): ?SalutationTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(SalutationTranslationCollection $translations): void
+    public function setTranslations(?SalutationTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

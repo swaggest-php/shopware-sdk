@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\DeliveryTimeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\DeliveryTime\DeliveryTimeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class DeliveryTimeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?array $customFields;

@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PromotionIndividualCode;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Promotion\PromotionEntity;
 
 final class PromotionIndividualCodeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $promotionId;
 
     protected string $code;

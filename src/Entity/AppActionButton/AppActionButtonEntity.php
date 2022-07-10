@@ -7,12 +7,9 @@ namespace Swaggest\ShopwareSdk\Entity\AppActionButton;
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\AppActionButtonTranslation\AppActionButtonTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class AppActionButtonEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $entity;
 
     protected string $view;
@@ -25,7 +22,7 @@ final class AppActionButtonEntity extends Entity
 
     protected string $label;
 
-    protected AppActionButtonTranslationCollection $translations;
+    protected ?AppActionButtonTranslationCollection $translations;
 
     protected string $appId;
 
@@ -91,12 +88,12 @@ final class AppActionButtonEntity extends Entity
         $this->label = $label;
     }
 
-    public function getTranslations(): AppActionButtonTranslationCollection
+    public function getTranslations(): ?AppActionButtonTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(AppActionButtonTranslationCollection $translations): void
+    public function setTranslations(?AppActionButtonTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

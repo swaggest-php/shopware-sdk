@@ -7,15 +7,12 @@ namespace Swaggest\ShopwareSdk\Entity\OrderAddress;
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\CountryState\CountryStateEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class OrderAddressEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $countryId;
 
     protected ?string $countryStateId;

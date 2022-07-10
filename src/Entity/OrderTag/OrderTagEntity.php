@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\OrderTag;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class OrderTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $orderId;
 
     protected ?string $orderVersionId;

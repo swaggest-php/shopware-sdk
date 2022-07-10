@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaThumbnail;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class MediaThumbnailEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mediaId;
 
     protected int $width;

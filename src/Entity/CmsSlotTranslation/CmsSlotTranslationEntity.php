@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\CmsSlotTranslation;
 
 use Swaggest\ShopwareSdk\Entity\CmsSlot\CmsSlotEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CmsSlotTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?array $config;
 
     protected ?array $customFields;

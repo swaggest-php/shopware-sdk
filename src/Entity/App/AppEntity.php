@@ -12,15 +12,12 @@ use Swaggest\ShopwareSdk\Entity\AppTemplate\AppTemplateCollection;
 use Swaggest\ShopwareSdk\Entity\AppTranslation\AppTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationEntity;
 use Swaggest\ShopwareSdk\Entity\Script\ScriptCollection;
 use Swaggest\ShopwareSdk\Entity\Webhook\WebhookCollection;
 
 final class AppEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $path;
@@ -51,7 +48,7 @@ final class AppEntity extends Entity
 
     protected ?array $cookies;
 
-    protected AppTranslationCollection $translations;
+    protected ?AppTranslationCollection $translations;
 
     protected string $label;
 
@@ -233,12 +230,12 @@ final class AppEntity extends Entity
         $this->cookies = $cookies;
     }
 
-    public function getTranslations(): AppTranslationCollection
+    public function getTranslations(): ?AppTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(AppTranslationCollection $translations): void
+    public function setTranslations(?AppTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

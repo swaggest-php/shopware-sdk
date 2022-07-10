@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Version;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\VersionCommit\VersionCommitCollection;
 
 final class VersionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?VersionCommitCollection $commits;

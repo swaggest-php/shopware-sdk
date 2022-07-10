@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\Webhook;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class WebhookEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $eventName;

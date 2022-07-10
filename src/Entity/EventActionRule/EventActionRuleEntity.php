@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\EventActionRule;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\EventAction\EventActionEntity;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class EventActionRuleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $eventActionId;
 
     protected string $ruleId;
