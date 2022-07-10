@@ -29,7 +29,7 @@ final class ProductVisibilityDefinition extends AbstractEntityDefinition
         return ProductVisibilityEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required(), new PrimaryKey()),

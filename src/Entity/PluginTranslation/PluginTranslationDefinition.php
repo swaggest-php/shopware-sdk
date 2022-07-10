@@ -30,7 +30,7 @@ final class PluginTranslationDefinition extends AbstractEntityDefinition
         return PluginTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('label', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),

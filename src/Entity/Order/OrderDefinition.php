@@ -32,7 +32,7 @@ final class OrderDefinition extends AbstractEntityDefinition
         return OrderEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),

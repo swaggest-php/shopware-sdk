@@ -29,7 +29,7 @@ final class EventActionRuleDefinition extends AbstractEntityDefinition
         return EventActionRuleEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('eventActionId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

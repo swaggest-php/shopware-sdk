@@ -30,7 +30,7 @@ final class StateMachineStateEntity extends Entity
 
     protected ?StateMachineTransitionCollection $toStateMachineTransitions;
 
-    protected StateMachineStateTranslationCollection $translations;
+    protected ?StateMachineStateTranslationCollection $translations;
 
     protected ?OrderTransactionCollection $orderTransactions;
 
@@ -104,12 +104,12 @@ final class StateMachineStateEntity extends Entity
         $this->toStateMachineTransitions = $toStateMachineTransitions;
     }
 
-    public function getTranslations(): StateMachineStateTranslationCollection
+    public function getTranslations(): ?StateMachineStateTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(StateMachineStateTranslationCollection $translations): void
+    public function setTranslations(?StateMachineStateTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

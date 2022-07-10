@@ -29,7 +29,7 @@ final class ProductSortingTranslationDefinition extends AbstractEntityDefinition
         return ProductSortingTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('label', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

@@ -30,7 +30,7 @@ final class AppTranslationDefinition extends AbstractEntityDefinition
         return AppTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('label', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),

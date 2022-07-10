@@ -29,7 +29,7 @@ final class ThemeTranslationDefinition extends AbstractEntityDefinition
         return ThemeTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('description', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

@@ -29,7 +29,7 @@ final class CurrencyTranslationDefinition extends AbstractEntityDefinition
         return CurrencyTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('shortName', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

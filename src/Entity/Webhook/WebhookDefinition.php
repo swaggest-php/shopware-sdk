@@ -30,7 +30,7 @@ final class WebhookDefinition extends AbstractEntityDefinition
         return WebhookEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

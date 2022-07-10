@@ -29,7 +29,7 @@ final class TaxRuleTypeTranslationDefinition extends AbstractEntityDefinition
         return TaxRuleTypeTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('typeName', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),

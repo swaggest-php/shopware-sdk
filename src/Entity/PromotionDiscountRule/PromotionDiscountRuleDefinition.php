@@ -29,7 +29,7 @@ final class PromotionDiscountRuleDefinition extends AbstractEntityDefinition
         return PromotionDiscountRuleEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('discountId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

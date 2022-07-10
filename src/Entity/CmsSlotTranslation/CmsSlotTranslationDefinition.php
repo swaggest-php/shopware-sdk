@@ -29,7 +29,7 @@ final class CmsSlotTranslationDefinition extends AbstractEntityDefinition
         return CmsSlotTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('config', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

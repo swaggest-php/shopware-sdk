@@ -29,7 +29,7 @@ final class NumberRangeTypeTranslationDefinition extends AbstractEntityDefinitio
         return NumberRangeTypeTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('typeName', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),

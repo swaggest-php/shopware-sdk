@@ -29,7 +29,7 @@ final class PropertyGroupTranslationDefinition extends AbstractEntityDefinition
         return PropertyGroupTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('name', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

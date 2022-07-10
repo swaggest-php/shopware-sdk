@@ -30,7 +30,7 @@ final class MailTemplateTranslationDefinition extends AbstractEntityDefinition
         return MailTemplateTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('senderName', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

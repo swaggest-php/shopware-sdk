@@ -29,7 +29,7 @@ final class StateMachineTranslationDefinition extends AbstractEntityDefinition
         return StateMachineTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('name', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),

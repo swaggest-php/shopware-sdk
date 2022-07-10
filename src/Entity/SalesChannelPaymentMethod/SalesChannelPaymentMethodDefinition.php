@@ -29,7 +29,7 @@ final class SalesChannelPaymentMethodDefinition extends AbstractEntityDefinition
         return SalesChannelPaymentMethodEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('salesChannelId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

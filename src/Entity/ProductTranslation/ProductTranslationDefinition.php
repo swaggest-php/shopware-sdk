@@ -30,7 +30,7 @@ final class ProductTranslationDefinition extends AbstractEntityDefinition
         return ProductTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('metaDescription', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

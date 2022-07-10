@@ -29,7 +29,7 @@ final class PromotionSetgroupRuleDefinition extends AbstractEntityDefinition
         return PromotionSetgroupRuleEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('setgroupId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

@@ -29,7 +29,7 @@ final class ThemeSalesChannelDefinition extends AbstractEntityDefinition
         return ThemeSalesChannelEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('salesChannelId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

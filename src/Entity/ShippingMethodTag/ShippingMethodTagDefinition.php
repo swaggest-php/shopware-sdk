@@ -29,7 +29,7 @@ final class ShippingMethodTagDefinition extends AbstractEntityDefinition
         return ShippingMethodTagEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('shippingMethodId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

@@ -29,7 +29,7 @@ final class IntegrationRoleDefinition extends AbstractEntityDefinition
         return IntegrationRoleEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('integrationId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

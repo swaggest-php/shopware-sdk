@@ -29,7 +29,7 @@ final class CategoryTagDefinition extends AbstractEntityDefinition
         return CategoryTagEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('categoryId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

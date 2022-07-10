@@ -30,7 +30,7 @@ final class PromotionTranslationDefinition extends AbstractEntityDefinition
         return PromotionTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('name', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required(), new SearchRanking(500.000000)),

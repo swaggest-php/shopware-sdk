@@ -29,7 +29,7 @@ final class LandingPageSalesChannelDefinition extends AbstractEntityDefinition
         return LandingPageSalesChannelEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('landingPageId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

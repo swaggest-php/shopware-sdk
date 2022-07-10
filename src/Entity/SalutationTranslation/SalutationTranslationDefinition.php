@@ -29,7 +29,7 @@ final class SalutationTranslationDefinition extends AbstractEntityDefinition
         return SalutationTranslationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('displayName', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

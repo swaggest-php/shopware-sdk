@@ -29,7 +29,7 @@ final class PromotionPersonaCustomerDefinition extends AbstractEntityDefinition
         return PromotionPersonaCustomerEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('promotionId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

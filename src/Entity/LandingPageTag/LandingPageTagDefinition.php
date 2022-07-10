@@ -29,7 +29,7 @@ final class LandingPageTagDefinition extends AbstractEntityDefinition
         return LandingPageTagEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('landingPageId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

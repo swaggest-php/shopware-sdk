@@ -29,7 +29,7 @@ final class MediaFolderConfigurationMediaThumbnailSizeDefinition extends Abstrac
         return MediaFolderConfigurationMediaThumbnailSizeEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('mediaFolderConfigurationId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

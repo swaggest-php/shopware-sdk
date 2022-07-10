@@ -29,7 +29,7 @@ final class EventActionSalesChannelDefinition extends AbstractEntityDefinition
         return EventActionSalesChannelEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('eventActionId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),
