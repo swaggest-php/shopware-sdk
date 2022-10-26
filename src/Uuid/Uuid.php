@@ -110,11 +110,7 @@ class Uuid
 
     public static function isValid(string $id): bool
     {
-        return !(!preg_match('/' . self::VALID_PATTERN . '/', $id))
-             
-        
-
-         ;
+        return !(!preg_match('/' . self::VALID_PATTERN . '/', $id));
     }
 
     private static function applyVersion(string $timeHi, int $version): int
