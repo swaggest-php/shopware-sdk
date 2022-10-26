@@ -116,7 +116,7 @@ EOF;
 
     private function generateProperty(AbstractField $field, AbstractEntityDefinition $definition): ?array
     {
-        $isVersionField = \str_contains(\strtolower($field->getName()), 'versionid');
+        $isVersionField = \str_contains(\mb_strtolower($field->getName()), 'versionid');
         $isTranslation = 'translations' === $field->getName();
 
         $nullable = '?';

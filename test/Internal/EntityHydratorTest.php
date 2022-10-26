@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Test\Internal;
 
 use PHPUnit\Framework\TestCase;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Category\CategoryDefinition;
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\EntityCollection;
-use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\Product\ProductDefinition;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
@@ -141,11 +141,11 @@ final class EntityHydratorTest extends TestCase
             '666b8c649821412992a442295c7358d3',
             '831a6f25581c4f00a49a18dfc3d5345e',
             'a107617fa9a8457e81cf1c2f8f471464',
-            'c6d0de3623114430bab857f74d86ee31'
+            'c6d0de3623114430bab857f74d86ee31',
         ]);
         $product->setTagIds(null);
         $product->setCategoryIds([
-            '2645c66961ad457aa6c46759853fa610'
+            '2645c66961ad457aa6c46759853fa610',
         ]);
         $product->setChildCount(0);
         $product->setCustomFieldSetSelectionActive(null);
@@ -177,8 +177,8 @@ final class EntityHydratorTest extends TestCase
                     'listPrice' => null,
                     'percentage' => null,
                     'extensions' => [
-                    ]
-                ]
+                    ],
+                ],
             ],
             'extensions' => [
             ],
@@ -248,7 +248,7 @@ final class EntityHydratorTest extends TestCase
         yield [
             $dataset,
             new ProductDefinition(),
-            $productCollection
+            $productCollection,
         ];
     }
 
@@ -265,7 +265,7 @@ final class EntityHydratorTest extends TestCase
         yield [
             $dataset,
             new CategoryDefinition(),
-            $categoryCollection
+            $categoryCollection,
         ];
     }
 

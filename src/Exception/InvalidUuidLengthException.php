@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Exception;
 
@@ -23,7 +25,8 @@ class InvalidUuidLengthException extends \Exception
     {
         parent::__construct(\sprintf(
             'UUID has a invalid length. 16 bytes expected, %s given. Hexadecimal representation: %s',
-            $length, $hex
+            $length,
+            $hex
         ));
     }
 }

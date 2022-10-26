@@ -6,5 +6,4 @@ namespace Swaggest\ShopwareSdk\Exception;
 
 final class EntityDefinitionProcessorException extends \Exception
 {
-
 }
