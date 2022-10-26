@@ -9,8 +9,19 @@ use Swaggest\ShopwareSdk\Code\Entity\CollectionGenerator;
 use Swaggest\ShopwareSdk\Code\Entity\EntityGenerator;
 use Swaggest\ShopwareSdk\Code\Entity\TypeHintResolver;
 use Swaggest\ShopwareSdk\Code\EventSubscriber\CodeEventSubscriber;
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Entity\Category\CategoryDefinition;
+use Swaggest\ShopwareSdk\Entity\Product\ProductDefinition;
+use Swaggest\ShopwareSdk\Entity\Product\ProductDefinitionAbstract;
+use Swaggest\ShopwareSdk\Entity\Salutation\SalutationDefinition;
+use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateDefinition;
+use Swaggest\ShopwareSdk\Entity\StateMachineStateTranslation\StateMachineStateTranslationDefinition;
 use Swaggest\ShopwareSdk\Exception\SchemaException;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\CategoryDefinitionProcessor;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\EntityDefinitionProcessorCollection;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\ProductDefinitionProcessor;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\SalutationDefinitionProcessor;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\StateMachineStateDefinitionProcessor;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -36,7 +47,14 @@ final class GenerateEntitiesCommand extends Command
         $eventDispatcher = new EventDispatcher();
 
         $typeHintResolver = new TypeHintResolver($eventDispatcher);
-        $entityGenerator = new EntityGenerator($typeHintResolver);
+
+        /**
+         * If need be, add entity definition processors.
+         */
+        $processors = new EntityDefinitionProcessorCollection([
+        ]);
+
+        $entityGenerator = new EntityGenerator($typeHintResolver, $processors);
 
         $eventDispatcher->addSubscriber(new CodeEventSubscriber($entityGenerator));
 
@@ -52,7 +70,7 @@ final class GenerateEntitiesCommand extends Command
                 \mkdir($dirName);
             }
 
-            /** @var EntityDefinitionInterface $definition */
+            /** @var AbstractEntityDefinition $definition */
             $definition = new $class();
             $generatedEntity = $entityGenerator->generateEntity($definition);
             $generatedCollection = $collectionGenerator->generateCollection($definition);

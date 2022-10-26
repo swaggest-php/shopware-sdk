@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Schema;
 
+use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
 use Swaggest\ShopwareSdk\Exception\AssociationException;
 
-final class Association
+/**
+ * @internal
+ */
+final class AssociationField extends AbstractField
 {
-    use FlagTrait;
+    use CaseConverterTrait;
 
     public const ONE_TO_ONE = 'one_to_one';
 
@@ -17,11 +21,9 @@ final class Association
     public const MANY_TO_ONE = 'many_to_one';
 
     public const MANY_TO_MANY = 'many_to_many';
-
-    private $flags = [];
     
     public function __construct(
-        private string $name,
+        string $name,
         private string $relationType,
         private string $entity,
         private string $localField,
@@ -31,6 +33,8 @@ final class Association
         private ?string $reference,
         private ?string $local,
     ) {
+        parent::__construct($name);
+
         if (!\in_array($this->relationType, [self::ONE_TO_ONE, self::ONE_TO_MANY, self::MANY_TO_ONE, self::MANY_TO_MANY], true)) {
             throw new AssociationException('Unknown relation type: ' . $this->relationType);
         }
@@ -54,11 +58,6 @@ final class Association
         }
     }
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
     public function getRelationType(): string
     {
         return $this->relationType;
@@ -77,6 +76,13 @@ final class Association
     public function getReferenceField(): string
     {
         return $this->referenceField;
+    }
+
+    public function getReferenceDefinitionClass(): string
+    {
+        $entityClassName = $this->snakeToPascalCase($this->entity);
+
+        return \sprintf('Swaggest\\ShopwareSdk\\Entity\\%s\\%sDefinition', $entityClassName, $entityClassName);
     }
 
     public function getPrimary(): ?string

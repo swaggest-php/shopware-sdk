@@ -6,9 +6,10 @@ namespace Swaggest\ShopwareSdk\Code\Entity;
 
 use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
 use Swaggest\ShopwareSdk\Code\UseAwareCodeGeneratorInterface;
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
-use Swaggest\ShopwareSdk\Schema\Field;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AbstractField;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\EntityDefinitionProcessorCollection;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\EntityDefinitionProcessorInterface;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
 final class EntityGenerator implements UseAwareCodeGeneratorInterface
@@ -30,8 +31,6 @@ use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class #entity#Entity extends Entity
 {
-    use EntityIdTrait;
-
     #properties#
 
 #functions#
@@ -55,21 +54,25 @@ EOF;
     }
 EOF;
 
-    public function __construct(private TypeHintResolver $typeHintResolver)
-    {
+    public function __construct(
+        private TypeHintResolver $typeHintResolver,
+        private EntityDefinitionProcessorCollection $entityDefinitionProcessorCollection
+    ) {
     }
 
-    public function generateEntity(EntityDefinitionInterface $definition): string
+    public function generateEntity(AbstractEntityDefinition $entityDefinition): string
     {
+        $this->processEntityDefinition($entityDefinition);
+
         $properties = [];
 
-        /** @var Field|Association $field */
-        foreach ($definition->defineFields() as $field) {
+        /** @var AbstractField $field */
+        foreach ($entityDefinition->getFields() as $field) {
             if ($this->shouldSkip($field->getName())) {
                 continue;
             }
 
-            $property = $this->generateProperty($field);
+            $property = $this->generateProperty($field, $entityDefinition);
 
             if (!$property) {
                 continue;
@@ -81,7 +84,7 @@ EOF;
         $functions = \array_column($properties, 'functions');
         $properties = \array_column($properties, 'property');
 
-        $entity = $definition->getEntityName();
+        $entity = $entityDefinition->getEntityName();
         $entity = \explode('_', $entity);
         $entity = \array_map('ucfirst', $entity);
         $entity = \implode('', $entity);
@@ -111,18 +114,18 @@ EOF;
         $this->uses[] = $class;
     }
 
-    private function generateProperty(Field|Association $field): ?array
+    private function generateProperty(AbstractField $field, AbstractEntityDefinition $definition): ?array
     {
-        $isBoolean = Field::class === $field::class && 'boolean' === $field->getType();
-        $isJson = Field::class === $field::class && \in_array($field->getType(), ['json_list', 'json_object'], true);
+        $isVersionField = \str_contains(\strtolower($field->getName()), 'versionid');
+        $isTranslation = 'translations' === $field->getName();
 
         $nullable = '?';
 
-        if ($field->hasFlag(Required::class) || $isBoolean || $isJson) {
+        if ($field->hasFlag(Required::class) && !$isVersionField && !$isTranslation) {
             $nullable = '';
         }
 
-        $type = $this->typeHintResolver->resolve($field);
+        $type = $this->typeHintResolver->resolve($field, $definition);
 
         $template = \str_replace(
             ['#property#', '#type#', '#nullable#'],
@@ -145,5 +148,17 @@ EOF;
     private function shouldSkip(string $fieldName): bool
     {
         return \in_array($fieldName, ['id', 'createdAt', 'updatedAt', 'translated', 'versionId'], true);
+    }
+
+    private function processEntityDefinition(AbstractEntityDefinition $entityDefinition): void
+    {
+        /** @var EntityDefinitionProcessorInterface|null $processor */
+        $processor = $this->entityDefinitionProcessorCollection->get($entityDefinition::class);
+
+        if ($processor === null) {
+            return;
+        }
+
+        $processor->process($entityDefinition);
     }
 }

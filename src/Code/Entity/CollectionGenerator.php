@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Code\Entity;
 
 use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 
 final class CollectionGenerator
 {
@@ -39,7 +39,7 @@ final class #entity#Collection extends EntityCollection
 
 EOF;
 
-    public function generateCollection(EntityDefinitionInterface $definition): string
+    public function generateCollection(AbstractEntityDefinition $definition): string
     {
         $entityClass = $definition->getEntityClass();
         $entityClass = explode('\\', $entityClass);

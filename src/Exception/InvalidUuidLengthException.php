@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace Swaggest\ShopwareSdk\Entity;
+namespace Swaggest\ShopwareSdk\Exception;
 
 /**
  * Copyright 2019 shopware AG
@@ -19,17 +17,13 @@ namespace Swaggest\ShopwareSdk\Entity;
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-trait EntityIdTrait
+class InvalidUuidLengthException extends \Exception
 {
-    protected string $id;
-
-    public function getId(): string
+    public function __construct(int $length, string $hex)
     {
-        return $this->id;
-    }
-
-    public function setId(string $id): void
-    {
-        $this->id = $id;
+        parent::__construct(\sprintf(
+            'UUID has a invalid length. 16 bytes expected, %s given. Hexadecimal representation: %s',
+            $length, $hex
+        ));
     }
 }
