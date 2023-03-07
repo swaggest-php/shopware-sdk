@@ -21,7 +21,7 @@
         "price": [
           {
             "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
-            "net": 357.15966386554624,
+            "net": 357.15966386555,
             "gross": 425.02,
             "linked": true,
             "listPrice": null,
@@ -53,7 +53,7 @@
         "purchasePrices": [
           {
             "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
-            "net": 478.1932773109244,
+            "net": 478.19327731092,
             "gross": 569.05,
             "linked": true,
             "listPrice": null,
@@ -124,7 +124,7 @@
           "price": [
             {
               "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
-              "net": 357.15966386554624,
+              "net": 357.15966386555,
               "gross": 425.02,
               "linked": true,
               "listPrice": null,
