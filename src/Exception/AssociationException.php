@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Exception;
 
-use Exception;
-
-final class AssociationException extends Exception
+final class AssociationException extends \Exception
 {
 }

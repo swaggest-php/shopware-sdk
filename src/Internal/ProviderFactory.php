@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Internal;
 
 use League\OAuth2\Client\Provider\GenericProvider;
 use Swaggest\ShopwareSdk\Context;
-use function rtrim;
 
 final class ProviderFactory
 {
@@ -18,7 +17,7 @@ final class ProviderFactory
 
     public function create(Context $context): GenericProvider
     {
-        $baseUrl = rtrim($context->getBaseUrl(), '/');
+        $baseUrl = \rtrim($context->getBaseUrl(), '/');
 
         return new GenericProvider([
             'clientId' => $context->getClientId(),

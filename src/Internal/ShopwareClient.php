@@ -10,9 +10,6 @@ use League\OAuth2\Client\Token\AccessTokenInterface;
 use Psr\Http\Message\ResponseInterface;
 use Swaggest\ShopwareSdk\Context;
 use Swaggest\ShopwareSdk\Exception\ShopwareClientException;
-use function json_encode;
-use function ltrim;
-use function rtrim;
 
 /**
  * @internal
@@ -34,7 +31,7 @@ final class ShopwareClient implements ShopwareClientInterface
 
     public function sendRequest(string $method, string $endpoint, array $data, Context $context): ResponseInterface
     {
-        $url = rtrim($context->getBaseUrl(), '/') . '/api/' . ltrim($endpoint, '/');
+        $url = \rtrim($context->getBaseUrl(), '/') . '/api/' . \ltrim($endpoint, '/');
 
         try {
             if (null === $this->accessToken || $this->accessToken->hasExpired()) {
@@ -46,7 +43,7 @@ final class ShopwareClient implements ShopwareClientInterface
 
         $options = [
             'headers' => $this->headerProvider->getHeaders($context),
-            'body' => json_encode($data),
+            'body' => \json_encode($data),
         ];
 
         $request = $this->provider->getAuthenticatedRequest($method, $url, $this->accessToken, $options);
