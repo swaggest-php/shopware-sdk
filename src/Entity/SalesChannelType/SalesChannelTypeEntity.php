@@ -5,19 +5,16 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelType;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannelTypeTranslation\SalesChannelTypeTranslationCollection;
 
 final class SalesChannelTypeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $coverUrl;
 
     protected ?string $iconName;
 
-    protected array $screenshotUrls;
+    protected ?array $screenshotUrls;
 
     protected string $name;
 
@@ -27,9 +24,9 @@ final class SalesChannelTypeEntity extends Entity
 
     protected ?string $descriptionLong;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected SalesChannelTypeTranslationCollection $translations;
+    protected ?SalesChannelTypeTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannels;
 
@@ -53,12 +50,12 @@ final class SalesChannelTypeEntity extends Entity
         $this->iconName = $iconName;
     }
 
-    public function getScreenshotUrls(): array
+    public function getScreenshotUrls(): ?array
     {
         return $this->screenshotUrls;
     }
 
-    public function setScreenshotUrls(array $screenshotUrls): void
+    public function setScreenshotUrls(?array $screenshotUrls): void
     {
         $this->screenshotUrls = $screenshotUrls;
     }
@@ -103,22 +100,22 @@ final class SalesChannelTypeEntity extends Entity
         $this->descriptionLong = $descriptionLong;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): SalesChannelTypeTranslationCollection
+    public function getTranslations(): ?SalesChannelTypeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(SalesChannelTypeTranslationCollection $translations): void
+    public function setTranslations(?SalesChannelTypeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\ShippingMethod;
 
 use Swaggest\ShopwareSdk\Entity\DeliveryTime\DeliveryTimeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
@@ -18,13 +17,11 @@ use Swaggest\ShopwareSdk\Entity\Tax\TaxEntity;
 
 final class ShippingMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $availabilityRuleId;
 
@@ -42,7 +39,7 @@ final class ShippingMethodEntity extends Entity
 
     protected ?string $trackingUrl;
 
-    protected ShippingMethodTranslationCollection $translations;
+    protected ?ShippingMethodTranslationCollection $translations;
 
     protected ?RuleEntity $availabilityRule;
 
@@ -70,22 +67,22 @@ final class ShippingMethodEntity extends Entity
         $this->name = $name;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -170,12 +167,12 @@ final class ShippingMethodEntity extends Entity
         $this->trackingUrl = $trackingUrl;
     }
 
-    public function getTranslations(): ShippingMethodTranslationCollection
+    public function getTranslations(): ?ShippingMethodTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ShippingMethodTranslationCollection $translations): void
+    public function setTranslations(?ShippingMethodTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

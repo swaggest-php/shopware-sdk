@@ -1,0 +1,1246 @@
+{
+  "data": [
+    {
+      "id": "14e7ef91382e465db25efff7e4bc8f41",
+      "type": "category",
+      "attributes": {
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "parentId": "c8505deca25f4ad592bde4520a45de06",
+        "parentVersionId": null,
+        "afterCategoryId": null,
+        "afterCategoryVersionId": null,
+        "mediaId": "9ad23a8ad11d448bb3e4c14f8d35667f",
+        "displayNestedProducts": true,
+        "autoIncrement": 2,
+        "breadcrumb": [
+          "Home",
+          "Shoes, Computers & Games"
+        ],
+        "level": 2,
+        "path": "|c8505deca25f4ad592bde4520a45de06|",
+        "childCount": 2,
+        "type": "page",
+        "productAssignmentType": "product",
+        "visible": true,
+        "active": true,
+        "name": "Shoes, Computers & Games",
+        "customFields": null,
+        "slotConfig": null,
+        "linkType": null,
+        "internalLink": null,
+        "externalLink": null,
+        "linkNewTab": null,
+        "description": "Natus corrupti reiciendis et id voluptas ea quo. Et nihil dolorem enim aut eos. Aut at voluptatem alias.",
+        "metaTitle": null,
+        "metaDescription": null,
+        "keywords": null,
+        "cmsPageId": "f854f69822ad485b99d42118fab95fb2",
+        "cmsPageVersionId": null,
+        "productStreamId": null,
+        "createdAt": "2022-02-17T18:36:06.290+00:00",
+        "updatedAt": null,
+        "translated": {
+          "breadcrumb": [
+            "Home",
+            "Shoes, Computers & Games"
+          ],
+          "name": "Shoes, Computers & Games",
+          "customFields": {},
+          "slotConfig": null,
+          "linkType": null,
+          "internalLink": null,
+          "externalLink": null,
+          "linkNewTab": null,
+          "description": "Natus corrupti reiciendis et id voluptas ea quo. Et nihil dolorem enim aut eos. Aut at voluptatem alias.",
+          "metaTitle": null,
+          "metaDescription": null,
+          "keywords": null
+        },
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41"
+      },
+      "relationships": {
+        "parent": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/parent"
+          }
+        },
+        "children": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/children"
+          }
+        },
+        "media": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/media"
+          }
+        },
+        "translations": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/translations"
+          }
+        },
+        "products": {
+          "data": [
+            {
+              "type": "product",
+              "id": "940161565c9942ae9d40f6d6e4c9a773"
+            },
+            {
+              "type": "product",
+              "id": "d665f80f9ec242aab0fe7df256624953"
+            },
+            {
+              "type": "product",
+              "id": "fbd955932fd9427c98f7ea03756b375a"
+            }
+          ],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/products"
+          }
+        },
+        "nestedProducts": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/nested-products"
+          }
+        },
+        "tags": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/tags"
+          }
+        },
+        "cmsPage": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/cms-page"
+          }
+        },
+        "productStream": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/product-stream"
+          }
+        },
+        "navigationSalesChannels": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/navigation-sales-channels"
+          }
+        },
+        "footerSalesChannels": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/footer-sales-channels"
+          }
+        },
+        "serviceSalesChannels": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/service-sales-channels"
+          }
+        },
+        "mainCategories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/main-categories"
+          }
+        },
+        "seoUrls": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/category\/14e7ef91382e465db25efff7e4bc8f41\/seo-urls"
+          }
+        }
+      },
+      "meta": null
+    }
+  ],
+  "included": [
+    {
+      "id": "ea37692d7cd244c3983ccb0250ee7834",
+      "type": "tax",
+      "attributes": {
+        "taxRate": 7.0,
+        "name": "Reduced rate",
+        "position": 2,
+        "customFields": null,
+        "createdAt": "2022-02-17T18:35:03.211+00:00",
+        "updatedAt": null,
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/tax\/ea37692d7cd244c3983ccb0250ee7834"
+      },
+      "relationships": {
+        "products": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ea37692d7cd244c3983ccb0250ee7834\/products"
+          }
+        },
+        "rules": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ea37692d7cd244c3983ccb0250ee7834\/rules"
+          }
+        },
+        "shippingMethods": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ea37692d7cd244c3983ccb0250ee7834\/shipping-methods"
+          }
+        }
+      },
+      "meta": null
+    },
+    {
+      "id": "940161565c9942ae9d40f6d6e4c9a773",
+      "type": "product",
+      "attributes": {
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "parentId": null,
+        "parentVersionId": null,
+        "manufacturerId": "94e19a4b3fd14ae3b2665d4be2400309",
+        "productManufacturerVersionId": null,
+        "unitId": null,
+        "taxId": "ea37692d7cd244c3983ccb0250ee7834",
+        "coverId": "9b58d598746845b0af0a74a5726ab3b0",
+        "productMediaVersionId": null,
+        "deliveryTimeId": null,
+        "featureSetId": null,
+        "canonicalProductId": null,
+        "cmsPageId": null,
+        "cmsPageVersionId": null,
+        "price": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 556.5327102803739,
+            "gross": 595.49,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "productNumber": "bc8e2706b7f24237990788548c487efb",
+        "stock": 36,
+        "restockTime": null,
+        "autoIncrement": 999,
+        "active": true,
+        "availableStock": 36,
+        "available": true,
+        "isCloseout": false,
+        "variation": [],
+        "displayGroup": "f7aa03f7782d4536836cb0cf3cf1ffeb",
+        "configuratorGroupConfig": null,
+        "mainVariantId": null,
+        "variantRestrictions": null,
+        "manufacturerNumber": null,
+        "ean": null,
+        "purchaseSteps": 1,
+        "maxPurchase": null,
+        "minPurchase": 1,
+        "purchaseUnit": null,
+        "referenceUnit": null,
+        "shippingFree": false,
+        "purchasePrices": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 507.27102803738313,
+            "gross": 542.78,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "markAsTopseller": null,
+        "weight": null,
+        "width": 375.0,
+        "height": 738.0,
+        "length": null,
+        "releaseDate": null,
+        "ratingAverage": null,
+        "categoryTree": [
+          "c8505deca25f4ad592bde4520a45de06",
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "propertyIds": [
+          "43c0b3f84bd04cc7ba39f502ef97d12f",
+          "8802819ce38f4fc2b2e4aefecd8eab83",
+          "b1d764a4e1e84155896a96f19171895a",
+          "b311f7e674f549c6ae675049c46bac34",
+          "b91ba1830c904b03bf1afae4f90d903b",
+          "eceaffe4843e44a898b4fe3d602d7373"
+        ],
+        "optionIds": null,
+        "streamIds": [
+          "666b8c649821412992a442295c7358d3"
+        ],
+        "tagIds": null,
+        "categoryIds": [
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "childCount": 0,
+        "customFieldSetSelectionActive": null,
+        "sales": 0,
+        "metaDescription": null,
+        "name": "Lightweight Wool WebTex",
+        "keywords": null,
+        "description": "Eveniet magnam vero reiciendis ut aliquam quo. Quia dolor ab sapiente exercitationem enim voluptas tempora. Repudiandae consectetur deserunt est alias sunt ducimus.",
+        "metaTitle": null,
+        "packUnit": null,
+        "packUnitPlural": null,
+        "customFields": {},
+        "slotConfig": null,
+        "customSearchKeywords": null,
+        "cheapestPrice": {
+          "hasRange": false,
+          "variantId": "940161565c9942ae9d40f6d6e4c9a773",
+          "parentId": "940161565c9942ae9d40f6d6e4c9a773",
+          "ruleId": null,
+          "purchase": null,
+          "reference": null,
+          "unitId": null,
+          "price": [
+            {
+              "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+              "net": 556.5327102803739,
+              "gross": 595.49,
+              "linked": true,
+              "listPrice": null,
+              "percentage": null,
+              "extensions": []
+            }
+          ],
+          "extensions": []
+        },
+        "createdAt": "2022-02-17T18:36:15.153+00:00",
+        "updatedAt": "2022-02-17T18:43:28.106+00:00",
+        "translated": {
+          "metaDescription": null,
+          "name": "Lightweight Wool WebTex",
+          "keywords": null,
+          "description": "Eveniet magnam vero reiciendis ut aliquam quo. Quia dolor ab sapiente exercitationem enim voluptas tempora. Repudiandae consectetur deserunt est alias sunt ducimus.",
+          "metaTitle": null,
+          "packUnit": null,
+          "packUnitPlural": null,
+          "customFields": {},
+          "slotConfig": null,
+          "customSearchKeywords": null
+        },
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773"
+      },
+      "relationships": {
+        "parent": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/parent"
+          }
+        },
+        "children": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/children"
+          }
+        },
+        "deliveryTime": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/delivery-time"
+          }
+        },
+        "tax": {
+          "data": {
+            "type": "tax",
+            "id": "ea37692d7cd244c3983ccb0250ee7834"
+          },
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/tax"
+          }
+        },
+        "manufacturer": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/manufacturer"
+          }
+        },
+        "unit": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/unit"
+          }
+        },
+        "cover": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/cover"
+          }
+        },
+        "featureSet": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/feature-set"
+          }
+        },
+        "cmsPage": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/cms-page"
+          }
+        },
+        "canonicalProduct": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/canonical-product"
+          }
+        },
+        "prices": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/prices"
+          }
+        },
+        "media": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/media"
+          }
+        },
+        "crossSellings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/cross-sellings"
+          }
+        },
+        "crossSellingAssignedProducts": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/cross-selling-assigned-products"
+          }
+        },
+        "configuratorSettings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/configurator-settings"
+          }
+        },
+        "visibilities": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/visibilities"
+          }
+        },
+        "searchKeywords": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/search-keywords"
+          }
+        },
+        "productReviews": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/product-reviews"
+          }
+        },
+        "mainCategories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/main-categories"
+          }
+        },
+        "seoUrls": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/seo-urls"
+          }
+        },
+        "orderLineItems": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/order-line-items"
+          }
+        },
+        "wishlists": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/wishlists"
+          }
+        },
+        "options": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/options"
+          }
+        },
+        "properties": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/properties"
+          }
+        },
+        "categories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/categories"
+          }
+        },
+        "streams": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/streams"
+          }
+        },
+        "categoriesRo": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/categories-ro"
+          }
+        },
+        "tags": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/tags"
+          }
+        },
+        "customFieldSets": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/custom-field-sets"
+          }
+        },
+        "translations": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/940161565c9942ae9d40f6d6e4c9a773\/translations"
+          }
+        }
+      },
+      "meta": null
+    },
+    {
+      "id": "d665f80f9ec242aab0fe7df256624953",
+      "type": "product",
+      "attributes": {
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "parentId": null,
+        "parentVersionId": null,
+        "manufacturerId": "4408e47999d242a6bcfcd7e42534d4e4",
+        "productManufacturerVersionId": null,
+        "unitId": null,
+        "taxId": "ea37692d7cd244c3983ccb0250ee7834",
+        "coverId": "f4ba55d6216c48339caa80bd4c0045cc",
+        "productMediaVersionId": null,
+        "deliveryTimeId": null,
+        "featureSetId": null,
+        "canonicalProductId": null,
+        "cmsPageId": null,
+        "cmsPageVersionId": null,
+        "price": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 205.73831775700933,
+            "gross": 220.14,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "productNumber": "6a9673a5fd014aebaa253af0f7b39745",
+        "stock": 13,
+        "restockTime": null,
+        "autoIncrement": 1021,
+        "active": true,
+        "availableStock": 13,
+        "available": true,
+        "isCloseout": false,
+        "variation": [],
+        "displayGroup": "717d16c0f16b6bf4cfa1e7d4361bb6a3",
+        "configuratorGroupConfig": null,
+        "mainVariantId": null,
+        "variantRestrictions": null,
+        "manufacturerNumber": null,
+        "ean": null,
+        "purchaseSteps": 1,
+        "maxPurchase": null,
+        "minPurchase": 1,
+        "purchaseUnit": null,
+        "referenceUnit": null,
+        "shippingFree": false,
+        "purchasePrices": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 934.3831775700934,
+            "gross": 999.79,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "markAsTopseller": null,
+        "weight": null,
+        "width": 474.0,
+        "height": 460.0,
+        "length": null,
+        "releaseDate": null,
+        "ratingAverage": null,
+        "categoryTree": [
+          "c8505deca25f4ad592bde4520a45de06",
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "propertyIds": [
+          "1f27955ec91a42dd90eec4d62d6c7037",
+          "31f37060b33e4ed48b9ade343f5df41d",
+          "390c103d39b641dea0a0333516c0db6b",
+          "69ca18d5a02c457fa723ceca69f5f842",
+          "74e5befaea014913896687380df7d2b6",
+          "a480fb2a19be406d9b6ae54718355a3f",
+          "b25b6705fae4492ea38090891770655f",
+          "e3a9b4ae8d8a45c7ae14fd5856f3252d",
+          "eb639409f1e346df88e572d1ab304954",
+          "eceaffe4843e44a898b4fe3d602d7373"
+        ],
+        "optionIds": null,
+        "streamIds": [
+          "48648160134a450d9c8dfc48ebe7e7a8",
+          "4e5ab8e26e4e465c92cfa4bb22bc5cc7",
+          "591a9a9ca5bd4170b5418403a78d100e",
+          "666b8c649821412992a442295c7358d3",
+          "831a6f25581c4f00a49a18dfc3d5345e",
+          "c6d0de3623114430bab857f74d86ee31"
+        ],
+        "tagIds": null,
+        "categoryIds": [
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "childCount": 0,
+        "customFieldSetSelectionActive": null,
+        "sales": 0,
+        "metaDescription": null,
+        "name": "Lightweight Linen Psychic Pizza",
+        "keywords": null,
+        "description": "Occaecati quia accusamus est dolorum fugiat natus dolor. Est dolores quam exercitationem non.",
+        "metaTitle": null,
+        "packUnit": null,
+        "packUnitPlural": null,
+        "customFields": {},
+        "slotConfig": null,
+        "customSearchKeywords": null,
+        "cheapestPrice": {
+          "hasRange": false,
+          "variantId": "d665f80f9ec242aab0fe7df256624953",
+          "parentId": "d665f80f9ec242aab0fe7df256624953",
+          "ruleId": null,
+          "purchase": null,
+          "reference": null,
+          "unitId": null,
+          "price": [
+            {
+              "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+              "net": 205.73831775700933,
+              "gross": 220.14,
+              "linked": true,
+              "listPrice": null,
+              "percentage": null,
+              "extensions": []
+            }
+          ],
+          "extensions": []
+        },
+        "createdAt": "2022-02-17T18:36:15.416+00:00",
+        "updatedAt": "2022-02-17T18:43:28.680+00:00",
+        "translated": {
+          "metaDescription": null,
+          "name": "Lightweight Linen Psychic Pizza",
+          "keywords": null,
+          "description": "Occaecati quia accusamus est dolorum fugiat natus dolor. Est dolores quam exercitationem non.",
+          "metaTitle": null,
+          "packUnit": null,
+          "packUnitPlural": null,
+          "customFields": {},
+          "slotConfig": null,
+          "customSearchKeywords": null
+        },
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953"
+      },
+      "relationships": {
+        "parent": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/parent"
+          }
+        },
+        "children": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/children"
+          }
+        },
+        "deliveryTime": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/delivery-time"
+          }
+        },
+        "tax": {
+          "data": {
+            "type": "tax",
+            "id": "ea37692d7cd244c3983ccb0250ee7834"
+          },
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/tax"
+          }
+        },
+        "manufacturer": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/manufacturer"
+          }
+        },
+        "unit": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/unit"
+          }
+        },
+        "cover": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/cover"
+          }
+        },
+        "featureSet": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/feature-set"
+          }
+        },
+        "cmsPage": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/cms-page"
+          }
+        },
+        "canonicalProduct": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/canonical-product"
+          }
+        },
+        "prices": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/prices"
+          }
+        },
+        "media": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/media"
+          }
+        },
+        "crossSellings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/cross-sellings"
+          }
+        },
+        "crossSellingAssignedProducts": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/cross-selling-assigned-products"
+          }
+        },
+        "configuratorSettings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/configurator-settings"
+          }
+        },
+        "visibilities": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/visibilities"
+          }
+        },
+        "searchKeywords": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/search-keywords"
+          }
+        },
+        "productReviews": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/product-reviews"
+          }
+        },
+        "mainCategories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/main-categories"
+          }
+        },
+        "seoUrls": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/seo-urls"
+          }
+        },
+        "orderLineItems": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/order-line-items"
+          }
+        },
+        "wishlists": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/wishlists"
+          }
+        },
+        "options": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/options"
+          }
+        },
+        "properties": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/properties"
+          }
+        },
+        "categories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/categories"
+          }
+        },
+        "streams": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/streams"
+          }
+        },
+        "categoriesRo": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/categories-ro"
+          }
+        },
+        "tags": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/tags"
+          }
+        },
+        "customFieldSets": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/custom-field-sets"
+          }
+        },
+        "translations": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/d665f80f9ec242aab0fe7df256624953\/translations"
+          }
+        }
+      },
+      "meta": null
+    },
+    {
+      "id": "ec39d6671d474a33aa0172ef78ce05eb",
+      "type": "tax",
+      "attributes": {
+        "taxRate": 0.0,
+        "name": "Reduced rate 2",
+        "position": 3,
+        "customFields": null,
+        "createdAt": "2022-02-17T18:35:14.919+00:00",
+        "updatedAt": null,
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/tax\/ec39d6671d474a33aa0172ef78ce05eb"
+      },
+      "relationships": {
+        "products": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ec39d6671d474a33aa0172ef78ce05eb\/products"
+          }
+        },
+        "rules": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ec39d6671d474a33aa0172ef78ce05eb\/rules"
+          }
+        },
+        "shippingMethods": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/ec39d6671d474a33aa0172ef78ce05eb\/shipping-methods"
+          }
+        }
+      },
+      "meta": null
+    },
+    {
+      "id": "fbd955932fd9427c98f7ea03756b375a",
+      "type": "product",
+      "attributes": {
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "parentId": null,
+        "parentVersionId": null,
+        "manufacturerId": "fc040ba11e8346719f41e1d82006cefa",
+        "productManufacturerVersionId": null,
+        "unitId": null,
+        "taxId": "ec39d6671d474a33aa0172ef78ce05eb",
+        "coverId": "7a4733e460e44608a0a3340b60f2a513",
+        "productMediaVersionId": null,
+        "deliveryTimeId": null,
+        "featureSetId": null,
+        "canonicalProductId": null,
+        "cmsPageId": null,
+        "cmsPageVersionId": null,
+        "price": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 932.19,
+            "gross": 932.19,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "productNumber": "f8ff0e42f9b24e3ea9a9cee4adbfe1cd",
+        "stock": 28,
+        "restockTime": null,
+        "autoIncrement": 144,
+        "active": true,
+        "availableStock": 28,
+        "available": true,
+        "isCloseout": false,
+        "variation": [],
+        "displayGroup": "1f3636fc35723883a9dcb43e52461bfe",
+        "configuratorGroupConfig": null,
+        "mainVariantId": null,
+        "variantRestrictions": null,
+        "manufacturerNumber": null,
+        "ean": null,
+        "purchaseSteps": 1,
+        "maxPurchase": null,
+        "minPurchase": 1,
+        "purchaseUnit": null,
+        "referenceUnit": null,
+        "shippingFree": false,
+        "purchasePrices": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 48.51,
+            "gross": 48.51,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "markAsTopseller": null,
+        "weight": null,
+        "width": 360.0,
+        "height": 763.0,
+        "length": null,
+        "releaseDate": null,
+        "ratingAverage": null,
+        "categoryTree": [
+          "c8505deca25f4ad592bde4520a45de06",
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "propertyIds": [
+          "31f37060b33e4ed48b9ade343f5df41d",
+          "376012a1f6b6428a920828a92f3ecf35",
+          "43c0b3f84bd04cc7ba39f502ef97d12f",
+          "52f98faf9cd84172b61725417405cf34",
+          "74e5befaea014913896687380df7d2b6",
+          "b258df4e0f0a4ac68c260ddcda2658ff",
+          "b311f7e674f549c6ae675049c46bac34",
+          "e6319fc57aa64e6c9908c03b20c4bd9c",
+          "e9379ed1873d4e57872158b444bed14d"
+        ],
+        "optionIds": null,
+        "streamIds": [
+          "666b8c649821412992a442295c7358d3"
+        ],
+        "tagIds": null,
+        "categoryIds": [
+          "14e7ef91382e465db25efff7e4bc8f41"
+        ],
+        "childCount": 0,
+        "customFieldSetSelectionActive": null,
+        "sales": 0,
+        "metaDescription": null,
+        "name": "Durable Steel Vinyl Maid",
+        "keywords": null,
+        "description": "Ipsum nostrum ipsam corrupti qui inventore ea. Optio est ut autem nihil incidunt. Quia cum ut nihil qui id optio. Ipsum provident magni vero molestiae expedita fugit nulla.",
+        "metaTitle": null,
+        "packUnit": null,
+        "packUnitPlural": null,
+        "customFields": {},
+        "slotConfig": null,
+        "customSearchKeywords": null,
+        "cheapestPrice": {
+          "hasRange": false,
+          "variantId": "fbd955932fd9427c98f7ea03756b375a",
+          "parentId": "fbd955932fd9427c98f7ea03756b375a",
+          "ruleId": null,
+          "purchase": null,
+          "reference": null,
+          "unitId": null,
+          "price": [
+            {
+              "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+              "net": 932.19,
+              "gross": 932.19,
+              "linked": true,
+              "listPrice": null,
+              "percentage": null,
+              "extensions": []
+            }
+          ],
+          "extensions": []
+        },
+        "createdAt": "2022-02-17T18:36:09.952+00:00",
+        "updatedAt": "2022-02-17T18:43:14.916+00:00",
+        "translated": {
+          "metaDescription": null,
+          "name": "Durable Steel Vinyl Maid",
+          "keywords": null,
+          "description": "Ipsum nostrum ipsam corrupti qui inventore ea. Optio est ut autem nihil incidunt. Quia cum ut nihil qui id optio. Ipsum provident magni vero molestiae expedita fugit nulla.",
+          "metaTitle": null,
+          "packUnit": null,
+          "packUnitPlural": null,
+          "customFields": {},
+          "slotConfig": null,
+          "customSearchKeywords": null
+        },
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a"
+      },
+      "relationships": {
+        "parent": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/parent"
+          }
+        },
+        "children": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/children"
+          }
+        },
+        "deliveryTime": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/delivery-time"
+          }
+        },
+        "tax": {
+          "data": {
+            "type": "tax",
+            "id": "ec39d6671d474a33aa0172ef78ce05eb"
+          },
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/tax"
+          }
+        },
+        "manufacturer": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/manufacturer"
+          }
+        },
+        "unit": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/unit"
+          }
+        },
+        "cover": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/cover"
+          }
+        },
+        "featureSet": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/feature-set"
+          }
+        },
+        "cmsPage": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/cms-page"
+          }
+        },
+        "canonicalProduct": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/canonical-product"
+          }
+        },
+        "prices": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/prices"
+          }
+        },
+        "media": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/media"
+          }
+        },
+        "crossSellings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/cross-sellings"
+          }
+        },
+        "crossSellingAssignedProducts": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/cross-selling-assigned-products"
+          }
+        },
+        "configuratorSettings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/configurator-settings"
+          }
+        },
+        "visibilities": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/visibilities"
+          }
+        },
+        "searchKeywords": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/search-keywords"
+          }
+        },
+        "productReviews": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/product-reviews"
+          }
+        },
+        "mainCategories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/main-categories"
+          }
+        },
+        "seoUrls": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/seo-urls"
+          }
+        },
+        "orderLineItems": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/order-line-items"
+          }
+        },
+        "wishlists": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/wishlists"
+          }
+        },
+        "options": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/options"
+          }
+        },
+        "properties": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/properties"
+          }
+        },
+        "categories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/categories"
+          }
+        },
+        "streams": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/streams"
+          }
+        },
+        "categoriesRo": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/categories-ro"
+          }
+        },
+        "tags": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/tags"
+          }
+        },
+        "customFieldSets": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/custom-field-sets"
+          }
+        },
+        "translations": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/fbd955932fd9427c98f7ea03756b375a\/translations"
+          }
+        }
+      },
+      "meta": null
+    }
+  ],
+  "links": {
+    "self": "http:\/\/localhost:8000\/api\/search\/category"
+  },
+  "meta": {
+    "totalCountMode": 0,
+    "total": 1
+  },
+  "aggregations": []
+}

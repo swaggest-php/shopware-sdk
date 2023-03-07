@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\WebhookEventLog;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
 use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
@@ -12,7 +12,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class WebhookEventLogDefinition implements EntityDefinitionInterface
+final class WebhookEventLogDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -29,7 +29,7 @@ final class WebhookEventLogDefinition implements EntityDefinitionInterface
         return WebhookEventLogEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),

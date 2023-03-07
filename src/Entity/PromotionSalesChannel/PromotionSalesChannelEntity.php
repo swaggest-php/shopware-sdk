@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PromotionSalesChannel;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Promotion\PromotionEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class PromotionSalesChannelEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $promotionId;
 
     protected string $salesChannelId;

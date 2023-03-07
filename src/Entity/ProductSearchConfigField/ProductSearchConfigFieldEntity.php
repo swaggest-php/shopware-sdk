@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\ProductSearchConfigField;
 
 use Swaggest\ShopwareSdk\Entity\CustomField\CustomFieldEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductSearchConfig\ProductSearchConfigEntity;
 
 final class ProductSearchConfigFieldEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $searchConfigId;
 
     protected ?string $customFieldId;

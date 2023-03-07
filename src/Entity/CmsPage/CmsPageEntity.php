@@ -8,7 +8,6 @@ use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPageTranslation\CmsPageTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CmsSection\CmsSectionCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
@@ -16,21 +15,19 @@ use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class CmsPageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $name;
 
     protected string $type;
 
     protected ?string $entity;
 
-    protected array $config;
+    protected ?array $config;
 
     protected ?string $previewMediaId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected bool $locked;
+    protected ?bool $locked;
 
     protected ?CmsSectionCollection $sections;
 
@@ -76,12 +73,12 @@ final class CmsPageEntity extends Entity
         $this->entity = $entity;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
@@ -96,22 +93,22 @@ final class CmsPageEntity extends Entity
         $this->previewMediaId = $previewMediaId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getLocked(): bool
+    public function getLocked(): ?bool
     {
         return $this->locked;
     }
 
-    public function setLocked(bool $locked): void
+    public function setLocked(?bool $locked): void
     {
         $this->locked = $locked;
     }

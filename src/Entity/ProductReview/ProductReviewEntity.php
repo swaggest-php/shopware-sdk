@@ -6,18 +6,15 @@ namespace Swaggest\ShopwareSdk\Entity\ProductReview;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class ProductReviewEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?string $customerId;
 
@@ -35,7 +32,7 @@ final class ProductReviewEntity extends Entity
 
     protected ?float $points;
 
-    protected bool $status;
+    protected ?bool $status;
 
     protected ?string $comment;
 
@@ -47,7 +44,7 @@ final class ProductReviewEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getProductId(): string
     {
@@ -59,12 +56,12 @@ final class ProductReviewEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -149,12 +146,12 @@ final class ProductReviewEntity extends Entity
         $this->points = $points;
     }
 
-    public function getStatus(): bool
+    public function getStatus(): ?bool
     {
         return $this->status;
     }
 
-    public function setStatus(bool $status): void
+    public function setStatus(?bool $status): void
     {
         $this->status = $status;
     }
@@ -209,12 +206,12 @@ final class ProductReviewEntity extends Entity
         $this->language = $language;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Theme;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\ThemeTranslation\ThemeTranslationCollection;
 
 final class ThemeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $technicalName;
 
     protected string $name;
@@ -23,23 +20,23 @@ final class ThemeEntity extends Entity
 
     protected ?string $description;
 
-    protected array $labels;
+    protected ?array $labels;
 
-    protected array $helpTexts;
+    protected ?array $helpTexts;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $previewMediaId;
 
     protected ?string $parentThemeId;
 
-    protected array $baseConfig;
+    protected ?array $baseConfig;
 
-    protected array $configValues;
+    protected ?array $configValues;
 
     protected bool $active;
 
-    protected ThemeTranslationCollection $translations;
+    protected ?ThemeTranslationCollection $translations;
 
     protected ?SalesChannelCollection $salesChannels;
 
@@ -89,32 +86,32 @@ final class ThemeEntity extends Entity
         $this->description = $description;
     }
 
-    public function getLabels(): array
+    public function getLabels(): ?array
     {
         return $this->labels;
     }
 
-    public function setLabels(array $labels): void
+    public function setLabels(?array $labels): void
     {
         $this->labels = $labels;
     }
 
-    public function getHelpTexts(): array
+    public function getHelpTexts(): ?array
     {
         return $this->helpTexts;
     }
 
-    public function setHelpTexts(array $helpTexts): void
+    public function setHelpTexts(?array $helpTexts): void
     {
         $this->helpTexts = $helpTexts;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -139,22 +136,22 @@ final class ThemeEntity extends Entity
         $this->parentThemeId = $parentThemeId;
     }
 
-    public function getBaseConfig(): array
+    public function getBaseConfig(): ?array
     {
         return $this->baseConfig;
     }
 
-    public function setBaseConfig(array $baseConfig): void
+    public function setBaseConfig(?array $baseConfig): void
     {
         $this->baseConfig = $baseConfig;
     }
 
-    public function getConfigValues(): array
+    public function getConfigValues(): ?array
     {
         return $this->configValues;
     }
 
-    public function setConfigValues(array $configValues): void
+    public function setConfigValues(?array $configValues): void
     {
         $this->configValues = $configValues;
     }
@@ -169,12 +166,12 @@ final class ThemeEntity extends Entity
         $this->active = $active;
     }
 
-    public function getTranslations(): ThemeTranslationCollection
+    public function getTranslations(): ?ThemeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ThemeTranslationCollection $translations): void
+    public function setTranslations(?ThemeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\Script;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class ScriptEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $script;
 
     protected string $hook;

@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Category;
 use Swaggest\ShopwareSdk\Entity\CategoryTranslation\CategoryTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MainCategory\MainCategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
@@ -18,15 +17,13 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class CategoryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $parentId;
 
-    protected string $parentVersionId;
+    protected ?string $parentVersionId;
 
     protected ?string $afterCategoryId;
 
-    protected string $afterCategoryVersionId;
+    protected ?string $afterCategoryVersionId;
 
     protected ?string $mediaId;
 
@@ -34,7 +31,7 @@ final class CategoryEntity extends Entity
 
     protected ?int $autoIncrement;
 
-    protected array $breadcrumb;
+    protected ?array $breadcrumb;
 
     protected ?int $level;
 
@@ -46,15 +43,15 @@ final class CategoryEntity extends Entity
 
     protected string $productAssignmentType;
 
-    protected bool $visible;
+    protected ?bool $visible;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
     protected ?string $linkType;
 
@@ -62,7 +59,7 @@ final class CategoryEntity extends Entity
 
     protected ?string $externalLink;
 
-    protected bool $linkNewTab;
+    protected ?bool $linkNewTab;
 
     protected ?string $description;
 
@@ -78,7 +75,7 @@ final class CategoryEntity extends Entity
 
     protected ?MediaEntity $media;
 
-    protected CategoryTranslationCollection $translations;
+    protected ?CategoryTranslationCollection $translations;
 
     protected ?ProductCollection $products;
 
@@ -88,7 +85,7 @@ final class CategoryEntity extends Entity
 
     protected ?string $cmsPageId;
 
-    protected string $cmsPageVersionId;
+    protected ?string $cmsPageVersionId;
 
     protected ?CmsPageEntity $cmsPage;
 
@@ -116,12 +113,12 @@ final class CategoryEntity extends Entity
         $this->parentId = $parentId;
     }
 
-    public function getParentVersionId(): string
+    public function getParentVersionId(): ?string
     {
         return $this->parentVersionId;
     }
 
-    public function setParentVersionId(string $parentVersionId): void
+    public function setParentVersionId(?string $parentVersionId): void
     {
         $this->parentVersionId = $parentVersionId;
     }
@@ -136,12 +133,12 @@ final class CategoryEntity extends Entity
         $this->afterCategoryId = $afterCategoryId;
     }
 
-    public function getAfterCategoryVersionId(): string
+    public function getAfterCategoryVersionId(): ?string
     {
         return $this->afterCategoryVersionId;
     }
 
-    public function setAfterCategoryVersionId(string $afterCategoryVersionId): void
+    public function setAfterCategoryVersionId(?string $afterCategoryVersionId): void
     {
         $this->afterCategoryVersionId = $afterCategoryVersionId;
     }
@@ -176,12 +173,12 @@ final class CategoryEntity extends Entity
         $this->autoIncrement = $autoIncrement;
     }
 
-    public function getBreadcrumb(): array
+    public function getBreadcrumb(): ?array
     {
         return $this->breadcrumb;
     }
 
-    public function setBreadcrumb(array $breadcrumb): void
+    public function setBreadcrumb(?array $breadcrumb): void
     {
         $this->breadcrumb = $breadcrumb;
     }
@@ -236,22 +233,22 @@ final class CategoryEntity extends Entity
         $this->productAssignmentType = $productAssignmentType;
     }
 
-    public function getVisible(): bool
+    public function getVisible(): ?bool
     {
         return $this->visible;
     }
 
-    public function setVisible(bool $visible): void
+    public function setVisible(?bool $visible): void
     {
         $this->visible = $visible;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -266,22 +263,22 @@ final class CategoryEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
@@ -316,12 +313,12 @@ final class CategoryEntity extends Entity
         $this->externalLink = $externalLink;
     }
 
-    public function getLinkNewTab(): bool
+    public function getLinkNewTab(): ?bool
     {
         return $this->linkNewTab;
     }
 
-    public function setLinkNewTab(bool $linkNewTab): void
+    public function setLinkNewTab(?bool $linkNewTab): void
     {
         $this->linkNewTab = $linkNewTab;
     }
@@ -396,12 +393,12 @@ final class CategoryEntity extends Entity
         $this->media = $media;
     }
 
-    public function getTranslations(): CategoryTranslationCollection
+    public function getTranslations(): ?CategoryTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CategoryTranslationCollection $translations): void
+    public function setTranslations(?CategoryTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
@@ -446,12 +443,12 @@ final class CategoryEntity extends Entity
         $this->cmsPageId = $cmsPageId;
     }
 
-    public function getCmsPageVersionId(): string
+    public function getCmsPageVersionId(): ?string
     {
         return $this->cmsPageVersionId;
     }
 
-    public function setCmsPageVersionId(string $cmsPageVersionId): void
+    public function setCmsPageVersionId(?string $cmsPageVersionId): void
     {
         $this->cmsPageVersionId = $cmsPageVersionId;
     }

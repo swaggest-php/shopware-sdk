@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\OrderDeliveryPosition;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\Computed;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
@@ -13,7 +13,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ProtectedFlag;
 use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 
-final class OrderDeliveryPositionDefinition implements EntityDefinitionInterface
+final class OrderDeliveryPositionDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -30,7 +30,7 @@ final class OrderDeliveryPositionDefinition implements EntityDefinitionInterface
         return OrderDeliveryPositionEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -44,8 +44,8 @@ final class OrderDeliveryPositionDefinition implements EntityDefinitionInterface
             (new Field('totalPrice', 'float'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed()),
             (new Field('quantity', 'int'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed()),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('orderDelivery', Association::MANY_TO_ONE, 'order_delivery', 'orderDeliveryId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('orderLineItem', Association::MANY_TO_ONE, 'order_line_item', 'orderLineItemId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('orderDelivery', AssociationField::MANY_TO_ONE, 'order_delivery', 'orderDeliveryId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('orderLineItem', AssociationField::MANY_TO_ONE, 'order_line_item', 'orderLineItemId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
         ];

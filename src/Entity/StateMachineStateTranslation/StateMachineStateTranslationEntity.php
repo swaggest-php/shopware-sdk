@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachineStateTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 
 final class StateMachineStateTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $stateMachineStateId;
 
@@ -35,12 +32,12 @@ final class StateMachineStateTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

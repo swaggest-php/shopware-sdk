@@ -6,24 +6,21 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation;
 
 use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CustomerGroupTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $registrationTitle;
 
     protected ?string $registrationIntroduction;
 
-    protected bool $registrationOnlyCompanyRegistration;
+    protected ?bool $registrationOnlyCompanyRegistration;
 
     protected ?string $registrationSeoMetaDescription;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $customerGroupId;
 
@@ -63,12 +60,12 @@ final class CustomerGroupTranslationEntity extends Entity
         $this->registrationIntroduction = $registrationIntroduction;
     }
 
-    public function getRegistrationOnlyCompanyRegistration(): bool
+    public function getRegistrationOnlyCompanyRegistration(): ?bool
     {
         return $this->registrationOnlyCompanyRegistration;
     }
 
-    public function setRegistrationOnlyCompanyRegistration(bool $registrationOnlyCompanyRegistration): void
+    public function setRegistrationOnlyCompanyRegistration(?bool $registrationOnlyCompanyRegistration): void
     {
         $this->registrationOnlyCompanyRegistration = $registrationOnlyCompanyRegistration;
     }
@@ -83,12 +80,12 @@ final class CustomerGroupTranslationEntity extends Entity
         $this->registrationSeoMetaDescription = $registrationSeoMetaDescription;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

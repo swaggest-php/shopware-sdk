@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\DeadMessage;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ScheduledTask\ScheduledTaskEntity;
 
 final class DeadMessageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $originalMessageClass;
 
     protected string $serializedOriginalMessage;

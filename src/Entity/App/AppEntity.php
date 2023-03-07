@@ -12,15 +12,12 @@ use Swaggest\ShopwareSdk\Entity\AppTemplate\AppTemplateCollection;
 use Swaggest\ShopwareSdk\Entity\AppTranslation\AppTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationEntity;
 use Swaggest\ShopwareSdk\Entity\Script\ScriptCollection;
 use Swaggest\ShopwareSdk\Entity\Webhook\WebhookCollection;
 
 final class AppEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $path;
@@ -45,13 +42,13 @@ final class AppEntity extends Entity
 
     protected ?string $appSecret;
 
-    protected array $modules;
+    protected ?array $modules;
 
-    protected array $mainModule;
+    protected ?array $mainModule;
 
-    protected array $cookies;
+    protected ?array $cookies;
 
-    protected AppTranslationCollection $translations;
+    protected ?AppTranslationCollection $translations;
 
     protected string $label;
 
@@ -59,7 +56,7 @@ final class AppEntity extends Entity
 
     protected ?string $privacyPolicyExtensions;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $integrationId;
 
@@ -203,42 +200,42 @@ final class AppEntity extends Entity
         $this->appSecret = $appSecret;
     }
 
-    public function getModules(): array
+    public function getModules(): ?array
     {
         return $this->modules;
     }
 
-    public function setModules(array $modules): void
+    public function setModules(?array $modules): void
     {
         $this->modules = $modules;
     }
 
-    public function getMainModule(): array
+    public function getMainModule(): ?array
     {
         return $this->mainModule;
     }
 
-    public function setMainModule(array $mainModule): void
+    public function setMainModule(?array $mainModule): void
     {
         $this->mainModule = $mainModule;
     }
 
-    public function getCookies(): array
+    public function getCookies(): ?array
     {
         return $this->cookies;
     }
 
-    public function setCookies(array $cookies): void
+    public function setCookies(?array $cookies): void
     {
         $this->cookies = $cookies;
     }
 
-    public function getTranslations(): AppTranslationCollection
+    public function getTranslations(): ?AppTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(AppTranslationCollection $translations): void
+    public function setTranslations(?AppTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
@@ -273,12 +270,12 @@ final class AppEntity extends Entity
         $this->privacyPolicyExtensions = $privacyPolicyExtensions;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\IntegrationRole;
 
 use Swaggest\ShopwareSdk\Entity\AclRole\AclRoleEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationEntity;
 
 final class IntegrationRoleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $integrationId;
 
     protected string $aclRoleId;

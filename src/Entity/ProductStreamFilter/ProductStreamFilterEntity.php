@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductStreamFilter;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductStream\ProductStreamEntity;
 
 final class ProductStreamFilterEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productStreamId;
 
     protected ?string $parentId;
@@ -24,7 +21,7 @@ final class ProductStreamFilterEntity extends Entity
 
     protected ?string $value;
 
-    protected array $parameters;
+    protected ?array $parameters;
 
     protected ?int $position;
 
@@ -34,7 +31,7 @@ final class ProductStreamFilterEntity extends Entity
 
     protected ?ProductStreamFilterCollection $queries;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getProductStreamId(): string
     {
@@ -96,12 +93,12 @@ final class ProductStreamFilterEntity extends Entity
         $this->value = $value;
     }
 
-    public function getParameters(): array
+    public function getParameters(): ?array
     {
         return $this->parameters;
     }
 
-    public function setParameters(array $parameters): void
+    public function setParameters(?array $parameters): void
     {
         $this->parameters = $parameters;
     }
@@ -146,12 +143,12 @@ final class ProductStreamFilterEntity extends Entity
         $this->queries = $queries;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

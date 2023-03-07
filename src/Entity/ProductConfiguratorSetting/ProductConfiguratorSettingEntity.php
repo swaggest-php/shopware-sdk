@@ -5,24 +5,21 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductConfiguratorSetting;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupOption\PropertyGroupOptionEntity;
 
 final class ProductConfiguratorSettingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?string $mediaId;
 
     protected string $optionId;
 
-    protected array $price;
+    protected ?array $price;
 
     protected ?int $position;
 
@@ -32,7 +29,7 @@ final class ProductConfiguratorSettingEntity extends Entity
 
     protected ?PropertyGroupOptionEntity $option;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getProductId(): string
     {
@@ -44,12 +41,12 @@ final class ProductConfiguratorSettingEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -74,12 +71,12 @@ final class ProductConfiguratorSettingEntity extends Entity
         $this->optionId = $optionId;
     }
 
-    public function getPrice(): array
+    public function getPrice(): ?array
     {
         return $this->price;
     }
 
-    public function setPrice(array $price): void
+    public function setPrice(?array $price): void
     {
         $this->price = $price;
     }
@@ -124,12 +121,12 @@ final class ProductConfiguratorSettingEntity extends Entity
         $this->option = $option;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

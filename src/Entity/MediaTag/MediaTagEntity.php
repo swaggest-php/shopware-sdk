@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaTag;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class MediaTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mediaId;
 
     protected string $tagId;

@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\SalesChannelDomain;
 
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\ProductExport\ProductExportCollection;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
@@ -14,8 +13,6 @@ use Swaggest\ShopwareSdk\Entity\SnippetSet\SnippetSetEntity;
 
 final class SalesChannelDomainEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $url;
 
     protected string $salesChannelId;
@@ -38,9 +35,9 @@ final class SalesChannelDomainEntity extends Entity
 
     protected ?ProductExportCollection $productExports;
 
-    protected bool $hreflangUseOnlyLocale;
+    protected ?bool $hreflangUseOnlyLocale;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getUrl(): string
     {
@@ -152,22 +149,22 @@ final class SalesChannelDomainEntity extends Entity
         $this->productExports = $productExports;
     }
 
-    public function getHreflangUseOnlyLocale(): bool
+    public function getHreflangUseOnlyLocale(): ?bool
     {
         return $this->hreflangUseOnlyLocale;
     }
 
-    public function setHreflangUseOnlyLocale(bool $hreflangUseOnlyLocale): void
+    public function setHreflangUseOnlyLocale(?bool $hreflangUseOnlyLocale): void
     {
         $this->hreflangUseOnlyLocale = $hreflangUseOnlyLocale;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\ScheduledTask;
 
 use Swaggest\ShopwareSdk\Entity\DeadMessage\DeadMessageCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class ScheduledTaskEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $scheduledTaskClass;

@@ -7,18 +7,15 @@ namespace Swaggest\ShopwareSdk\Entity\CmsSection;
 use Swaggest\ShopwareSdk\Entity\CmsBlock\CmsBlockCollection;
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class CmsSectionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected int $position;
 
     protected string $type;
 
-    protected bool $locked;
+    protected ?bool $locked;
 
     protected ?string $name;
 
@@ -42,9 +39,9 @@ final class CmsSectionEntity extends Entity
 
     protected ?CmsBlockCollection $blocks;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected string $cmsPageVersionId;
+    protected ?string $cmsPageVersionId;
 
     public function getPosition(): int
     {
@@ -66,12 +63,12 @@ final class CmsSectionEntity extends Entity
         $this->type = $type;
     }
 
-    public function getLocked(): bool
+    public function getLocked(): ?bool
     {
         return $this->locked;
     }
 
-    public function setLocked(bool $locked): void
+    public function setLocked(?bool $locked): void
     {
         $this->locked = $locked;
     }
@@ -186,22 +183,22 @@ final class CmsSectionEntity extends Entity
         $this->blocks = $blocks;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getCmsPageVersionId(): string
+    public function getCmsPageVersionId(): ?string
     {
         return $this->cmsPageVersionId;
     }
 
-    public function setCmsPageVersionId(string $cmsPageVersionId): void
+    public function setCmsPageVersionId(?string $cmsPageVersionId): void
     {
         $this->cmsPageVersionId = $cmsPageVersionId;
     }

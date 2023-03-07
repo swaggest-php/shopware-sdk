@@ -7,12 +7,9 @@ namespace Swaggest\ShopwareSdk\Entity\AppCmsBlock;
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\AppCmsBlockTranslation\AppCmsBlockTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class AppCmsBlockEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected array $block;
@@ -23,7 +20,7 @@ final class AppCmsBlockEntity extends Entity
 
     protected string $label;
 
-    protected AppCmsBlockTranslationCollection $translations;
+    protected ?AppCmsBlockTranslationCollection $translations;
 
     protected string $appId;
 
@@ -79,12 +76,12 @@ final class AppCmsBlockEntity extends Entity
         $this->label = $label;
     }
 
-    public function getTranslations(): AppCmsBlockTranslationCollection
+    public function getTranslations(): ?AppCmsBlockTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(AppCmsBlockTranslationCollection $translations): void
+    public function setTranslations(?AppCmsBlockTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

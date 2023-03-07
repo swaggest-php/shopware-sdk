@@ -6,7 +6,9 @@ namespace Swaggest\ShopwareSdk\Test\Code\Entity;
 
 use PHPUnit\Framework\TestCase;
 use Swaggest\ShopwareSdk\Code\Entity\TypeHintResolver;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AbstractField;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -24,9 +26,9 @@ final class TypeHintResolverTest extends TestCase
     /**
      * @dataProvider provideFieldData
      */
-    public function testResolve(Field|Association $field, string $expected): void
+    public function testResolve(AbstractField $field, string $expected): void
     {
-        $actual = $this->typeHintResolver->resolve($field);
+        $actual = $this->typeHintResolver->resolve($field, $this->createMock(AbstractEntityDefinition::class));
 
         self::assertSame($expected, $actual);
     }
@@ -45,9 +47,9 @@ final class TypeHintResolverTest extends TestCase
         yield [new Field('categoryTree', 'json_list'), 'array'];
         yield [new Field('block', 'json_object'), 'array'];
         yield [new Field('createdAt', 'date'), '\DateTimeInterface'];
-        yield [new Association('recoveryCustomer', Association::ONE_TO_ONE, 'customer_recovery', 'id', 'customerId', null, null, null, null), 'CustomerRecoveryEntity'];
-        yield [new Association('translations', Association::ONE_TO_MANY, 'salutation_translation', 'id', 'salutationId', 'salutationId', null, null, null), 'SalutationTranslationCollection'];
-        yield [new Association('parent', Association::MANY_TO_ONE, 'category', 'parentId', 'id', null, null, null, null), 'CategoryEntity'];
-        yield [new Association('currencies', Association::MANY_TO_MANY, 'currency', 'id', 'id', null, 'sales_channel_currency', 'currencyId', 'salesChannelId'), 'CurrencyCollection'];
+        yield [new AssociationField('recoveryCustomer', AssociationField::ONE_TO_ONE, 'customer_recovery', 'id', 'customerId', null, null, null, null), 'CustomerRecoveryEntity'];
+        yield [new AssociationField('translations', AssociationField::ONE_TO_MANY, 'salutation_translation', 'id', 'salutationId', 'salutationId', null, null, null), 'SalutationTranslationCollection'];
+        yield [new AssociationField('parent', AssociationField::MANY_TO_ONE, 'category', 'parentId', 'id', null, null, null, null), 'CategoryEntity'];
+        yield [new AssociationField('currencies', AssociationField::MANY_TO_MANY, 'currency', 'id', 'id', null, 'sales_channel_currency', 'currencyId', 'salesChannelId'), 'CurrencyCollection'];
     }
 }

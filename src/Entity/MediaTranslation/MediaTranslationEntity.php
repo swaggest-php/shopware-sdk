@@ -5,19 +5,16 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class MediaTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $title;
 
     protected ?string $alt;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $mediaId;
 
@@ -47,12 +44,12 @@ final class MediaTranslationEntity extends Entity
         $this->alt = $alt;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

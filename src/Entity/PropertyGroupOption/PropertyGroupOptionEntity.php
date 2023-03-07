@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PropertyGroupOption;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\ProductConfiguratorSetting\ProductConfiguratorSettingCollection;
@@ -14,8 +13,6 @@ use Swaggest\ShopwareSdk\Entity\PropertyGroupOptionTranslation\PropertyGroupOpti
 
 final class PropertyGroupOptionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $groupId;
 
     protected string $name;
@@ -26,13 +23,13 @@ final class PropertyGroupOptionEntity extends Entity
 
     protected ?string $mediaId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?MediaEntity $media;
 
     protected ?PropertyGroupEntity $group;
 
-    protected PropertyGroupOptionTranslationCollection $translations;
+    protected ?PropertyGroupOptionTranslationCollection $translations;
 
     protected ?ProductConfiguratorSettingCollection $productConfiguratorSettings;
 
@@ -90,12 +87,12 @@ final class PropertyGroupOptionEntity extends Entity
         $this->mediaId = $mediaId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -120,12 +117,12 @@ final class PropertyGroupOptionEntity extends Entity
         $this->group = $group;
     }
 
-    public function getTranslations(): PropertyGroupOptionTranslationCollection
+    public function getTranslations(): ?PropertyGroupOptionTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PropertyGroupOptionTranslationCollection $translations): void
+    public function setTranslations(?PropertyGroupOptionTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

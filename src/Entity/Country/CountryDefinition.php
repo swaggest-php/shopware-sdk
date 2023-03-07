@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Country;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\Computed;
@@ -19,7 +19,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\Runtime;
 use Swaggest\ShopwareSdk\Schema\Flag\SearchRanking;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 
-final class CountryDefinition implements EntityDefinitionInterface
+final class CountryDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -36,7 +36,7 @@ final class CountryDefinition implements EntityDefinitionInterface
         return CountryEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -56,14 +56,14 @@ final class CountryDefinition implements EntityDefinitionInterface
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Translatable()),
             (new Field('customerTax', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('companyTax', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('states', Association::ONE_TO_MANY, 'country_state', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('translations', Association::ONE_TO_MANY, 'country_translation', 'id', 'countryId', 'countryId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Required()),
-            (new Association('customerAddresses', Association::ONE_TO_MANY, 'customer_address', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('orderAddresses', Association::ONE_TO_MANY, 'order_address', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('salesChannelDefaultAssignments', Association::ONE_TO_MANY, 'sales_channel', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('salesChannels', Association::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'sales_channel_country', 'salesChannelId', 'countryId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('taxRules', Association::ONE_TO_MANY, 'tax_rule', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('currencyCountryRoundings', Association::ONE_TO_MANY, 'currency_country_rounding', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('states', AssociationField::ONE_TO_MANY, 'country_state', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'country_translation', 'id', 'countryId', 'countryId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Required()),
+            (new AssociationField('customerAddresses', AssociationField::ONE_TO_MANY, 'customer_address', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('orderAddresses', AssociationField::ONE_TO_MANY, 'order_address', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('salesChannelDefaultAssignments', AssociationField::ONE_TO_MANY, 'sales_channel', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('salesChannels', AssociationField::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'sales_channel_country', 'salesChannelId', 'countryId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('taxRules', AssociationField::ONE_TO_MANY, 'tax_rule', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('currencyCountryRoundings', AssociationField::ONE_TO_MANY, 'currency_country_rounding', 'id', 'countryId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('translated', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed(), new Runtime()),

@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\CustomFieldSetRelation;
 
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class CustomFieldSetRelationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $customFieldSetId;
 
     protected string $entityName;

@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelShippingMethod;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodEntity;
 
 final class SalesChannelShippingMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $salesChannelId;
 
     protected string $shippingMethodId;

@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachineTransition;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\StateMachine\StateMachineEntity;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 
 final class StateMachineTransitionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $actionName;
 
     protected string $stateMachineId;
@@ -27,7 +24,7 @@ final class StateMachineTransitionEntity extends Entity
 
     protected ?StateMachineStateEntity $toStateMachineState;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getActionName(): string
     {
@@ -99,12 +96,12 @@ final class StateMachineTransitionEntity extends Entity
         $this->toStateMachineState = $toStateMachineState;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Order;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
@@ -15,7 +15,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\Required;
 use Swaggest\ShopwareSdk\Schema\Flag\SearchRanking;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class OrderDefinition implements EntityDefinitionInterface
+final class OrderDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -32,7 +32,7 @@ final class OrderDefinition implements EntityDefinitionInterface
         return OrderEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -59,24 +59,24 @@ final class OrderDefinition implements EntityDefinitionInterface
             (new Field('campaignCode', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('customerComment', 'text'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('stateId', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Required()),
-            (new Association('stateMachineState', Association::MANY_TO_ONE, 'state_machine_state', 'stateId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('stateMachineState', AssociationField::MANY_TO_ONE, 'state_machine_state', 'stateId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('ruleIds', 'json_list'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('createdById', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('updatedById', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('orderCustomer', Association::ONE_TO_ONE, 'order_customer', 'id', 'orderId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.500000)),
-            (new Association('currency', Association::MANY_TO_ONE, 'currency', 'currencyId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('language', Association::MANY_TO_ONE, 'language', 'languageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('salesChannel', Association::MANY_TO_ONE, 'sales_channel', 'salesChannelId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('addresses', Association::ONE_TO_MANY, 'order_address', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.250000)),
-            (new Association('billingAddress', Association::MANY_TO_ONE, 'order_address', 'billingAddressId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('deliveries', Association::ONE_TO_MANY, 'order_delivery', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.250000)),
-            (new Association('lineItems', Association::ONE_TO_MANY, 'order_line_item', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('transactions', Association::ONE_TO_MANY, 'order_transaction', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('documents', Association::ONE_TO_MANY, 'document', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('tags', Association::MANY_TO_MANY, 'tag', 'id', 'id', null, 'order_tag', 'tagId', 'orderId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new SearchRanking(0.250000)),
-            (new Association('createdBy', Association::MANY_TO_ONE, 'user', 'createdById', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('updatedBy', Association::MANY_TO_ONE, 'user', 'updatedById', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('orderCustomer', AssociationField::ONE_TO_ONE, 'order_customer', 'id', 'orderId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.500000)),
+            (new AssociationField('currency', AssociationField::MANY_TO_ONE, 'currency', 'currencyId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('language', AssociationField::MANY_TO_ONE, 'language', 'languageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('salesChannel', AssociationField::MANY_TO_ONE, 'sales_channel', 'salesChannelId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('addresses', AssociationField::ONE_TO_MANY, 'order_address', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.250000)),
+            (new AssociationField('billingAddress', AssociationField::MANY_TO_ONE, 'order_address', 'billingAddressId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('deliveries', AssociationField::ONE_TO_MANY, 'order_delivery', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new SearchRanking(0.250000)),
+            (new AssociationField('lineItems', AssociationField::ONE_TO_MANY, 'order_line_item', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('transactions', AssociationField::ONE_TO_MANY, 'order_transaction', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('documents', AssociationField::ONE_TO_MANY, 'document', 'id', 'orderId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('tags', AssociationField::MANY_TO_MANY, 'tag', 'id', 'id', null, 'order_tag', 'tagId', 'orderId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new SearchRanking(0.250000)),
+            (new AssociationField('createdBy', AssociationField::MANY_TO_ONE, 'user', 'createdById', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('updatedBy', AssociationField::MANY_TO_ONE, 'user', 'updatedById', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('itemRounding', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('totalRounding', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),

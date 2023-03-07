@@ -5,18 +5,15 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MailTemplate;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailTemplateMedia\MailTemplateMediaCollection;
 use Swaggest\ShopwareSdk\Entity\MailTemplateTranslation\MailTemplateTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\MailTemplateType\MailTemplateTypeEntity;
 
 final class MailTemplateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mailTemplateTypeId;
 
-    protected bool $systemDefault;
+    protected ?bool $systemDefault;
 
     protected ?string $senderName;
 
@@ -28,9 +25,9 @@ final class MailTemplateEntity extends Entity
 
     protected string $contentPlain;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected MailTemplateTranslationCollection $translations;
+    protected ?MailTemplateTranslationCollection $translations;
 
     protected ?MailTemplateTypeEntity $mailTemplateType;
 
@@ -46,12 +43,12 @@ final class MailTemplateEntity extends Entity
         $this->mailTemplateTypeId = $mailTemplateTypeId;
     }
 
-    public function getSystemDefault(): bool
+    public function getSystemDefault(): ?bool
     {
         return $this->systemDefault;
     }
 
-    public function setSystemDefault(bool $systemDefault): void
+    public function setSystemDefault(?bool $systemDefault): void
     {
         $this->systemDefault = $systemDefault;
     }
@@ -106,22 +103,22 @@ final class MailTemplateEntity extends Entity
         $this->contentPlain = $contentPlain;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): MailTemplateTranslationCollection
+    public function getTranslations(): ?MailTemplateTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(MailTemplateTranslationCollection $translations): void
+    public function setTranslations(?MailTemplateTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

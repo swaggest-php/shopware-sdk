@@ -18,7 +18,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation\CustomerGroupTranslatio
 use Swaggest\ShopwareSdk\Entity\DeliveryTimeTranslation\DeliveryTimeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentTypeTranslation\DocumentTypeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfileTranslation\ImportExportProfileTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\LandingPageTranslation\LandingPageTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Locale\LocaleEntity;
@@ -61,8 +60,6 @@ use Swaggest\ShopwareSdk\Entity\UnitTranslation\UnitTranslationCollection;
 
 final class LanguageEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $parentId;
 
     protected string $localeId;
@@ -71,7 +68,7 @@ final class LanguageEntity extends Entity
 
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?LanguageEntity $parent;
 
@@ -225,12 +222,12 @@ final class LanguageEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

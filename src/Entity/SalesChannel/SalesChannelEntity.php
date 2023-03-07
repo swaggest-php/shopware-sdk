@@ -16,7 +16,6 @@ use Swaggest\ShopwareSdk\Entity\CustomerGroup\CustomerGroupEntity;
 use Swaggest\ShopwareSdk\Entity\CustomerWishlist\CustomerWishlistCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfigSalesChannel\DocumentBaseConfigSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\EventAction\EventActionCollection;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageCollection;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageCollection;
@@ -46,8 +45,6 @@ use Swaggest\ShopwareSdk\Entity\Theme\ThemeCollection;
 
 final class SalesChannelEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $typeId;
 
     protected string $languageId;
@@ -66,17 +63,17 @@ final class SalesChannelEntity extends Entity
 
     protected string $navigationCategoryId;
 
-    protected string $navigationCategoryVersionId;
+    protected ?string $navigationCategoryVersionId;
 
     protected ?int $navigationCategoryDepth;
 
     protected ?string $footerCategoryId;
 
-    protected string $footerCategoryVersionId;
+    protected ?string $footerCategoryVersionId;
 
     protected ?string $serviceCategoryId;
 
-    protected string $serviceCategoryVersionId;
+    protected ?string $serviceCategoryVersionId;
 
     protected ?string $mailHeaderFooterId;
 
@@ -90,19 +87,19 @@ final class SalesChannelEntity extends Entity
 
     protected string $accessKey;
 
-    protected array $configuration;
+    protected ?array $configuration;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $hreflangActive;
+    protected ?bool $hreflangActive;
 
-    protected bool $maintenance;
+    protected ?bool $maintenance;
 
-    protected array $maintenanceIpWhitelist;
+    protected ?array $maintenanceIpWhitelist;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected SalesChannelTranslationCollection $translations;
+    protected ?SalesChannelTranslationCollection $translations;
 
     protected ?CurrencyCollection $currencies;
 
@@ -112,7 +109,7 @@ final class SalesChannelEntity extends Entity
 
     protected ?PaymentMethodCollection $paymentMethods;
 
-    protected array $paymentMethodIds;
+    protected ?array $paymentMethodIds;
 
     protected ?ShippingMethodCollection $shippingMethods;
 
@@ -136,11 +133,11 @@ final class SalesChannelEntity extends Entity
 
     protected ?string $homeCmsPageId;
 
-    protected string $homeCmsPageVersionId;
+    protected ?string $homeCmsPageVersionId;
 
     protected ?CmsPageEntity $homeCmsPage;
 
-    protected array $homeSlotConfig;
+    protected ?array $homeSlotConfig;
 
     protected bool $homeEnabled;
 
@@ -290,12 +287,12 @@ final class SalesChannelEntity extends Entity
         $this->navigationCategoryId = $navigationCategoryId;
     }
 
-    public function getNavigationCategoryVersionId(): string
+    public function getNavigationCategoryVersionId(): ?string
     {
         return $this->navigationCategoryVersionId;
     }
 
-    public function setNavigationCategoryVersionId(string $navigationCategoryVersionId): void
+    public function setNavigationCategoryVersionId(?string $navigationCategoryVersionId): void
     {
         $this->navigationCategoryVersionId = $navigationCategoryVersionId;
     }
@@ -320,12 +317,12 @@ final class SalesChannelEntity extends Entity
         $this->footerCategoryId = $footerCategoryId;
     }
 
-    public function getFooterCategoryVersionId(): string
+    public function getFooterCategoryVersionId(): ?string
     {
         return $this->footerCategoryVersionId;
     }
 
-    public function setFooterCategoryVersionId(string $footerCategoryVersionId): void
+    public function setFooterCategoryVersionId(?string $footerCategoryVersionId): void
     {
         $this->footerCategoryVersionId = $footerCategoryVersionId;
     }
@@ -340,12 +337,12 @@ final class SalesChannelEntity extends Entity
         $this->serviceCategoryId = $serviceCategoryId;
     }
 
-    public function getServiceCategoryVersionId(): string
+    public function getServiceCategoryVersionId(): ?string
     {
         return $this->serviceCategoryVersionId;
     }
 
-    public function setServiceCategoryVersionId(string $serviceCategoryVersionId): void
+    public function setServiceCategoryVersionId(?string $serviceCategoryVersionId): void
     {
         $this->serviceCategoryVersionId = $serviceCategoryVersionId;
     }
@@ -410,72 +407,72 @@ final class SalesChannelEntity extends Entity
         $this->accessKey = $accessKey;
     }
 
-    public function getConfiguration(): array
+    public function getConfiguration(): ?array
     {
         return $this->configuration;
     }
 
-    public function setConfiguration(array $configuration): void
+    public function setConfiguration(?array $configuration): void
     {
         $this->configuration = $configuration;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getHreflangActive(): bool
+    public function getHreflangActive(): ?bool
     {
         return $this->hreflangActive;
     }
 
-    public function setHreflangActive(bool $hreflangActive): void
+    public function setHreflangActive(?bool $hreflangActive): void
     {
         $this->hreflangActive = $hreflangActive;
     }
 
-    public function getMaintenance(): bool
+    public function getMaintenance(): ?bool
     {
         return $this->maintenance;
     }
 
-    public function setMaintenance(bool $maintenance): void
+    public function setMaintenance(?bool $maintenance): void
     {
         $this->maintenance = $maintenance;
     }
 
-    public function getMaintenanceIpWhitelist(): array
+    public function getMaintenanceIpWhitelist(): ?array
     {
         return $this->maintenanceIpWhitelist;
     }
 
-    public function setMaintenanceIpWhitelist(array $maintenanceIpWhitelist): void
+    public function setMaintenanceIpWhitelist(?array $maintenanceIpWhitelist): void
     {
         $this->maintenanceIpWhitelist = $maintenanceIpWhitelist;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): SalesChannelTranslationCollection
+    public function getTranslations(): ?SalesChannelTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(SalesChannelTranslationCollection $translations): void
+    public function setTranslations(?SalesChannelTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
@@ -520,12 +517,12 @@ final class SalesChannelEntity extends Entity
         $this->paymentMethods = $paymentMethods;
     }
 
-    public function getPaymentMethodIds(): array
+    public function getPaymentMethodIds(): ?array
     {
         return $this->paymentMethodIds;
     }
 
-    public function setPaymentMethodIds(array $paymentMethodIds): void
+    public function setPaymentMethodIds(?array $paymentMethodIds): void
     {
         $this->paymentMethodIds = $paymentMethodIds;
     }
@@ -640,12 +637,12 @@ final class SalesChannelEntity extends Entity
         $this->homeCmsPageId = $homeCmsPageId;
     }
 
-    public function getHomeCmsPageVersionId(): string
+    public function getHomeCmsPageVersionId(): ?string
     {
         return $this->homeCmsPageVersionId;
     }
 
-    public function setHomeCmsPageVersionId(string $homeCmsPageVersionId): void
+    public function setHomeCmsPageVersionId(?string $homeCmsPageVersionId): void
     {
         $this->homeCmsPageVersionId = $homeCmsPageVersionId;
     }
@@ -660,12 +657,12 @@ final class SalesChannelEntity extends Entity
         $this->homeCmsPage = $homeCmsPage;
     }
 
-    public function getHomeSlotConfig(): array
+    public function getHomeSlotConfig(): ?array
     {
         return $this->homeSlotConfig;
     }
 
-    public function setHomeSlotConfig(array $homeSlotConfig): void
+    public function setHomeSlotConfig(?array $homeSlotConfig): void
     {
         $this->homeSlotConfig = $homeSlotConfig;
     }

@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ImportExportLog;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportFile\ImportExportFileEntity;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfile\ImportExportProfileEntity;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class ImportExportLogEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $activity;
 
     protected string $state;
@@ -34,7 +31,7 @@ final class ImportExportLogEntity extends Entity
 
     protected array $config;
 
-    protected array $result;
+    protected ?array $result;
 
     protected ?UserEntity $user;
 
@@ -146,12 +143,12 @@ final class ImportExportLogEntity extends Entity
         $this->config = $config;
     }
 
-    public function getResult(): array
+    public function getResult(): ?array
     {
         return $this->result;
     }
 
-    public function setResult(array $result): void
+    public function setResult(?array $result): void
     {
         $this->result = $result;
     }

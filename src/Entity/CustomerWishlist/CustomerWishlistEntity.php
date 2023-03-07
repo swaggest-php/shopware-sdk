@@ -7,18 +7,15 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerWishlist;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\CustomerWishlistProduct\CustomerWishlistProductCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class CustomerWishlistEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $customerId;
 
     protected string $salesChannelId;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CustomerWishlistProductCollection $products;
 
@@ -46,12 +43,12 @@ final class CustomerWishlistEntity extends Entity
         $this->salesChannelId = $salesChannelId;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

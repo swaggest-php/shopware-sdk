@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\VersionCommit;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Version\VersionEntity;
 use Swaggest\ShopwareSdk\Entity\VersionCommitData\VersionCommitDataCollection;
 
 final class VersionCommitEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $userId;
 
     protected ?string $integrationId;
 
     protected ?int $autoIncrement;
 
-    protected bool $isMerge;
+    protected ?bool $isMerge;
 
     protected ?string $message;
 
@@ -57,12 +54,12 @@ final class VersionCommitEntity extends Entity
         $this->autoIncrement = $autoIncrement;
     }
 
-    public function getIsMerge(): bool
+    public function getIsMerge(): ?bool
     {
         return $this->isMerge;
     }
 
-    public function setIsMerge(bool $isMerge): void
+    public function setIsMerge(?bool $isMerge): void
     {
         $this->isMerge = $isMerge;
     }

@@ -5,19 +5,16 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\LandingPageTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageEntity;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class LandingPageTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $url;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
     protected ?string $metaTitle;
 
@@ -25,7 +22,7 @@ final class LandingPageTranslationEntity extends Entity
 
     protected ?string $keywords;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $landingPageId;
 
@@ -35,7 +32,7 @@ final class LandingPageTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $landingPageVersionId;
+    protected ?string $landingPageVersionId;
 
     public function getName(): string
     {
@@ -57,12 +54,12 @@ final class LandingPageTranslationEntity extends Entity
         $this->url = $url;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
@@ -97,12 +94,12 @@ final class LandingPageTranslationEntity extends Entity
         $this->keywords = $keywords;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -147,12 +144,12 @@ final class LandingPageTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getLandingPageVersionId(): string
+    public function getLandingPageVersionId(): ?string
     {
         return $this->landingPageVersionId;
     }
 
-    public function setLandingPageVersionId(string $landingPageVersionId): void
+    public function setLandingPageVersionId(?string $landingPageVersionId): void
     {
         $this->landingPageVersionId = $landingPageVersionId;
     }

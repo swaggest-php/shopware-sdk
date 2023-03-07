@@ -9,19 +9,16 @@ use Swaggest\ShopwareSdk\Entity\DocumentBaseConfig\DocumentBaseConfigCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfigSalesChannel\DocumentBaseConfigSalesChannelCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentTypeTranslation\DocumentTypeTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class DocumentTypeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $technicalName;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected DocumentTypeTranslationCollection $translations;
+    protected ?DocumentTypeTranslationCollection $translations;
 
     protected ?DocumentCollection $documents;
 
@@ -49,22 +46,22 @@ final class DocumentTypeEntity extends Entity
         $this->technicalName = $technicalName;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): DocumentTypeTranslationCollection
+    public function getTranslations(): ?DocumentTypeTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(DocumentTypeTranslationCollection $translations): void
+    public function setTranslations(?DocumentTypeTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

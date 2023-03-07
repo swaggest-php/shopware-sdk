@@ -8,13 +8,10 @@ use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\CountryState\CountryStateEntity;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class CustomerAddressEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $customerId;
 
     protected string $countryId;
@@ -45,7 +42,7 @@ final class CustomerAddressEntity extends Entity
 
     protected ?string $additionalAddressLine2;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CustomerEntity $customer;
 
@@ -205,12 +202,12 @@ final class CustomerAddressEntity extends Entity
         $this->additionalAddressLine2 = $additionalAddressLine2;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -5,19 +5,16 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductManufacturerTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\ProductManufacturer\ProductManufacturerEntity;
 
 final class ProductManufacturerTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $productManufacturerId;
 
@@ -27,7 +24,7 @@ final class ProductManufacturerTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $productManufacturerVersionId;
+    protected ?string $productManufacturerVersionId;
 
     public function getName(): string
     {
@@ -49,12 +46,12 @@ final class ProductManufacturerTranslationEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -99,12 +96,12 @@ final class ProductManufacturerTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getProductManufacturerVersionId(): string
+    public function getProductManufacturerVersionId(): ?string
     {
         return $this->productManufacturerVersionId;
     }
 
-    public function setProductManufacturerVersionId(string $productManufacturerVersionId): void
+    public function setProductManufacturerVersionId(?string $productManufacturerVersionId): void
     {
         $this->productManufacturerVersionId = $productManufacturerVersionId;
     }

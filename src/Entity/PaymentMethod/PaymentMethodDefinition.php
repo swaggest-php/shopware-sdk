@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\PaymentMethod;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\Computed;
@@ -19,7 +19,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\SearchRanking;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class PaymentMethodDefinition implements EntityDefinitionInterface
+final class PaymentMethodDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -36,7 +36,7 @@ final class PaymentMethodDefinition implements EntityDefinitionInterface
         return PaymentMethodEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -55,15 +55,15 @@ final class PaymentMethodDefinition implements EntityDefinitionInterface
             (new Field('synchronous', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new WriteProtected([]), new Runtime()),
             (new Field('asynchronous', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new WriteProtected([]), new Runtime()),
             (new Field('prepared', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new WriteProtected([]), new Runtime()),
-            (new Association('translations', Association::ONE_TO_MANY, 'payment_method_translation', 'id', 'paymentMethodId', 'paymentMethodId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Required()),
-            (new Association('media', Association::MANY_TO_ONE, 'media', 'mediaId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('availabilityRule', Association::MANY_TO_ONE, 'rule', 'availabilityRuleId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('salesChannelDefaultAssignments', Association::ONE_TO_MANY, 'sales_channel', 'id', 'paymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('plugin', Association::MANY_TO_ONE, 'plugin', 'pluginId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('customers', Association::ONE_TO_MANY, 'customer', 'id', 'lastPaymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('orderTransactions', Association::ONE_TO_MANY, 'order_transaction', 'id', 'paymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('salesChannels', Association::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'sales_channel_payment_method', 'salesChannelId', 'paymentMethodId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('appPaymentMethod', Association::ONE_TO_ONE, 'app_payment_method', 'id', 'paymentMethodId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'payment_method_translation', 'id', 'paymentMethodId', 'paymentMethodId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Required()),
+            (new AssociationField('media', AssociationField::MANY_TO_ONE, 'media', 'mediaId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('availabilityRule', AssociationField::MANY_TO_ONE, 'rule', 'availabilityRuleId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('salesChannelDefaultAssignments', AssociationField::ONE_TO_MANY, 'sales_channel', 'id', 'paymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('plugin', AssociationField::MANY_TO_ONE, 'plugin', 'pluginId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('customers', AssociationField::ONE_TO_MANY, 'customer', 'id', 'lastPaymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('orderTransactions', AssociationField::ONE_TO_MANY, 'order_transaction', 'id', 'paymentMethodId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('salesChannels', AssociationField::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'sales_channel_payment_method', 'salesChannelId', 'paymentMethodId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('appPaymentMethod', AssociationField::ONE_TO_ONE, 'app_payment_method', 'id', 'paymentMethodId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('translated', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed(), new Runtime()),

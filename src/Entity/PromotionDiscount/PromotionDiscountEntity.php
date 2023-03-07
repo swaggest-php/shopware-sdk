@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PromotionDiscount;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Promotion\PromotionEntity;
 use Swaggest\ShopwareSdk\Entity\PromotionDiscountPrices\PromotionDiscountPricesCollection;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleCollection;
 
 final class PromotionDiscountEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $promotionId;
 
     protected string $scope;

@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ThemeMedia;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Theme\ThemeEntity;
 
 final class ThemeMediaEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $themeId;
 
     protected string $mediaId;

@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductVisibility;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class ProductVisibilityEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected string $salesChannelId;
 
@@ -35,12 +32,12 @@ final class ProductVisibilityEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }

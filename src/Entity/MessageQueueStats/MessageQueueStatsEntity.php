@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MessageQueueStats;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 ;
 
 final class MessageQueueStatsEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected int $size;

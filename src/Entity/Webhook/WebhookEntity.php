@@ -6,12 +6,9 @@ namespace Swaggest\ShopwareSdk\Entity\Webhook;
 
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 
 final class WebhookEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $eventName;
@@ -20,7 +17,7 @@ final class WebhookEntity extends Entity
 
     protected int $errorCount;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?string $appId;
 
@@ -66,12 +63,12 @@ final class WebhookEntity extends Entity
         $this->errorCount = $errorCount;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }

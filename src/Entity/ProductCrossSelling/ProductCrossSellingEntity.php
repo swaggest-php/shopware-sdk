@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductCrossSelling;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSellingAssignedProducts\ProductCrossSellingAssignedProductsCollection;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSellingTranslation\ProductCrossSellingTranslationCollection;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\ProductStream\ProductStreamEntity;
 
 final class ProductCrossSellingEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected int $position;
@@ -25,13 +22,13 @@ final class ProductCrossSellingEntity extends Entity
 
     protected string $type;
 
-    protected bool $active;
+    protected ?bool $active;
 
     protected ?int $limit;
 
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?ProductEntity $product;
 
@@ -41,7 +38,7 @@ final class ProductCrossSellingEntity extends Entity
 
     protected ?ProductCrossSellingAssignedProductsCollection $assignedProducts;
 
-    protected ProductCrossSellingTranslationCollection $translations;
+    protected ?ProductCrossSellingTranslationCollection $translations;
 
     public function getName(): string
     {
@@ -93,12 +90,12 @@ final class ProductCrossSellingEntity extends Entity
         $this->type = $type;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
@@ -123,12 +120,12 @@ final class ProductCrossSellingEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -173,12 +170,12 @@ final class ProductCrossSellingEntity extends Entity
         $this->assignedProducts = $assignedProducts;
     }
 
-    public function getTranslations(): ProductCrossSellingTranslationCollection
+    public function getTranslations(): ?ProductCrossSellingTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductCrossSellingTranslationCollection $translations): void
+    public function setTranslations(?ProductCrossSellingTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

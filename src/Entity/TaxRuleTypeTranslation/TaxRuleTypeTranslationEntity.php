@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\TaxRuleTypeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\TaxRuleType\TaxRuleTypeEntity;
 
 final class TaxRuleTypeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $typeName;
 
     protected string $taxRuleTypeId;

@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductSearchConfig;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\ProductSearchConfigField\ProductSearchConfigFieldCollection;
 
 final class ProductSearchConfigEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $languageId;
 
     protected bool $andLogic;
 
     protected int $minSearchLength;
 
-    protected array $excludedTerms;
+    protected ?array $excludedTerms;
 
     protected ?LanguageEntity $language;
 
@@ -55,12 +52,12 @@ final class ProductSearchConfigEntity extends Entity
         $this->minSearchLength = $minSearchLength;
     }
 
-    public function getExcludedTerms(): array
+    public function getExcludedTerms(): ?array
     {
         return $this->excludedTerms;
     }
 
-    public function setExcludedTerms(array $excludedTerms): void
+    public function setExcludedTerms(?array $excludedTerms): void
     {
         $this->excludedTerms = $excludedTerms;
     }

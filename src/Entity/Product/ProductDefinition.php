@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Product;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\AllowHtml;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
@@ -21,7 +21,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\SetNullOnDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class ProductDefinition implements EntityDefinitionInterface
+final class ProductDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -38,7 +38,7 @@ final class ProductDefinition implements EntityDefinitionInterface
         return ProductEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -105,36 +105,36 @@ final class ProductDefinition implements EntityDefinitionInterface
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited(), new Translatable()),
             (new Field('slotConfig', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited(), new Translatable()),
             (new Field('customSearchKeywords', 'json_list'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Inherited(), new SearchRanking(500.000000), new Translatable()),
-            (new Association('parent', Association::MANY_TO_ONE, 'product', 'parentId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('children', Association::ONE_TO_MANY, 'product', 'id', 'parentId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('deliveryTime', Association::MANY_TO_ONE, 'delivery_time', 'deliveryTimeId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('tax', Association::MANY_TO_ONE, 'tax', 'taxId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('manufacturer', Association::MANY_TO_ONE, 'product_manufacturer', 'manufacturerId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('unit', Association::MANY_TO_ONE, 'unit', 'unitId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('cover', Association::MANY_TO_ONE, 'product_media', 'coverId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('featureSet', Association::MANY_TO_ONE, 'product_feature_set', 'featureSetId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Inherited()),
-            (new Association('cmsPage', Association::MANY_TO_ONE, 'cms_page', 'cmsPageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('canonicalProduct', Association::MANY_TO_ONE, 'product', 'canonicalProductId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
-            (new Association('prices', Association::ONE_TO_MANY, 'product_price', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
-            (new Association('media', Association::ONE_TO_MANY, 'product_media', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
-            (new Association('crossSellings', Association::ONE_TO_MANY, 'product_cross_selling', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
-            (new Association('crossSellingAssignedProducts', Association::ONE_TO_MANY, 'product_cross_selling_assigned_products', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('configuratorSettings', Association::ONE_TO_MANY, 'product_configurator_setting', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('visibilities', Association::ONE_TO_MANY, 'product_visibility', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
-            (new Association('searchKeywords', Association::ONE_TO_MANY, 'product_search_keyword', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('productReviews', Association::ONE_TO_MANY, 'product_review', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('mainCategories', Association::ONE_TO_MANY, 'main_category', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('seoUrls', Association::ONE_TO_MANY, 'seo_url', 'id', 'foreignKey', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('orderLineItems', Association::ONE_TO_MANY, 'order_line_item', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new SetNullOnDelete()),
-            (new Association('wishlists', Association::ONE_TO_MANY, 'customer_wishlist_product', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
-            (new Association('options', Association::MANY_TO_MANY, 'property_group_option', 'id', 'id', null, 'product_option', 'optionId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('properties', Association::MANY_TO_MANY, 'property_group_option', 'id', 'id', null, 'product_property', 'optionId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
-            (new Association('categories', Association::MANY_TO_MANY, 'category', 'id', 'id', null, 'product_category', 'categoryId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited(), new SearchRanking(0.250000)),
-            (new Association('streams', Association::MANY_TO_MANY, 'product_stream', 'id', 'id', null, 'product_stream_mapping', 'productStreamId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
-            (new Association('categoriesRo', Association::MANY_TO_MANY, 'category', 'id', 'id', null, 'product_category_tree', 'categoryId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new WriteProtected([])),
-            (new Association('tags', Association::MANY_TO_MANY, 'tag', 'id', 'id', null, 'product_tag', 'tagId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited(), new SearchRanking(0.250000)),
-            (new Association('customFieldSets', Association::MANY_TO_MANY, 'custom_field_set', 'id', 'id', null, 'product_custom_field_set', 'customFieldSetId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
-            (new Association('translations', Association::ONE_TO_MANY, 'product_translation', 'id', 'productId', 'productId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited(), new Required()),
+            (new AssociationField('parent', AssociationField::MANY_TO_ONE, 'product', 'parentId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('children', AssociationField::ONE_TO_MANY, 'product', 'id', 'parentId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('deliveryTime', AssociationField::MANY_TO_ONE, 'delivery_time', 'deliveryTimeId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('tax', AssociationField::MANY_TO_ONE, 'tax', 'taxId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('manufacturer', AssociationField::MANY_TO_ONE, 'product_manufacturer', 'manufacturerId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('unit', AssociationField::MANY_TO_ONE, 'unit', 'unitId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('cover', AssociationField::MANY_TO_ONE, 'product_media', 'coverId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('featureSet', AssociationField::MANY_TO_ONE, 'product_feature_set', 'featureSetId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Inherited()),
+            (new AssociationField('cmsPage', AssociationField::MANY_TO_ONE, 'cms_page', 'cmsPageId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('canonicalProduct', AssociationField::MANY_TO_ONE, 'product', 'canonicalProductId', 'id', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Inherited()),
+            (new AssociationField('prices', AssociationField::ONE_TO_MANY, 'product_price', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('media', AssociationField::ONE_TO_MANY, 'product_media', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('crossSellings', AssociationField::ONE_TO_MANY, 'product_cross_selling', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('crossSellingAssignedProducts', AssociationField::ONE_TO_MANY, 'product_cross_selling_assigned_products', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('configuratorSettings', AssociationField::ONE_TO_MANY, 'product_configurator_setting', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('visibilities', AssociationField::ONE_TO_MANY, 'product_visibility', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('searchKeywords', AssociationField::ONE_TO_MANY, 'product_search_keyword', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('productReviews', AssociationField::ONE_TO_MANY, 'product_review', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('mainCategories', AssociationField::ONE_TO_MANY, 'main_category', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('seoUrls', AssociationField::ONE_TO_MANY, 'seo_url', 'id', 'foreignKey', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
+            (new AssociationField('orderLineItems', AssociationField::ONE_TO_MANY, 'order_line_item', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new SetNullOnDelete()),
+            (new AssociationField('wishlists', AssociationField::ONE_TO_MANY, 'customer_wishlist_product', 'id', 'productId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('options', AssociationField::MANY_TO_MANY, 'property_group_option', 'id', 'id', null, 'product_option', 'optionId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('properties', AssociationField::MANY_TO_MANY, 'property_group_option', 'id', 'id', null, 'product_property', 'optionId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('categories', AssociationField::MANY_TO_MANY, 'category', 'id', 'id', null, 'product_category', 'categoryId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited(), new SearchRanking(0.250000)),
+            (new AssociationField('streams', AssociationField::MANY_TO_MANY, 'product_stream', 'id', 'id', null, 'product_stream_mapping', 'productStreamId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete()),
+            (new AssociationField('categoriesRo', AssociationField::MANY_TO_MANY, 'category', 'id', 'id', null, 'product_category_tree', 'categoryId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new WriteProtected([])),
+            (new AssociationField('tags', AssociationField::MANY_TO_MANY, 'tag', 'id', 'id', null, 'product_tag', 'tagId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited(), new SearchRanking(0.250000)),
+            (new AssociationField('customFieldSets', AssociationField::MANY_TO_MANY, 'custom_field_set', 'id', 'id', null, 'product_custom_field_set', 'customFieldSetId', 'productId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Inherited()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'product_translation', 'id', 'productId', 'productId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new CascadeDelete(), new Inherited(), new Required()),
             (new Field('cheapestPrice', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new WriteProtected([]), new Inherited()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

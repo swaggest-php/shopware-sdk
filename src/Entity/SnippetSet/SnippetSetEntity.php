@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SnippetSet;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannelDomain\SalesChannelDomainCollection;
 use Swaggest\ShopwareSdk\Entity\Snippet\SnippetCollection;
 
 final class SnippetSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected string $baseFile;
 
     protected string $iso;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?SnippetCollection $snippets;
 
@@ -55,12 +52,12 @@ final class SnippetSetEntity extends Entity
         $this->iso = $iso;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

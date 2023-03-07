@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Flow;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\PrimaryKey;
@@ -14,7 +14,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class FlowDefinition implements EntityDefinitionInterface
+final class FlowDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -31,7 +31,7 @@ final class FlowDefinition implements EntityDefinitionInterface
         return FlowEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),
@@ -42,7 +42,7 @@ final class FlowDefinition implements EntityDefinitionInterface
             (new Field('invalid', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new WriteProtected([ProtectedFlag::SYSTEM])),
             (new Field('active', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('description', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('sequences', Association::ONE_TO_MANY, 'flow_sequence', 'id', 'flowId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
+            (new AssociationField('sequences', AssociationField::ONE_TO_MANY, 'flow_sequence', 'id', 'flowId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete()),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),

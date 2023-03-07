@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Plugin;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodCollection;
 use Swaggest\ShopwareSdk\Entity\PluginTranslation\PluginTranslationCollection;
 
 final class PluginEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $baseClass;
 
     protected string $name;
@@ -21,9 +18,9 @@ final class PluginEntity extends Entity
 
     protected array $autoload;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $managedByComposer;
+    protected ?bool $managedByComposer;
 
     protected ?string $path;
 
@@ -53,11 +50,11 @@ final class PluginEntity extends Entity
 
     protected ?string $supportLink;
 
-    protected array $changelog;
+    protected ?array $changelog;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected PluginTranslationCollection $translations;
+    protected ?PluginTranslationCollection $translations;
 
     protected ?PaymentMethodCollection $paymentMethods;
 
@@ -101,22 +98,22 @@ final class PluginEntity extends Entity
         $this->autoload = $autoload;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getManagedByComposer(): bool
+    public function getManagedByComposer(): ?bool
     {
         return $this->managedByComposer;
     }
 
-    public function setManagedByComposer(bool $managedByComposer): void
+    public function setManagedByComposer(?bool $managedByComposer): void
     {
         $this->managedByComposer = $managedByComposer;
     }
@@ -261,32 +258,32 @@ final class PluginEntity extends Entity
         $this->supportLink = $supportLink;
     }
 
-    public function getChangelog(): array
+    public function getChangelog(): ?array
     {
         return $this->changelog;
     }
 
-    public function setChangelog(array $changelog): void
+    public function setChangelog(?array $changelog): void
     {
         $this->changelog = $changelog;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): PluginTranslationCollection
+    public function getTranslations(): ?PluginTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PluginTranslationCollection $translations): void
+    public function setTranslations(?PluginTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

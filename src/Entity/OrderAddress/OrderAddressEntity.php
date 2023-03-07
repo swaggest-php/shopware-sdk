@@ -7,22 +7,19 @@ namespace Swaggest\ShopwareSdk\Entity\OrderAddress;
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\CountryState\CountryStateEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class OrderAddressEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $countryId;
 
     protected ?string $countryStateId;
 
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected string $salutationId;
 
@@ -50,7 +47,7 @@ final class OrderAddressEntity extends Entity
 
     protected ?string $additionalAddressLine2;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?CountryEntity $country;
 
@@ -92,12 +89,12 @@ final class OrderAddressEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -232,12 +229,12 @@ final class OrderAddressEntity extends Entity
         $this->additionalAddressLine2 = $additionalAddressLine2;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

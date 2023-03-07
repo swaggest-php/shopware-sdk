@@ -6,18 +6,15 @@ namespace Swaggest\ShopwareSdk\Entity\ProductCustomFieldSet;
 
 use Swaggest\ShopwareSdk\Entity\CustomFieldSet\CustomFieldSetEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 
 final class ProductCustomFieldSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
     protected string $customFieldSetId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?ProductEntity $product;
 
@@ -43,12 +40,12 @@ final class ProductCustomFieldSetEntity extends Entity
         $this->customFieldSetId = $customFieldSetId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }

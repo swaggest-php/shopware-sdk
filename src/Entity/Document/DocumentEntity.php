@@ -6,14 +6,11 @@ namespace Swaggest\ShopwareSdk\Entity\Document;
 
 use Swaggest\ShopwareSdk\Entity\DocumentType\DocumentTypeEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 
 final class DocumentEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $documentTypeId;
 
     protected string $fileType;
@@ -24,17 +21,17 @@ final class DocumentEntity extends Entity
 
     protected ?string $documentMediaFileId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected array $config;
 
-    protected bool $sent;
+    protected ?bool $sent;
 
-    protected bool $static;
+    protected ?bool $static;
 
     protected string $deepLinkCode;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?DocumentTypeEntity $documentType;
 
@@ -96,12 +93,12 @@ final class DocumentEntity extends Entity
         $this->documentMediaFileId = $documentMediaFileId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -116,22 +113,22 @@ final class DocumentEntity extends Entity
         $this->config = $config;
     }
 
-    public function getSent(): bool
+    public function getSent(): ?bool
     {
         return $this->sent;
     }
 
-    public function setSent(bool $sent): void
+    public function setSent(?bool $sent): void
     {
         $this->sent = $sent;
     }
 
-    public function getStatic(): bool
+    public function getStatic(): ?bool
     {
         return $this->static;
     }
 
-    public function setStatic(bool $static): void
+    public function setStatic(?bool $static): void
     {
         $this->static = $static;
     }
@@ -146,12 +143,12 @@ final class DocumentEntity extends Entity
         $this->deepLinkCode = $deepLinkCode;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -7,8 +7,10 @@ namespace Swaggest\ShopwareSdk\Code\Entity;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Swaggest\ShopwareSdk\Code\CaseConverterTrait;
 use Swaggest\ShopwareSdk\Code\Event\ClassUsedEvent;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Exception\EntityGeneratorException;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Schema\AbstractField;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 
 final class TypeHintResolver
@@ -19,7 +21,7 @@ final class TypeHintResolver
     {
     }
 
-    public function resolve(Field|Association $field): string
+    public function resolve(AbstractField $field, AbstractEntityDefinition $entityDefinition): string
     {
         if ($field instanceof Field) {
             return match ($field->getType()) {
@@ -32,17 +34,23 @@ final class TypeHintResolver
             };
         }
 
+        if (!$field instanceof AssociationField) {
+            throw new EntityGeneratorException('Unsupported field type: ' . $field::class);
+        }
+
         $entityName = $this->snakeToPascalCase($field->getEntity());
 
         return match ($field->getRelationType()) {
-            Association::ONE_TO_ONE, Association::MANY_TO_ONE => $this->getAssociationTypeHint($entityName, 'Entity'),
-            Association::ONE_TO_MANY, Association::MANY_TO_MANY => $this->getAssociationTypeHint($entityName, 'Collection'),
+            AssociationField::ONE_TO_ONE, AssociationField::MANY_TO_ONE => $this->getAssociationTypeHint($entityName, 'Entity', $entityDefinition),
+            AssociationField::ONE_TO_MANY, AssociationField::MANY_TO_MANY => $this->getAssociationTypeHint($entityName, 'Collection', $entityDefinition),
         };
     }
 
-    private function getAssociationTypeHint(string $entityName, string $classType): string
+    private function getAssociationTypeHint(string $entityName, string $classType, AbstractEntityDefinition $entityDefinition): string
     {
-        $this->eventDispatcher->dispatch(new ClassUsedEvent($this->getFullClass($entityName, $classType)));
+        $fullClass = $this->getFullClass($entityName, $classType);
+
+        $this->eventDispatcher->dispatch(new ClassUsedEvent($fullClass, $entityDefinition));
 
         return $entityName . $classType;
     }

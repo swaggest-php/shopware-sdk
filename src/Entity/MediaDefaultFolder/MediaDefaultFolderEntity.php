@@ -5,20 +5,17 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaDefaultFolder;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MediaFolder\MediaFolderEntity;
 
 final class MediaDefaultFolderEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected array $associationFields;
 
     protected string $entity;
 
     protected ?MediaFolderEntity $folder;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getAssociationFields(): array
     {
@@ -50,12 +47,12 @@ final class MediaDefaultFolderEntity extends Entity
         $this->folder = $folder;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

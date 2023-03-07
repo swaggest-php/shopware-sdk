@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NumberRangeTypeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\NumberRangeType\NumberRangeTypeEntity;
 
 final class NumberRangeTypeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $typeName;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $numberRangeTypeId;
 
@@ -35,12 +32,12 @@ final class NumberRangeTypeTranslationEntity extends Entity
         $this->typeName = $typeName;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -5,18 +5,15 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\OrderTransaction;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
 use Swaggest\ShopwareSdk\Entity\StateMachineState\StateMachineStateEntity;
 
 final class OrderTransactionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected string $paymentMethodId;
 
@@ -26,7 +23,7 @@ final class OrderTransactionEntity extends Entity
 
     protected ?StateMachineStateEntity $stateMachineState;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?OrderEntity $order;
 
@@ -42,12 +39,12 @@ final class OrderTransactionEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -92,12 +89,12 @@ final class OrderTransactionEntity extends Entity
         $this->stateMachineState = $stateMachineState;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

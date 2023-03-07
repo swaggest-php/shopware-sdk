@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MailTemplateTypeTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\MailTemplateType\MailTemplateTypeEntity;
 
 final class MailTemplateTypeTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $mailTemplateTypeId;
 
@@ -35,12 +32,12 @@ final class MailTemplateTypeTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

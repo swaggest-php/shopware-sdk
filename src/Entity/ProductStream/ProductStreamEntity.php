@@ -6,7 +6,6 @@ namespace Swaggest\ShopwareSdk\Entity\ProductStream;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ProductCrossSelling\ProductCrossSellingCollection;
 use Swaggest\ShopwareSdk\Entity\ProductExport\ProductExportCollection;
 use Swaggest\ShopwareSdk\Entity\ProductStreamFilter\ProductStreamFilterCollection;
@@ -14,19 +13,17 @@ use Swaggest\ShopwareSdk\Entity\ProductStreamTranslation\ProductStreamTranslatio
 
 final class ProductStreamEntity extends Entity
 {
-    use EntityIdTrait;
+    protected ?array $apiFilter;
 
-    protected array $apiFilter;
-
-    protected bool $invalid;
+    protected ?bool $invalid;
 
     protected string $name;
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected ProductStreamTranslationCollection $translations;
+    protected ?ProductStreamTranslationCollection $translations;
 
     protected ?ProductStreamFilterCollection $filters;
 
@@ -36,22 +33,22 @@ final class ProductStreamEntity extends Entity
 
     protected ?CategoryCollection $categories;
 
-    public function getApiFilter(): array
+    public function getApiFilter(): ?array
     {
         return $this->apiFilter;
     }
 
-    public function setApiFilter(array $apiFilter): void
+    public function setApiFilter(?array $apiFilter): void
     {
         $this->apiFilter = $apiFilter;
     }
 
-    public function getInvalid(): bool
+    public function getInvalid(): ?bool
     {
         return $this->invalid;
     }
 
-    public function setInvalid(bool $invalid): void
+    public function setInvalid(?bool $invalid): void
     {
         $this->invalid = $invalid;
     }
@@ -76,22 +73,22 @@ final class ProductStreamEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getTranslations(): ProductStreamTranslationCollection
+    public function getTranslations(): ?ProductStreamTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ProductStreamTranslationCollection $translations): void
+    public function setTranslations(?ProductStreamTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

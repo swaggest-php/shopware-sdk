@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PromotionSetgroupRule;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PromotionSetgroup\PromotionSetgroupEntity;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class PromotionSetgroupRuleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $setgroupId;
 
     protected string $ruleId;

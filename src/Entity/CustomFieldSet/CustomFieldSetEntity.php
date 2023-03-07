@@ -8,20 +8,17 @@ use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\CustomField\CustomFieldCollection;
 use Swaggest\ShopwareSdk\Entity\CustomFieldSetRelation\CustomFieldSetRelationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 
 final class CustomFieldSetEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected array $config;
+    protected ?array $config;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $global;
+    protected ?bool $global;
 
     protected ?int $position;
 
@@ -45,32 +42,32 @@ final class CustomFieldSetEntity extends Entity
         $this->name = $name;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getGlobal(): bool
+    public function getGlobal(): ?bool
     {
         return $this->global;
     }
 
-    public function setGlobal(bool $global): void
+    public function setGlobal(?bool $global): void
     {
         $this->global = $global;
     }

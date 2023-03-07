@@ -5,18 +5,15 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\UserConfig;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class UserConfigEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $userId;
 
     protected string $key;
 
-    protected array $value;
+    protected ?array $value;
 
     protected ?UserEntity $user;
 
@@ -40,12 +37,12 @@ final class UserConfigEntity extends Entity
         $this->key = $key;
     }
 
-    public function getValue(): array
+    public function getValue(): ?array
     {
         return $this->value;
     }
 
-    public function setValue(array $value): void
+    public function setValue(?array $value): void
     {
         $this->value = $value;
     }

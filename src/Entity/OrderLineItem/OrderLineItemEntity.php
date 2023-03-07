@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\OrderLineItem;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\OrderDeliveryPosition\OrderDeliveryPositionCollection;
@@ -13,19 +12,17 @@ use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 
 final class OrderLineItemEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected ?string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected ?string $parentId;
 
-    protected string $parentVersionId;
+    protected ?string $parentVersionId;
 
     protected ?string $coverId;
 
@@ -39,19 +36,19 @@ final class OrderLineItemEntity extends Entity
 
     protected string $label;
 
-    protected array $payload;
+    protected ?array $payload;
 
-    protected bool $good;
+    protected ?bool $good;
 
-    protected bool $removable;
+    protected ?bool $removable;
 
-    protected bool $stackable;
+    protected ?bool $stackable;
 
     protected int $position;
 
     protected array $price;
 
-    protected array $priceDefinition;
+    protected ?array $priceDefinition;
 
     protected ?float $unitPrice;
 
@@ -61,7 +58,7 @@ final class OrderLineItemEntity extends Entity
 
     protected ?string $type;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?OrderEntity $order;
 
@@ -83,12 +80,12 @@ final class OrderLineItemEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -103,12 +100,12 @@ final class OrderLineItemEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -123,12 +120,12 @@ final class OrderLineItemEntity extends Entity
         $this->parentId = $parentId;
     }
 
-    public function getParentVersionId(): string
+    public function getParentVersionId(): ?string
     {
         return $this->parentVersionId;
     }
 
-    public function setParentVersionId(string $parentVersionId): void
+    public function setParentVersionId(?string $parentVersionId): void
     {
         $this->parentVersionId = $parentVersionId;
     }
@@ -193,42 +190,42 @@ final class OrderLineItemEntity extends Entity
         $this->label = $label;
     }
 
-    public function getPayload(): array
+    public function getPayload(): ?array
     {
         return $this->payload;
     }
 
-    public function setPayload(array $payload): void
+    public function setPayload(?array $payload): void
     {
         $this->payload = $payload;
     }
 
-    public function getGood(): bool
+    public function getGood(): ?bool
     {
         return $this->good;
     }
 
-    public function setGood(bool $good): void
+    public function setGood(?bool $good): void
     {
         $this->good = $good;
     }
 
-    public function getRemovable(): bool
+    public function getRemovable(): ?bool
     {
         return $this->removable;
     }
 
-    public function setRemovable(bool $removable): void
+    public function setRemovable(?bool $removable): void
     {
         $this->removable = $removable;
     }
 
-    public function getStackable(): bool
+    public function getStackable(): ?bool
     {
         return $this->stackable;
     }
 
-    public function setStackable(bool $stackable): void
+    public function setStackable(?bool $stackable): void
     {
         $this->stackable = $stackable;
     }
@@ -253,12 +250,12 @@ final class OrderLineItemEntity extends Entity
         $this->price = $price;
     }
 
-    public function getPriceDefinition(): array
+    public function getPriceDefinition(): ?array
     {
         return $this->priceDefinition;
     }
 
-    public function setPriceDefinition(array $priceDefinition): void
+    public function setPriceDefinition(?array $priceDefinition): void
     {
         $this->priceDefinition = $priceDefinition;
     }
@@ -303,12 +300,12 @@ final class OrderLineItemEntity extends Entity
         $this->type = $type;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

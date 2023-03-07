@@ -5,24 +5,21 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\UserAccessKey;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class UserAccessKeyEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $userId;
 
     protected string $accessKey;
 
     protected string $secretAccessKey;
 
-    protected bool $writeAccess;
+    protected ?bool $writeAccess;
 
     protected ?\DateTimeInterface $lastUsageAt;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?UserEntity $user;
 
@@ -56,12 +53,12 @@ final class UserAccessKeyEntity extends Entity
         $this->secretAccessKey = $secretAccessKey;
     }
 
-    public function getWriteAccess(): bool
+    public function getWriteAccess(): ?bool
     {
         return $this->writeAccess;
     }
 
-    public function setWriteAccess(bool $writeAccess): void
+    public function setWriteAccess(?bool $writeAccess): void
     {
         $this->writeAccess = $writeAccess;
     }
@@ -76,12 +73,12 @@ final class UserAccessKeyEntity extends Entity
         $this->lastUsageAt = $lastUsageAt;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

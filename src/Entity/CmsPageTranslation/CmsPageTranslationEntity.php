@@ -6,16 +6,13 @@ namespace Swaggest\ShopwareSdk\Entity\CmsPageTranslation;
 
 use Swaggest\ShopwareSdk\Entity\CmsPage\CmsPageEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CmsPageTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $name;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $cmsPageId;
 
@@ -25,7 +22,7 @@ final class CmsPageTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $cmsPageVersionId;
+    protected ?string $cmsPageVersionId;
 
     public function getName(): ?string
     {
@@ -37,12 +34,12 @@ final class CmsPageTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -87,12 +84,12 @@ final class CmsPageTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getCmsPageVersionId(): string
+    public function getCmsPageVersionId(): ?string
     {
         return $this->cmsPageVersionId;
     }
 
-    public function setCmsPageVersionId(string $cmsPageVersionId): void
+    public function setCmsPageVersionId(?string $cmsPageVersionId): void
     {
         $this->cmsPageVersionId = $cmsPageVersionId;
     }

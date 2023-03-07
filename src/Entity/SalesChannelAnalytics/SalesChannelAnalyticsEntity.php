@@ -5,20 +5,17 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelAnalytics;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelAnalyticsEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $trackingId;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $trackOrders;
+    protected ?bool $trackOrders;
 
-    protected bool $anonymizeIp;
+    protected ?bool $anonymizeIp;
 
     protected ?SalesChannelEntity $salesChannel;
 
@@ -32,32 +29,32 @@ final class SalesChannelAnalyticsEntity extends Entity
         $this->trackingId = $trackingId;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getTrackOrders(): bool
+    public function getTrackOrders(): ?bool
     {
         return $this->trackOrders;
     }
 
-    public function setTrackOrders(bool $trackOrders): void
+    public function setTrackOrders(?bool $trackOrders): void
     {
         $this->trackOrders = $trackOrders;
     }
 
-    public function getAnonymizeIp(): bool
+    public function getAnonymizeIp(): ?bool
     {
         return $this->anonymizeIp;
     }
 
-    public function setAnonymizeIp(bool $anonymizeIp): void
+    public function setAnonymizeIp(?bool $anonymizeIp): void
     {
         $this->anonymizeIp = $anonymizeIp;
     }

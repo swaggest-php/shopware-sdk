@@ -5,18 +5,15 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PromotionIndividualCode;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Promotion\PromotionEntity;
 
 final class PromotionIndividualCodeEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $promotionId;
 
     protected string $code;
 
-    protected array $payload;
+    protected ?array $payload;
 
     protected ?PromotionEntity $promotion;
 
@@ -40,12 +37,12 @@ final class PromotionIndividualCodeEntity extends Entity
         $this->code = $code;
     }
 
-    public function getPayload(): array
+    public function getPayload(): ?array
     {
         return $this->payload;
     }
 
-    public function setPayload(array $payload): void
+    public function setPayload(?array $payload): void
     {
         $this->payload = $payload;
     }

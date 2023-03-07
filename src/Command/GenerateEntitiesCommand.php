@@ -9,8 +9,9 @@ use Swaggest\ShopwareSdk\Code\Entity\CollectionGenerator;
 use Swaggest\ShopwareSdk\Code\Entity\EntityGenerator;
 use Swaggest\ShopwareSdk\Code\Entity\TypeHintResolver;
 use Swaggest\ShopwareSdk\Code\EventSubscriber\CodeEventSubscriber;
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
 use Swaggest\ShopwareSdk\Exception\SchemaException;
+use Swaggest\ShopwareSdk\Schema\EntityDefinition\Processor\EntityDefinitionProcessorCollection;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -36,7 +37,14 @@ final class GenerateEntitiesCommand extends Command
         $eventDispatcher = new EventDispatcher();
 
         $typeHintResolver = new TypeHintResolver($eventDispatcher);
-        $entityGenerator = new EntityGenerator($typeHintResolver);
+
+        /**
+         * If need be, add entity definition processors.
+         */
+        $processors = new EntityDefinitionProcessorCollection([
+        ]);
+
+        $entityGenerator = new EntityGenerator($typeHintResolver, $processors);
 
         $eventDispatcher->addSubscriber(new CodeEventSubscriber($entityGenerator));
 
@@ -52,7 +60,7 @@ final class GenerateEntitiesCommand extends Command
                 \mkdir($dirName);
             }
 
-            /** @var EntityDefinitionInterface $definition */
+            /** @var AbstractEntityDefinition $definition */
             $definition = new $class();
             $generatedEntity = $entityGenerator->generateEntity($definition);
             $generatedCollection = $collectionGenerator->generateCollection($definition);

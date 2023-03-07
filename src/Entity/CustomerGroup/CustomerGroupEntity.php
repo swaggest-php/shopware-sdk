@@ -7,26 +7,23 @@ namespace Swaggest\ShopwareSdk\Entity\CustomerGroup;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\CustomerGroupTranslation\CustomerGroupTranslationCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class CustomerGroupEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected bool $displayGross;
+    protected ?bool $displayGross;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
-    protected bool $registrationActive;
+    protected ?bool $registrationActive;
 
     protected ?string $registrationTitle;
 
     protected ?string $registrationIntroduction;
 
-    protected bool $registrationOnlyCompanyRegistration;
+    protected ?bool $registrationOnlyCompanyRegistration;
 
     protected ?string $registrationSeoMetaDescription;
 
@@ -34,7 +31,7 @@ final class CustomerGroupEntity extends Entity
 
     protected ?SalesChannelCollection $salesChannels;
 
-    protected CustomerGroupTranslationCollection $translations;
+    protected ?CustomerGroupTranslationCollection $translations;
 
     protected ?SalesChannelCollection $registrationSalesChannels;
 
@@ -48,32 +45,32 @@ final class CustomerGroupEntity extends Entity
         $this->name = $name;
     }
 
-    public function getDisplayGross(): bool
+    public function getDisplayGross(): ?bool
     {
         return $this->displayGross;
     }
 
-    public function setDisplayGross(bool $displayGross): void
+    public function setDisplayGross(?bool $displayGross): void
     {
         $this->displayGross = $displayGross;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
 
-    public function getRegistrationActive(): bool
+    public function getRegistrationActive(): ?bool
     {
         return $this->registrationActive;
     }
 
-    public function setRegistrationActive(bool $registrationActive): void
+    public function setRegistrationActive(?bool $registrationActive): void
     {
         $this->registrationActive = $registrationActive;
     }
@@ -98,12 +95,12 @@ final class CustomerGroupEntity extends Entity
         $this->registrationIntroduction = $registrationIntroduction;
     }
 
-    public function getRegistrationOnlyCompanyRegistration(): bool
+    public function getRegistrationOnlyCompanyRegistration(): ?bool
     {
         return $this->registrationOnlyCompanyRegistration;
     }
 
-    public function setRegistrationOnlyCompanyRegistration(bool $registrationOnlyCompanyRegistration): void
+    public function setRegistrationOnlyCompanyRegistration(?bool $registrationOnlyCompanyRegistration): void
     {
         $this->registrationOnlyCompanyRegistration = $registrationOnlyCompanyRegistration;
     }
@@ -138,12 +135,12 @@ final class CustomerGroupEntity extends Entity
         $this->salesChannels = $salesChannels;
     }
 
-    public function getTranslations(): CustomerGroupTranslationCollection
+    public function getTranslations(): ?CustomerGroupTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(CustomerGroupTranslationCollection $translations): void
+    public function setTranslations(?CustomerGroupTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

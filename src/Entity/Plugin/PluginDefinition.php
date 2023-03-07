@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Plugin;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\AllowHtml;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
@@ -19,7 +19,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\SetNullOnDelete;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 use Swaggest\ShopwareSdk\Schema\Flag\WriteProtected;
 
-final class PluginDefinition implements EntityDefinitionInterface
+final class PluginDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -36,7 +36,7 @@ final class PluginDefinition implements EntityDefinitionInterface
         return PluginEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),
@@ -62,8 +62,8 @@ final class PluginDefinition implements EntityDefinitionInterface
             (new Field('supportLink', 'string'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Translatable()),
             (new Field('changelog', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Translatable()),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Translatable()),
-            (new Association('translations', Association::ONE_TO_MANY, 'plugin_translation', 'id', 'pluginId', 'pluginId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
-            (new Association('paymentMethods', Association::ONE_TO_MANY, 'payment_method', 'id', 'pluginId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new SetNullOnDelete()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'plugin_translation', 'id', 'pluginId', 'pluginId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
+            (new AssociationField('paymentMethods', AssociationField::ONE_TO_MANY, 'payment_method', 'id', 'pluginId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new SetNullOnDelete()),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('translated', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed(), new Runtime()),

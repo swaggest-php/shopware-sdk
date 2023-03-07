@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\StateMachineState;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderCollection;
 use Swaggest\ShopwareSdk\Entity\OrderDelivery\OrderDeliveryCollection;
 use Swaggest\ShopwareSdk\Entity\OrderTransaction\OrderTransactionCollection;
@@ -16,8 +15,6 @@ use Swaggest\ShopwareSdk\Entity\StateMachineTransition\StateMachineTransitionCol
 
 final class StateMachineStateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $technicalName;
 
     protected string $name;
@@ -30,7 +27,7 @@ final class StateMachineStateEntity extends Entity
 
     protected ?StateMachineTransitionCollection $toStateMachineTransitions;
 
-    protected StateMachineStateTranslationCollection $translations;
+    protected ?StateMachineStateTranslationCollection $translations;
 
     protected ?OrderTransactionCollection $orderTransactions;
 
@@ -38,7 +35,7 @@ final class StateMachineStateEntity extends Entity
 
     protected ?OrderCollection $orders;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?StateMachineHistoryCollection $toStateMachineHistoryEntries;
 
@@ -104,12 +101,12 @@ final class StateMachineStateEntity extends Entity
         $this->toStateMachineTransitions = $toStateMachineTransitions;
     }
 
-    public function getTranslations(): StateMachineStateTranslationCollection
+    public function getTranslations(): ?StateMachineStateTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(StateMachineStateTranslationCollection $translations): void
+    public function setTranslations(?StateMachineStateTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
@@ -144,12 +141,12 @@ final class StateMachineStateEntity extends Entity
         $this->orders = $orders;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

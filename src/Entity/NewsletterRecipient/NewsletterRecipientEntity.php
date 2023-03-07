@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NewsletterRecipient;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
@@ -13,8 +12,6 @@ use Swaggest\ShopwareSdk\Entity\Tag\TagCollection;
 
 final class NewsletterRecipientEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $email;
 
     protected ?string $title;
@@ -33,7 +30,7 @@ final class NewsletterRecipientEntity extends Entity
 
     protected string $hash;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?\DateTimeInterface $confirmedAt;
 
@@ -141,12 +138,12 @@ final class NewsletterRecipientEntity extends Entity
         $this->hash = $hash;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

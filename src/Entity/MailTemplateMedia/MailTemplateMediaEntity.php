@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MailTemplateMedia;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailTemplate\MailTemplateEntity;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class MailTemplateMediaEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mailTemplateId;
 
     protected string $languageId;

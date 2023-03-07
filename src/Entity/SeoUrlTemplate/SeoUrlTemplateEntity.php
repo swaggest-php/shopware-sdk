@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SeoUrlTemplate;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SeoUrlTemplateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $salesChannelId;
 
     protected string $entityName;
@@ -20,9 +17,9 @@ final class SeoUrlTemplateEntity extends Entity
 
     protected ?string $template;
 
-    protected bool $isValid;
+    protected ?bool $isValid;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?SalesChannelEntity $salesChannel;
 
@@ -66,22 +63,22 @@ final class SeoUrlTemplateEntity extends Entity
         $this->template = $template;
     }
 
-    public function getIsValid(): bool
+    public function getIsValid(): ?bool
     {
         return $this->isValid;
     }
 
-    public function setIsValid(bool $isValid): void
+    public function setIsValid(?bool $isValid): void
     {
         $this->isValid = $isValid;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\CustomerGroup;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\AllowHtml;
 use Swaggest\ShopwareSdk\Schema\Flag\CascadeDelete;
@@ -19,7 +19,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\Runtime;
 use Swaggest\ShopwareSdk\Schema\Flag\SearchRanking;
 use Swaggest\ShopwareSdk\Schema\Flag\Translatable;
 
-final class CustomerGroupDefinition implements EntityDefinitionInterface
+final class CustomerGroupDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -36,7 +36,7 @@ final class CustomerGroupDefinition implements EntityDefinitionInterface
         return CustomerGroupEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new PrimaryKey(), new Required()),
@@ -48,10 +48,10 @@ final class CustomerGroupDefinition implements EntityDefinitionInterface
             (new Field('registrationIntroduction', 'text'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new AllowHtml(), new Translatable()),
             (new Field('registrationOnlyCompanyRegistration', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Translatable()),
             (new Field('registrationSeoMetaDescription', 'text'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Translatable()),
-            (new Association('customers', Association::ONE_TO_MANY, 'customer', 'id', 'groupId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('salesChannels', Association::ONE_TO_MANY, 'sales_channel', 'id', 'customerGroupId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('translations', Association::ONE_TO_MANY, 'customer_group_translation', 'id', 'customerGroupId', 'customerGroupId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
-            (new Association('registrationSalesChannels', Association::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'customer_group_registration_sales_channels', 'salesChannelId', 'customerGroupId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('customers', AssociationField::ONE_TO_MANY, 'customer', 'id', 'groupId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('salesChannels', AssociationField::ONE_TO_MANY, 'sales_channel', 'id', 'customerGroupId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('translations', AssociationField::ONE_TO_MANY, 'customer_group_translation', 'id', 'customerGroupId', 'customerGroupId', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new CascadeDelete(), new Required()),
+            (new AssociationField('registrationSalesChannels', AssociationField::MANY_TO_MANY, 'sales_channel', 'id', 'id', null, 'customer_group_registration_sales_channels', 'salesChannelId', 'customerGroupId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
             (new Field('translated', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Computed(), new Runtime()),

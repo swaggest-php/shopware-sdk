@@ -5,20 +5,17 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\RuleCondition;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class RuleConditionEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $type;
 
     protected string $ruleId;
 
     protected ?string $parentId;
 
-    protected array $value;
+    protected ?array $value;
 
     protected ?int $position;
 
@@ -28,7 +25,7 @@ final class RuleConditionEntity extends Entity
 
     protected ?RuleConditionCollection $children;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getType(): ?string
     {
@@ -60,12 +57,12 @@ final class RuleConditionEntity extends Entity
         $this->parentId = $parentId;
     }
 
-    public function getValue(): array
+    public function getValue(): ?array
     {
         return $this->value;
     }
 
-    public function setValue(array $value): void
+    public function setValue(?array $value): void
     {
         $this->value = $value;
     }
@@ -110,12 +107,12 @@ final class RuleConditionEntity extends Entity
         $this->children = $children;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

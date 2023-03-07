@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\SalesChannelTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class SalesChannelTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected array $homeSlotConfig;
+    protected ?array $homeSlotConfig;
 
     protected bool $homeEnabled;
 
@@ -27,7 +24,7 @@ final class SalesChannelTranslationEntity extends Entity
 
     protected ?string $homeKeywords;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $salesChannelId;
 
@@ -47,12 +44,12 @@ final class SalesChannelTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getHomeSlotConfig(): array
+    public function getHomeSlotConfig(): ?array
     {
         return $this->homeSlotConfig;
     }
 
-    public function setHomeSlotConfig(array $homeSlotConfig): void
+    public function setHomeSlotConfig(?array $homeSlotConfig): void
     {
         $this->homeSlotConfig = $homeSlotConfig;
     }
@@ -107,12 +104,12 @@ final class SalesChannelTranslationEntity extends Entity
         $this->homeKeywords = $homeKeywords;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

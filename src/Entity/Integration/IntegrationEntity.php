@@ -7,26 +7,23 @@ namespace Swaggest\ShopwareSdk\Entity\Integration;
 use Swaggest\ShopwareSdk\Entity\AclRole\AclRoleCollection;
 use Swaggest\ShopwareSdk\Entity\App\AppEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Notification\NotificationCollection;
 
 final class IntegrationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $label;
 
     protected string $accessKey;
 
     protected string $secretAccessKey;
 
-    protected bool $writeAccess;
+    protected ?bool $writeAccess;
 
     protected ?\DateTimeInterface $lastUsageAt;
 
-    protected bool $admin;
+    protected ?bool $admin;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?\DateTimeInterface $deletedAt;
 
@@ -66,12 +63,12 @@ final class IntegrationEntity extends Entity
         $this->secretAccessKey = $secretAccessKey;
     }
 
-    public function getWriteAccess(): bool
+    public function getWriteAccess(): ?bool
     {
         return $this->writeAccess;
     }
 
-    public function setWriteAccess(bool $writeAccess): void
+    public function setWriteAccess(?bool $writeAccess): void
     {
         $this->writeAccess = $writeAccess;
     }
@@ -86,22 +83,22 @@ final class IntegrationEntity extends Entity
         $this->lastUsageAt = $lastUsageAt;
     }
 
-    public function getAdmin(): bool
+    public function getAdmin(): ?bool
     {
         return $this->admin;
     }
 
-    public function setAdmin(bool $admin): void
+    public function setAdmin(?bool $admin): void
     {
         $this->admin = $admin;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

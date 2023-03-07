@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\MediaThumbnail;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 
 final class MediaThumbnailEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $mediaId;
 
     protected int $width;
@@ -22,7 +19,7 @@ final class MediaThumbnailEntity extends Entity
 
     protected ?MediaEntity $media;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getMediaId(): string
     {
@@ -74,12 +71,12 @@ final class MediaThumbnailEntity extends Entity
         $this->media = $media;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

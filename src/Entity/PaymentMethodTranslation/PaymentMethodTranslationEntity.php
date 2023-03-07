@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PaymentMethodTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\PaymentMethod\PaymentMethodEntity;
 
 final class PaymentMethodTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $distinguishableName;
 
     protected ?string $description;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $paymentMethodId;
 
@@ -59,12 +56,12 @@ final class PaymentMethodTranslationEntity extends Entity
         $this->description = $description;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

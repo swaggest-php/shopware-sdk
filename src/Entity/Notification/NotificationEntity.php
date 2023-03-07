@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Notification;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Integration\IntegrationEntity;
 use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class NotificationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $status;
 
     protected string $message;
 
-    protected bool $adminOnly;
+    protected ?bool $adminOnly;
 
-    protected array $requiredPrivileges;
+    protected ?array $requiredPrivileges;
 
     protected ?string $createdByIntegrationId;
 
@@ -49,22 +46,22 @@ final class NotificationEntity extends Entity
         $this->message = $message;
     }
 
-    public function getAdminOnly(): bool
+    public function getAdminOnly(): ?bool
     {
         return $this->adminOnly;
     }
 
-    public function setAdminOnly(bool $adminOnly): void
+    public function setAdminOnly(?bool $adminOnly): void
     {
         $this->adminOnly = $adminOnly;
     }
 
-    public function getRequiredPrivileges(): array
+    public function getRequiredPrivileges(): ?array
     {
         return $this->requiredPrivileges;
     }
 
-    public function setRequiredPrivileges(array $requiredPrivileges): void
+    public function setRequiredPrivileges(?array $requiredPrivileges): void
     {
         $this->requiredPrivileges = $requiredPrivileges;
     }

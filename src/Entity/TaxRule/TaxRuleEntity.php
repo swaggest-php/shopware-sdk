@@ -6,21 +6,18 @@ namespace Swaggest\ShopwareSdk\Entity\TaxRule;
 
 use Swaggest\ShopwareSdk\Entity\Country\CountryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Tax\TaxEntity;
 use Swaggest\ShopwareSdk\Entity\TaxRuleType\TaxRuleTypeEntity;
 
 final class TaxRuleEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $taxRuleTypeId;
 
     protected string $countryId;
 
     protected float $taxRate;
 
-    protected array $data;
+    protected ?array $data;
 
     protected string $taxId;
 
@@ -60,12 +57,12 @@ final class TaxRuleEntity extends Entity
         $this->taxRate = $taxRate;
     }
 
-    public function getData(): array
+    public function getData(): ?array
     {
         return $this->data;
     }
 
-    public function setData(array $data): void
+    public function setData(?array $data): void
     {
         $this->data = $data;
     }

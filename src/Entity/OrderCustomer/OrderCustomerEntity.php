@@ -6,19 +6,16 @@ namespace Swaggest\ShopwareSdk\Entity\OrderCustomer;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Order\OrderEntity;
 use Swaggest\ShopwareSdk\Entity\Salutation\SalutationEntity;
 
 final class OrderCustomerEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $customerId;
 
     protected string $orderId;
 
-    protected string $orderVersionId;
+    protected ?string $orderVersionId;
 
     protected string $email;
 
@@ -32,11 +29,11 @@ final class OrderCustomerEntity extends Entity
 
     protected ?string $title;
 
-    protected array $vatIds;
+    protected ?array $vatIds;
 
     protected ?string $customerNumber;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?OrderEntity $order;
 
@@ -66,12 +63,12 @@ final class OrderCustomerEntity extends Entity
         $this->orderId = $orderId;
     }
 
-    public function getOrderVersionId(): string
+    public function getOrderVersionId(): ?string
     {
         return $this->orderVersionId;
     }
 
-    public function setOrderVersionId(string $orderVersionId): void
+    public function setOrderVersionId(?string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
     }
@@ -136,12 +133,12 @@ final class OrderCustomerEntity extends Entity
         $this->title = $title;
     }
 
-    public function getVatIds(): array
+    public function getVatIds(): ?array
     {
         return $this->vatIds;
     }
 
-    public function setVatIds(array $vatIds): void
+    public function setVatIds(?array $vatIds): void
     {
         $this->vatIds = $vatIds;
     }
@@ -156,12 +153,12 @@ final class OrderCustomerEntity extends Entity
         $this->customerNumber = $customerNumber;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -1,0 +1,391 @@
+{
+  "data": [
+    {
+      "id": "db0acac390164ad29b1cba3c8c48b385",
+      "type": "product",
+      "attributes": {
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "parentId": null,
+        "parentVersionId": null,
+        "manufacturerId": "89a8fefb288e4e5d8a9d65f60be2fd02",
+        "productManufacturerVersionId": null,
+        "unitId": null,
+        "taxId": "f9947bbf58cd43b59a4b22f4cec5ef30",
+        "coverId": "e43d74ff644b45a38495f23be802c38e",
+        "productMediaVersionId": null,
+        "deliveryTimeId": null,
+        "featureSetId": null,
+        "canonicalProductId": null,
+        "cmsPageId": null,
+        "cmsPageVersionId": null,
+        "price": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 357.15966386555,
+            "gross": 425.02,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "productNumber": "ffdd344ed870411882ffaa808e9880b6",
+        "stock": 28,
+        "restockTime": null,
+        "autoIncrement": 1415,
+        "active": true,
+        "availableStock": 28,
+        "available": true,
+        "isCloseout": false,
+        "variation": [],
+        "displayGroup": "1a8d5af3d22509b987248d5c40f53b07",
+        "configuratorGroupConfig": null,
+        "mainVariantId": null,
+        "variantRestrictions": null,
+        "manufacturerNumber": null,
+        "ean": null,
+        "purchaseSteps": 1,
+        "maxPurchase": null,
+        "minPurchase": 1,
+        "purchaseUnit": null,
+        "referenceUnit": null,
+        "shippingFree": false,
+        "purchasePrices": [
+          {
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "net": 478.19327731092,
+            "gross": 569.05,
+            "linked": true,
+            "listPrice": null,
+            "percentage": null,
+            "extensions": []
+          }
+        ],
+        "markAsTopseller": null,
+        "weight": null,
+        "width": 670.0,
+        "height": 175.0,
+        "length": null,
+        "releaseDate": null,
+        "ratingAverage": null,
+        "categoryTree": [
+          "c8505deca25f4ad592bde4520a45de06",
+          "e65f8f80d899418f98df4238f2b425cc",
+          "8ab3e11e42214e3e8b686f287206a48a",
+          "51d7ab4daeda467ca5b3a51bba166dba",
+          "2645c66961ad457aa6c46759853fa610"
+        ],
+        "propertyIds": [
+          "0d731d4b631645b18000ea8600f97af8",
+          "0e1454ce6fc44212a229042f2fefb3b7",
+          "74e5befaea014913896687380df7d2b6",
+          "8802819ce38f4fc2b2e4aefecd8eab83",
+          "b25b6705fae4492ea38090891770655f",
+          "b311f7e674f549c6ae675049c46bac34",
+          "cff3495d034241f18e54f6e74082c751",
+          "eceaffe4843e44a898b4fe3d602d7373"
+        ],
+        "optionIds": null,
+        "streamIds": [
+          "48648160134a450d9c8dfc48ebe7e7a8",
+          "4e5ab8e26e4e465c92cfa4bb22bc5cc7",
+          "591a9a9ca5bd4170b5418403a78d100e",
+          "5c3d6f3115d24036b12b2343d164e179",
+          "666b8c649821412992a442295c7358d3",
+          "831a6f25581c4f00a49a18dfc3d5345e",
+          "a107617fa9a8457e81cf1c2f8f471464",
+          "c6d0de3623114430bab857f74d86ee31"
+        ],
+        "tagIds": null,
+        "categoryIds": [
+          "2645c66961ad457aa6c46759853fa610"
+        ],
+        "childCount": 0,
+        "customFieldSetSelectionActive": null,
+        "sales": 0,
+        "metaDescription": null,
+        "name": "Intelligent Marble Fish Fingers",
+        "keywords": null,
+        "description": "Porro et minima fuga ut porro. Voluptatibus minus odit rerum quam occaecati quibusdam. Est quia in officia quo occaecati amet. Nesciunt cum et repudiandae. Aut saepe ut nisi aspernatur.",
+        "metaTitle": null,
+        "packUnit": null,
+        "packUnitPlural": null,
+        "customFields": {},
+        "slotConfig": null,
+        "customSearchKeywords": null,
+        "cheapestPrice": {
+          "hasRange": false,
+          "variantId": "db0acac390164ad29b1cba3c8c48b385",
+          "parentId": "db0acac390164ad29b1cba3c8c48b385",
+          "ruleId": null,
+          "purchase": null,
+          "reference": null,
+          "unitId": null,
+          "price": [
+            {
+              "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+              "net": 357.15966386555,
+              "gross": 425.02,
+              "linked": true,
+              "listPrice": null,
+              "percentage": null,
+              "extensions": []
+            }
+          ],
+          "extensions": []
+        },
+        "createdAt": "2022-02-17T18:36:17.858+00:00",
+        "updatedAt": "2022-02-17T18:43:34.390+00:00",
+        "translated": {
+          "metaDescription": null,
+          "name": "Intelligent Marble Fish Fingers",
+          "keywords": null,
+          "description": "Porro et minima fuga ut porro. Voluptatibus minus odit rerum quam occaecati quibusdam. Est quia in officia quo occaecati amet. Nesciunt cum et repudiandae. Aut saepe ut nisi aspernatur.",
+          "metaTitle": null,
+          "packUnit": null,
+          "packUnitPlural": null,
+          "customFields": {},
+          "slotConfig": null,
+          "customSearchKeywords": null
+        },
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385"
+      },
+      "relationships": {
+        "parent": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/parent"
+          }
+        },
+        "children": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/children"
+          }
+        },
+        "deliveryTime": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/delivery-time"
+          }
+        },
+        "tax": {
+          "data": {
+            "type": "tax",
+            "id": "f9947bbf58cd43b59a4b22f4cec5ef30"
+          },
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/tax"
+          }
+        },
+        "manufacturer": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/manufacturer"
+          }
+        },
+        "unit": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/unit"
+          }
+        },
+        "cover": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/cover"
+          }
+        },
+        "featureSet": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/feature-set"
+          }
+        },
+        "cmsPage": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/cms-page"
+          }
+        },
+        "canonicalProduct": {
+          "data": null,
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/canonical-product"
+          }
+        },
+        "prices": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/prices"
+          }
+        },
+        "media": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/media"
+          }
+        },
+        "crossSellings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/cross-sellings"
+          }
+        },
+        "crossSellingAssignedProducts": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/cross-selling-assigned-products"
+          }
+        },
+        "configuratorSettings": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/configurator-settings"
+          }
+        },
+        "visibilities": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/visibilities"
+          }
+        },
+        "searchKeywords": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/search-keywords"
+          }
+        },
+        "productReviews": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/product-reviews"
+          }
+        },
+        "mainCategories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/main-categories"
+          }
+        },
+        "seoUrls": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/seo-urls"
+          }
+        },
+        "orderLineItems": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/order-line-items"
+          }
+        },
+        "wishlists": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/wishlists"
+          }
+        },
+        "options": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/options"
+          }
+        },
+        "properties": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/properties"
+          }
+        },
+        "categories": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/categories"
+          }
+        },
+        "streams": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/streams"
+          }
+        },
+        "categoriesRo": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/categories-ro"
+          }
+        },
+        "tags": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/tags"
+          }
+        },
+        "customFieldSets": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/custom-field-sets"
+          }
+        },
+        "translations": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/product\/db0acac390164ad29b1cba3c8c48b385\/translations"
+          }
+        }
+      },
+      "meta": null
+    }
+  ],
+  "included": [
+    {
+      "id": "f9947bbf58cd43b59a4b22f4cec5ef30",
+      "type": "tax",
+      "attributes": {
+        "taxRate": 19.0,
+        "name": "Standard rate",
+        "position": 1,
+        "customFields": null,
+        "createdAt": "2022-02-17T18:35:03.209+00:00",
+        "updatedAt": null,
+        "apiAlias": null
+      },
+      "links": {
+        "self": "http:\/\/localhost:8000\/api\/tax\/f9947bbf58cd43b59a4b22f4cec5ef30"
+      },
+      "relationships": {
+        "products": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/f9947bbf58cd43b59a4b22f4cec5ef30\/products"
+          }
+        },
+        "rules": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/f9947bbf58cd43b59a4b22f4cec5ef30\/rules"
+          }
+        },
+        "shippingMethods": {
+          "data": [],
+          "links": {
+            "related": "http:\/\/localhost:8000\/api\/tax\/f9947bbf58cd43b59a4b22f4cec5ef30\/shipping-methods"
+          }
+        }
+      },
+      "meta": null
+    }
+  ],
+  "links": {
+    "self": "http:\/\/localhost:8000\/api\/search\/product"
+  },
+  "meta": {
+    "totalCountMode": 0,
+    "total": 1
+  },
+  "aggregations": []
+}

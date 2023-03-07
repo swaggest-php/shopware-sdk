@@ -6,21 +6,18 @@ namespace Swaggest\ShopwareSdk\Entity\MainCategory;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelEntity;
 
 final class MainCategoryEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected string $categoryId;
 
-    protected string $categoryVersionId;
+    protected ?string $categoryVersionId;
 
     protected string $salesChannelId;
 
@@ -40,12 +37,12 @@ final class MainCategoryEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -60,12 +57,12 @@ final class MainCategoryEntity extends Entity
         $this->categoryId = $categoryId;
     }
 
-    public function getCategoryVersionId(): string
+    public function getCategoryVersionId(): ?string
     {
         return $this->categoryVersionId;
     }
 
-    public function setCategoryVersionId(string $categoryVersionId): void
+    public function setCategoryVersionId(?string $categoryVersionId): void
     {
         $this->categoryVersionId = $categoryVersionId;
     }

@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ProductPrice;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductEntity;
 use Swaggest\ShopwareSdk\Entity\Rule\RuleEntity;
 
 final class ProductPriceEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $productId;
 
-    protected string $productVersionId;
+    protected ?string $productVersionId;
 
     protected string $ruleId;
 
@@ -29,7 +26,7 @@ final class ProductPriceEntity extends Entity
 
     protected ?RuleEntity $rule;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     public function getProductId(): string
     {
@@ -41,12 +38,12 @@ final class ProductPriceEntity extends Entity
         $this->productId = $productId;
     }
 
-    public function getProductVersionId(): string
+    public function getProductVersionId(): ?string
     {
         return $this->productVersionId;
     }
 
-    public function setProductVersionId(string $productVersionId): void
+    public function setProductVersionId(?string $productVersionId): void
     {
         $this->productVersionId = $productVersionId;
     }
@@ -111,12 +108,12 @@ final class ProductPriceEntity extends Entity
         $this->rule = $rule;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

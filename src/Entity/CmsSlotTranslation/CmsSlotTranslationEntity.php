@@ -6,16 +6,13 @@ namespace Swaggest\ShopwareSdk\Entity\CmsSlotTranslation;
 
 use Swaggest\ShopwareSdk\Entity\CmsSlot\CmsSlotEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CmsSlotTranslationEntity extends Entity
 {
-    use EntityIdTrait;
+    protected ?array $config;
 
-    protected array $config;
-
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $cmsSlotId;
 
@@ -25,24 +22,24 @@ final class CmsSlotTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $cmsSlotVersionId;
+    protected ?string $cmsSlotVersionId;
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -87,12 +84,12 @@ final class CmsSlotTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getCmsSlotVersionId(): string
+    public function getCmsSlotVersionId(): ?string
     {
         return $this->cmsSlotVersionId;
     }
 
-    public function setCmsSlotVersionId(string $cmsSlotVersionId): void
+    public function setCmsSlotVersionId(?string $cmsSlotVersionId): void
     {
         $this->cmsSlotVersionId = $cmsSlotVersionId;
     }

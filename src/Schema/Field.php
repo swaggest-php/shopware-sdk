@@ -4,20 +4,16 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Schema;
 
-final class Field
+/**
+ * @internal
+ */
+final class Field extends AbstractField
 {
-    use FlagTrait;
-
     public function __construct(
-        private string $name,
-        private string $type,
-        private array $flags = [],
+        string $name,
+        private string $type
     ) {
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
+        parent::__construct($name);
     }
 
     public function getType(): string

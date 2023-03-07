@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\NumberRangeState;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\NumberRange\NumberRangeEntity;
 
 final class NumberRangeStateEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $numberRangeId;
 
     protected int $lastValue;

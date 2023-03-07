@@ -6,11 +6,10 @@ namespace Swaggest\ShopwareSdk\Schema;
 
 use Swaggest\ShopwareSdk\Schema\Flag\AbstractFlag;
 
-/**
- * @property AbstractFlag[] $flags
- */
 trait FlagTrait
 {
+    private array $flags = [];
+
     public function addFlags(AbstractFlag ...$flags): self
     {
         foreach ($flags as $flag) {

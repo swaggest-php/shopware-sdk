@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\PropertyGroup;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupOption\PropertyGroupOptionCollection;
 use Swaggest\ShopwareSdk\Entity\PropertyGroupTranslation\PropertyGroupTranslationCollection;
 
 final class PropertyGroupEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
     protected ?string $description;
@@ -21,17 +18,17 @@ final class PropertyGroupEntity extends Entity
 
     protected string $sortingType;
 
-    protected bool $filterable;
+    protected ?bool $filterable;
 
-    protected bool $visibleOnProductDetailPage;
+    protected ?bool $visibleOnProductDetailPage;
 
     protected ?int $position;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?PropertyGroupOptionCollection $options;
 
-    protected PropertyGroupTranslationCollection $translations;
+    protected ?PropertyGroupTranslationCollection $translations;
 
     public function getName(): string
     {
@@ -73,22 +70,22 @@ final class PropertyGroupEntity extends Entity
         $this->sortingType = $sortingType;
     }
 
-    public function getFilterable(): bool
+    public function getFilterable(): ?bool
     {
         return $this->filterable;
     }
 
-    public function setFilterable(bool $filterable): void
+    public function setFilterable(?bool $filterable): void
     {
         $this->filterable = $filterable;
     }
 
-    public function getVisibleOnProductDetailPage(): bool
+    public function getVisibleOnProductDetailPage(): ?bool
     {
         return $this->visibleOnProductDetailPage;
     }
 
-    public function setVisibleOnProductDetailPage(bool $visibleOnProductDetailPage): void
+    public function setVisibleOnProductDetailPage(?bool $visibleOnProductDetailPage): void
     {
         $this->visibleOnProductDetailPage = $visibleOnProductDetailPage;
     }
@@ -103,12 +100,12 @@ final class PropertyGroupEntity extends Entity
         $this->position = $position;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -123,12 +120,12 @@ final class PropertyGroupEntity extends Entity
         $this->options = $options;
     }
 
-    public function getTranslations(): PropertyGroupTranslationCollection
+    public function getTranslations(): ?PropertyGroupTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PropertyGroupTranslationCollection $translations): void
+    public function setTranslations(?PropertyGroupTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\LandingPageTag;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\LandingPage\LandingPageEntity;
 use Swaggest\ShopwareSdk\Entity\Tag\TagEntity;
 
 final class LandingPageTagEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $landingPageId;
 
-    protected string $landingPageVersionId;
+    protected ?string $landingPageVersionId;
 
     protected string $tagId;
 
@@ -33,12 +30,12 @@ final class LandingPageTagEntity extends Entity
         $this->landingPageId = $landingPageId;
     }
 
-    public function getLandingPageVersionId(): string
+    public function getLandingPageVersionId(): ?string
     {
         return $this->landingPageVersionId;
     }
 
-    public function setLandingPageVersionId(string $landingPageVersionId): void
+    public function setLandingPageVersionId(?string $landingPageVersionId): void
     {
         $this->landingPageVersionId = $landingPageVersionId;
     }

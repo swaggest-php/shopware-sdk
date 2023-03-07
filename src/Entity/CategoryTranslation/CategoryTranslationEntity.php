@@ -6,18 +6,15 @@ namespace Swaggest\ShopwareSdk\Entity\CategoryTranslation;
 
 use Swaggest\ShopwareSdk\Entity\Category\CategoryEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 
 final class CategoryTranslationEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $name;
 
-    protected array $breadcrumb;
+    protected ?array $breadcrumb;
 
-    protected array $slotConfig;
+    protected ?array $slotConfig;
 
     protected ?string $linkType;
 
@@ -25,7 +22,7 @@ final class CategoryTranslationEntity extends Entity
 
     protected ?string $externalLink;
 
-    protected bool $linkNewTab;
+    protected ?bool $linkNewTab;
 
     protected ?string $description;
 
@@ -35,7 +32,7 @@ final class CategoryTranslationEntity extends Entity
 
     protected ?string $keywords;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected string $categoryId;
 
@@ -45,7 +42,7 @@ final class CategoryTranslationEntity extends Entity
 
     protected ?LanguageEntity $language;
 
-    protected string $categoryVersionId;
+    protected ?string $categoryVersionId;
 
     public function getName(): string
     {
@@ -57,22 +54,22 @@ final class CategoryTranslationEntity extends Entity
         $this->name = $name;
     }
 
-    public function getBreadcrumb(): array
+    public function getBreadcrumb(): ?array
     {
         return $this->breadcrumb;
     }
 
-    public function setBreadcrumb(array $breadcrumb): void
+    public function setBreadcrumb(?array $breadcrumb): void
     {
         $this->breadcrumb = $breadcrumb;
     }
 
-    public function getSlotConfig(): array
+    public function getSlotConfig(): ?array
     {
         return $this->slotConfig;
     }
 
-    public function setSlotConfig(array $slotConfig): void
+    public function setSlotConfig(?array $slotConfig): void
     {
         $this->slotConfig = $slotConfig;
     }
@@ -107,12 +104,12 @@ final class CategoryTranslationEntity extends Entity
         $this->externalLink = $externalLink;
     }
 
-    public function getLinkNewTab(): bool
+    public function getLinkNewTab(): ?bool
     {
         return $this->linkNewTab;
     }
 
-    public function setLinkNewTab(bool $linkNewTab): void
+    public function setLinkNewTab(?bool $linkNewTab): void
     {
         $this->linkNewTab = $linkNewTab;
     }
@@ -157,12 +154,12 @@ final class CategoryTranslationEntity extends Entity
         $this->keywords = $keywords;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -207,12 +204,12 @@ final class CategoryTranslationEntity extends Entity
         $this->language = $language;
     }
 
-    public function getCategoryVersionId(): string
+    public function getCategoryVersionId(): ?string
     {
         return $this->categoryVersionId;
     }
 
-    public function setCategoryVersionId(string $categoryVersionId): void
+    public function setCategoryVersionId(?string $categoryVersionId): void
     {
         $this->categoryVersionId = $categoryVersionId;
     }

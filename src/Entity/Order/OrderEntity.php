@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\Order;
 use Swaggest\ShopwareSdk\Entity\Currency\CurrencyEntity;
 use Swaggest\ShopwareSdk\Entity\Document\DocumentCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Language\LanguageEntity;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressCollection;
 use Swaggest\ShopwareSdk\Entity\OrderAddress\OrderAddressEntity;
@@ -22,15 +21,13 @@ use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class OrderEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?int $autoIncrement;
 
     protected ?string $orderNumber;
 
     protected string $billingAddressId;
 
-    protected string $billingAddressVersionId;
+    protected ?string $billingAddressVersionId;
 
     protected string $currencyId;
 
@@ -42,7 +39,7 @@ final class OrderEntity extends Entity
 
     protected ?\DateTimeInterface $orderDate;
 
-    protected array $price;
+    protected ?array $price;
 
     protected ?float $amountTotal;
 
@@ -52,7 +49,7 @@ final class OrderEntity extends Entity
 
     protected ?string $taxStatus;
 
-    protected array $shippingCosts;
+    protected ?array $shippingCosts;
 
     protected ?float $shippingTotal;
 
@@ -70,9 +67,9 @@ final class OrderEntity extends Entity
 
     protected ?StateMachineStateEntity $stateMachineState;
 
-    protected array $ruleIds;
+    protected ?array $ruleIds;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $createdById;
 
@@ -104,9 +101,9 @@ final class OrderEntity extends Entity
 
     protected ?UserEntity $updatedBy;
 
-    protected array $itemRounding;
+    protected ?array $itemRounding;
 
-    protected array $totalRounding;
+    protected ?array $totalRounding;
 
     public function getAutoIncrement(): ?int
     {
@@ -138,12 +135,12 @@ final class OrderEntity extends Entity
         $this->billingAddressId = $billingAddressId;
     }
 
-    public function getBillingAddressVersionId(): string
+    public function getBillingAddressVersionId(): ?string
     {
         return $this->billingAddressVersionId;
     }
 
-    public function setBillingAddressVersionId(string $billingAddressVersionId): void
+    public function setBillingAddressVersionId(?string $billingAddressVersionId): void
     {
         $this->billingAddressVersionId = $billingAddressVersionId;
     }
@@ -198,12 +195,12 @@ final class OrderEntity extends Entity
         $this->orderDate = $orderDate;
     }
 
-    public function getPrice(): array
+    public function getPrice(): ?array
     {
         return $this->price;
     }
 
-    public function setPrice(array $price): void
+    public function setPrice(?array $price): void
     {
         $this->price = $price;
     }
@@ -248,12 +245,12 @@ final class OrderEntity extends Entity
         $this->taxStatus = $taxStatus;
     }
 
-    public function getShippingCosts(): array
+    public function getShippingCosts(): ?array
     {
         return $this->shippingCosts;
     }
 
-    public function setShippingCosts(array $shippingCosts): void
+    public function setShippingCosts(?array $shippingCosts): void
     {
         $this->shippingCosts = $shippingCosts;
     }
@@ -338,22 +335,22 @@ final class OrderEntity extends Entity
         $this->stateMachineState = $stateMachineState;
     }
 
-    public function getRuleIds(): array
+    public function getRuleIds(): ?array
     {
         return $this->ruleIds;
     }
 
-    public function setRuleIds(array $ruleIds): void
+    public function setRuleIds(?array $ruleIds): void
     {
         $this->ruleIds = $ruleIds;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -508,22 +505,22 @@ final class OrderEntity extends Entity
         $this->updatedBy = $updatedBy;
     }
 
-    public function getItemRounding(): array
+    public function getItemRounding(): ?array
     {
         return $this->itemRounding;
     }
 
-    public function setItemRounding(array $itemRounding): void
+    public function setItemRounding(?array $itemRounding): void
     {
         $this->itemRounding = $itemRounding;
     }
 
-    public function getTotalRounding(): array
+    public function getTotalRounding(): ?array
     {
         return $this->totalRounding;
     }
 
-    public function setTotalRounding(array $totalRounding): void
+    public function setTotalRounding(?array $totalRounding): void
     {
         $this->totalRounding = $totalRounding;
     }

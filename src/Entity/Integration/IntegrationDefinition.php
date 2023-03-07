@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Swaggest\ShopwareSdk\Entity\Integration;
 
-use Swaggest\ShopwareSdk\Entity\EntityDefinitionInterface;
-use Swaggest\ShopwareSdk\Schema\Association;
+use Swaggest\ShopwareSdk\Entity\AbstractEntityDefinition;
+use Swaggest\ShopwareSdk\Schema\AssociationField;
 use Swaggest\ShopwareSdk\Schema\Field;
 use Swaggest\ShopwareSdk\Schema\Flag\Deprecated;
 use Swaggest\ShopwareSdk\Schema\Flag\Extension;
@@ -15,7 +15,7 @@ use Swaggest\ShopwareSdk\Schema\Flag\ReadProtected;
 use Swaggest\ShopwareSdk\Schema\Flag\Required;
 use Swaggest\ShopwareSdk\Schema\Flag\RestrictDelete;
 
-final class IntegrationDefinition implements EntityDefinitionInterface
+final class IntegrationDefinition extends AbstractEntityDefinition
 {
     public function getEntityName(): string
     {
@@ -32,7 +32,7 @@ final class IntegrationDefinition implements EntityDefinitionInterface
         return IntegrationEntity::class;
     }
 
-    public function defineFields(): array
+    protected function defineFields(): array
     {
         return [
             (new Field('id', 'uuid'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new PrimaryKey(), new Required()),
@@ -44,11 +44,11 @@ final class IntegrationDefinition implements EntityDefinitionInterface
             (new Field('admin', 'boolean'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('customFields', 'json_object'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('deletedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
-            (new Association('app', Association::ONE_TO_ONE, 'app', 'id', 'integrationId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
-            (new Association('aclRoles', Association::MANY_TO_MANY, 'acl_role', 'id', 'id', null, 'integration_role', 'aclRoleId', 'integrationId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
+            (new AssociationField('app', AssociationField::ONE_TO_ONE, 'app', 'id', 'integrationId', null, null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new RestrictDelete()),
+            (new AssociationField('aclRoles', AssociationField::MANY_TO_MANY, 'acl_role', 'id', 'id', null, 'integration_role', 'aclRoleId', 'integrationId'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API])),
             (new Field('createdAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API]), new Required()),
             (new Field('updatedAt', 'date'))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API, ProtectedFlag::SALES_CHANNEL_API])),
-            (new Association('createdNotifications', Association::ONE_TO_MANY, 'notification', 'id', 'createdByIntegrationId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Extension()),
+            (new AssociationField('createdNotifications', AssociationField::ONE_TO_MANY, 'notification', 'id', 'createdByIntegrationId', 'id', null, null, null))->addFlags(new ReadProtected([ProtectedFlag::ADMIN_API]), new Extension()),
         ];
     }
 }

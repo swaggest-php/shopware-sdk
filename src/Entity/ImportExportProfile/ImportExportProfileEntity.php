@@ -5,21 +5,18 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\ImportExportProfile;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\ImportExportLog\ImportExportLogCollection;
 use Swaggest\ShopwareSdk\Entity\ImportExportProfileTranslation\ImportExportProfileTranslationCollection;
 
 final class ImportExportProfileEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $name;
 
     protected string $label;
 
     protected ?string $type;
 
-    protected bool $systemDefault;
+    protected ?bool $systemDefault;
 
     protected string $sourceEntity;
 
@@ -29,15 +26,15 @@ final class ImportExportProfileEntity extends Entity
 
     protected string $enclosure;
 
-    protected array $mapping;
+    protected ?array $mapping;
 
-    protected array $updateBy;
+    protected ?array $updateBy;
 
-    protected array $config;
+    protected ?array $config;
 
     protected ?ImportExportLogCollection $importExportLogs;
 
-    protected ImportExportProfileTranslationCollection $translations;
+    protected ?ImportExportProfileTranslationCollection $translations;
 
     public function getName(): ?string
     {
@@ -69,12 +66,12 @@ final class ImportExportProfileEntity extends Entity
         $this->type = $type;
     }
 
-    public function getSystemDefault(): bool
+    public function getSystemDefault(): ?bool
     {
         return $this->systemDefault;
     }
 
-    public function setSystemDefault(bool $systemDefault): void
+    public function setSystemDefault(?bool $systemDefault): void
     {
         $this->systemDefault = $systemDefault;
     }
@@ -119,32 +116,32 @@ final class ImportExportProfileEntity extends Entity
         $this->enclosure = $enclosure;
     }
 
-    public function getMapping(): array
+    public function getMapping(): ?array
     {
         return $this->mapping;
     }
 
-    public function setMapping(array $mapping): void
+    public function setMapping(?array $mapping): void
     {
         $this->mapping = $mapping;
     }
 
-    public function getUpdateBy(): array
+    public function getUpdateBy(): ?array
     {
         return $this->updateBy;
     }
 
-    public function setUpdateBy(array $updateBy): void
+    public function setUpdateBy(?array $updateBy): void
     {
         $this->updateBy = $updateBy;
     }
 
-    public function getConfig(): array
+    public function getConfig(): ?array
     {
         return $this->config;
     }
 
-    public function setConfig(array $config): void
+    public function setConfig(?array $config): void
     {
         $this->config = $config;
     }
@@ -159,12 +156,12 @@ final class ImportExportProfileEntity extends Entity
         $this->importExportLogs = $importExportLogs;
     }
 
-    public function getTranslations(): ImportExportProfileTranslationCollection
+    public function getTranslations(): ?ImportExportProfileTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(ImportExportProfileTranslationCollection $translations): void
+    public function setTranslations(?ImportExportProfileTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

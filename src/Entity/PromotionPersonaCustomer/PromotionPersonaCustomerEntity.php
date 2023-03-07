@@ -6,13 +6,10 @@ namespace Swaggest\ShopwareSdk\Entity\PromotionPersonaCustomer;
 
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerEntity;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Promotion\PromotionEntity;
 
 final class PromotionPersonaCustomerEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected string $promotionId;
 
     protected string $customerId;

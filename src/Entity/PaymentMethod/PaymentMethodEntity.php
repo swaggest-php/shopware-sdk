@@ -7,7 +7,6 @@ namespace Swaggest\ShopwareSdk\Entity\PaymentMethod;
 use Swaggest\ShopwareSdk\Entity\AppPaymentMethod\AppPaymentMethodEntity;
 use Swaggest\ShopwareSdk\Entity\Customer\CustomerCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Media\MediaEntity;
 use Swaggest\ShopwareSdk\Entity\OrderTransaction\OrderTransactionCollection;
 use Swaggest\ShopwareSdk\Entity\PaymentMethodTranslation\PaymentMethodTranslationCollection;
@@ -17,8 +16,6 @@ use Swaggest\ShopwareSdk\Entity\SalesChannel\SalesChannelCollection;
 
 final class PaymentMethodEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $pluginId;
 
     protected ?string $handlerIdentifier;
@@ -31,11 +28,11 @@ final class PaymentMethodEntity extends Entity
 
     protected ?int $position;
 
-    protected bool $active;
+    protected ?bool $active;
 
-    protected bool $afterOrderEnabled;
+    protected ?bool $afterOrderEnabled;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $availabilityRuleId;
 
@@ -43,13 +40,13 @@ final class PaymentMethodEntity extends Entity
 
     protected ?string $formattedHandlerIdentifier;
 
-    protected bool $synchronous;
+    protected ?bool $synchronous;
 
-    protected bool $asynchronous;
+    protected ?bool $asynchronous;
 
-    protected bool $prepared;
+    protected ?bool $prepared;
 
-    protected PaymentMethodTranslationCollection $translations;
+    protected ?PaymentMethodTranslationCollection $translations;
 
     protected ?MediaEntity $media;
 
@@ -127,32 +124,32 @@ final class PaymentMethodEntity extends Entity
         $this->position = $position;
     }
 
-    public function getActive(): bool
+    public function getActive(): ?bool
     {
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(?bool $active): void
     {
         $this->active = $active;
     }
 
-    public function getAfterOrderEnabled(): bool
+    public function getAfterOrderEnabled(): ?bool
     {
         return $this->afterOrderEnabled;
     }
 
-    public function setAfterOrderEnabled(bool $afterOrderEnabled): void
+    public function setAfterOrderEnabled(?bool $afterOrderEnabled): void
     {
         $this->afterOrderEnabled = $afterOrderEnabled;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -187,42 +184,42 @@ final class PaymentMethodEntity extends Entity
         $this->formattedHandlerIdentifier = $formattedHandlerIdentifier;
     }
 
-    public function getSynchronous(): bool
+    public function getSynchronous(): ?bool
     {
         return $this->synchronous;
     }
 
-    public function setSynchronous(bool $synchronous): void
+    public function setSynchronous(?bool $synchronous): void
     {
         $this->synchronous = $synchronous;
     }
 
-    public function getAsynchronous(): bool
+    public function getAsynchronous(): ?bool
     {
         return $this->asynchronous;
     }
 
-    public function setAsynchronous(bool $asynchronous): void
+    public function setAsynchronous(?bool $asynchronous): void
     {
         $this->asynchronous = $asynchronous;
     }
 
-    public function getPrepared(): bool
+    public function getPrepared(): ?bool
     {
         return $this->prepared;
     }
 
-    public function setPrepared(bool $prepared): void
+    public function setPrepared(?bool $prepared): void
     {
         $this->prepared = $prepared;
     }
 
-    public function getTranslations(): PaymentMethodTranslationCollection
+    public function getTranslations(): ?PaymentMethodTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(PaymentMethodTranslationCollection $translations): void
+    public function setTranslations(?PaymentMethodTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }

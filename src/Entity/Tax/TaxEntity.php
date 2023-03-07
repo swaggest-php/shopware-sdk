@@ -5,22 +5,19 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Entity\Tax;
 
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\Product\ProductCollection;
 use Swaggest\ShopwareSdk\Entity\ShippingMethod\ShippingMethodCollection;
 use Swaggest\ShopwareSdk\Entity\TaxRule\TaxRuleCollection;
 
 final class TaxEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected float $taxRate;
 
     protected string $name;
 
     protected int $position;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?ProductCollection $products;
 
@@ -58,12 +55,12 @@ final class TaxEntity extends Entity
         $this->position = $position;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }

@@ -65,8 +65,8 @@ final class EntityTest extends TestCase
 
     public function provideApiAliases(): iterable
     {
-        yield ['happy_person', new HappyPersonEntity()];
-        yield ['elephant', new ElephantEntity()];
+        yield ['swaggest_shopware_sdk_test_entity_entities_happy_person_entity', new HappyPersonEntity()];
+        yield ['swaggest_shopware_sdk_test_entity_entities_elephant_entity', new ElephantEntity()];
     }
 
     public function provideSerializedEntities(): iterable

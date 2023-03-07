@@ -12,7 +12,6 @@ use Swaggest\ShopwareSdk\Entity\CmsSection\CmsSectionCollection;
 use Swaggest\ShopwareSdk\Entity\Document\DocumentCollection;
 use Swaggest\ShopwareSdk\Entity\DocumentBaseConfig\DocumentBaseConfigCollection;
 use Swaggest\ShopwareSdk\Entity\Entity;
-use Swaggest\ShopwareSdk\Entity\EntityIdTrait;
 use Swaggest\ShopwareSdk\Entity\MailTemplateMedia\MailTemplateMediaCollection;
 use Swaggest\ShopwareSdk\Entity\MediaFolder\MediaFolderEntity;
 use Swaggest\ShopwareSdk\Entity\MediaThumbnail\MediaThumbnailCollection;
@@ -30,8 +29,6 @@ use Swaggest\ShopwareSdk\Entity\User\UserEntity;
 
 final class MediaEntity extends Entity
 {
-    use EntityIdTrait;
-
     protected ?string $userId;
 
     protected ?string $mediaFolderId;
@@ -48,9 +45,9 @@ final class MediaEntity extends Entity
 
     protected ?string $mediaTypeRaw;
 
-    protected array $metaData;
+    protected ?array $metaData;
 
-    protected array $mediaType;
+    protected ?array $mediaType;
 
     protected ?string $alt;
 
@@ -58,15 +55,15 @@ final class MediaEntity extends Entity
 
     protected ?string $url;
 
-    protected bool $hasFile;
+    protected ?bool $hasFile;
 
-    protected bool $private;
+    protected ?bool $private;
 
-    protected array $customFields;
+    protected ?array $customFields;
 
     protected ?string $thumbnailsRo;
 
-    protected MediaTranslationCollection $translations;
+    protected ?MediaTranslationCollection $translations;
 
     protected ?TagCollection $tags;
 
@@ -192,22 +189,22 @@ final class MediaEntity extends Entity
         $this->mediaTypeRaw = $mediaTypeRaw;
     }
 
-    public function getMetaData(): array
+    public function getMetaData(): ?array
     {
         return $this->metaData;
     }
 
-    public function setMetaData(array $metaData): void
+    public function setMetaData(?array $metaData): void
     {
         $this->metaData = $metaData;
     }
 
-    public function getMediaType(): array
+    public function getMediaType(): ?array
     {
         return $this->mediaType;
     }
 
-    public function setMediaType(array $mediaType): void
+    public function setMediaType(?array $mediaType): void
     {
         $this->mediaType = $mediaType;
     }
@@ -242,32 +239,32 @@ final class MediaEntity extends Entity
         $this->url = $url;
     }
 
-    public function getHasFile(): bool
+    public function getHasFile(): ?bool
     {
         return $this->hasFile;
     }
 
-    public function setHasFile(bool $hasFile): void
+    public function setHasFile(?bool $hasFile): void
     {
         $this->hasFile = $hasFile;
     }
 
-    public function getPrivate(): bool
+    public function getPrivate(): ?bool
     {
         return $this->private;
     }
 
-    public function setPrivate(bool $private): void
+    public function setPrivate(?bool $private): void
     {
         $this->private = $private;
     }
 
-    public function getCustomFields(): array
+    public function getCustomFields(): ?array
     {
         return $this->customFields;
     }
 
-    public function setCustomFields(array $customFields): void
+    public function setCustomFields(?array $customFields): void
     {
         $this->customFields = $customFields;
     }
@@ -282,12 +279,12 @@ final class MediaEntity extends Entity
         $this->thumbnailsRo = $thumbnailsRo;
     }
 
-    public function getTranslations(): MediaTranslationCollection
+    public function getTranslations(): ?MediaTranslationCollection
     {
         return $this->translations;
     }
 
-    public function setTranslations(MediaTranslationCollection $translations): void
+    public function setTranslations(?MediaTranslationCollection $translations): void
     {
         $this->translations = $translations;
     }
