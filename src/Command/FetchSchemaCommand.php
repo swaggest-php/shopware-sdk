@@ -13,7 +13,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use function file_put_contents;
 
 final class FetchSchemaCommand extends Command
 {
@@ -40,7 +39,7 @@ final class FetchSchemaCommand extends Command
 
         $output = $input->getOption('output');
 
-        if (false === file_put_contents($output, $infoService->getEntitySchema($context))) {
+        if (false === \file_put_contents($output, $infoService->getEntitySchema($context))) {
             return 1;
         }
 

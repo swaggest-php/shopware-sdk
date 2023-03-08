@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Swaggest\ShopwareSdk\Internal;
 
 use Swaggest\ShopwareSdk\Context;
-use function array_merge;
 
 final class HeaderProvider implements HeaderProviderInterface
 {
     public function getHeaders(Context $context): array
     {
-        return array_merge($this->prepareCommonHeaders(), $this->prepareContextHeaders($context));
+        return \array_merge($this->prepareCommonHeaders(), $this->prepareContextHeaders($context));
     }
 
     private function prepareContextHeaders(Context $context): array

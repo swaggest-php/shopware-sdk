@@ -37,9 +37,7 @@ use PhpCsFixer\Fixer\CastNotation\NoUnsetCastFixer;
 use PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer;
-use PhpCsFixer\Fixer\ClassNotation\FinalClassFixer;
 use PhpCsFixer\Fixer\ClassNotation\FinalInternalClassFixer;
-use PhpCsFixer\Fixer\ClassNotation\FinalPublicMethodForAbstractClassFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoNullPropertyInitializationFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoPhp4ConstructorFixer;
@@ -142,7 +140,6 @@ use PhpCsFixer\Fixer\PhpTag\NoClosingTagFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitConstructFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertInternalTypeFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitFqcnAnnotationFixer;
-use PhpCsFixer\Fixer\PhpUnit\PhpUnitStrictFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestCaseStaticMethodCallsFixer;
 use PhpCsFixer\Fixer\ReturnNotation\NoUselessReturnFixer;
 use PhpCsFixer\Fixer\ReturnNotation\ReturnAssignmentFixer;
@@ -341,8 +338,6 @@ return static function (ECSConfig $ecsConfig): void {
         SpaceAfterSemicolonFixer::class,
 
         ArrayIndentationFixer::class,
-
-
     ]);
 
     $ecsConfig->ruleWithConfiguration(MethodArgumentSpaceFixer::class, ['on_multiline' => 'ensure_fully_multiline']);
